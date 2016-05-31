@@ -31,3 +31,5 @@ Main colors are #121212, and standard blue from Xubuntu theme.
 ----------
 
 If you have any questions, make an issue in this repo :)
+
+> Oh and this guy on wallpaper it's Benny Greb :D
