@@ -17,6 +17,7 @@ List of my tools of choice:
  * **Gimp** - images/graphics editor
  * **KeePassX** - password manager
  * **LibreOffice** - office suite
+ * **DuckDuckGo** - as my search engine
  * I also use sometimes virtualbox, wine, firefox, and some other useful tools etc.
 
 ## Keyboard shortcuts
