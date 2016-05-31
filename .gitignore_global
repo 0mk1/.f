@@ -1,0 +1,13 @@
+*.swp
+.DS_Store
+.DS_Store?
+.agignore
+Thumbs.db
+tags
+.netrwhist
+.bundle
+.svn
+log/
+*.ideas
+.ideas
+TODO

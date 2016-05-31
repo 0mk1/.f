@@ -1,0 +1,23 @@
+# Linux/Ubuntu
+alias agi="sudo apt-get install"
+alias aguu="sudo apt-get update; sudo apt-get upgrade;"
+alias t="thunar ."
+
+# Navigation
+alias p="cd ~/Programming/Projekty"
+alias prg="cd ~/Programming"
+alias drms="cd ~/Drums"
+alias study="cd ~/Studia"
+alias msc="cd ~/Inne"
+
+# Git aliases
+alias gall="git add -A"
+alias gcmt="git commit"
+alias gstat="git status --porcelain"
+alias glog="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias gpll="git pull"
+alias gpsh="git push"
+
+# Vim alias
+alias v="vim"
+alias v.="vim ."

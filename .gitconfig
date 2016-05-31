@@ -1,0 +1,22 @@
+[user]
+  name = Mateusz Kamycki
+  email = mateusz.kamycki@gmail.com
+
+[color]
+  ui = true
+  diff = auto
+  status = auto
+  branch = auto
+
+[core]
+  excludesfile = ~/.gitignore_global
+  editor = vim
+
+[github]
+  user = toffi9
+
+[help]
+  autocorrect = 1
+
+[push]
+  default = current
