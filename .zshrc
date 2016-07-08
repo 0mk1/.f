@@ -32,17 +32,17 @@ export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/g
 # unset MANPATH # delete if you already modified MANPATH elsewhere in your config
 # MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 # Python3 virtualenv/venvwrapper
 export WORKON_HOME=~/.virtualenvs
 VIRTUALENVWRAPPER_PYTHON='/usr/bin/python3' # This needs to be placed before the virtualenvwrapper command
-export PROJECT_HOME=$HOME/Programming/Projekty
+export PROJECT_HOME=$HOME/Projekty
 source /usr/local/bin/virtualenvwrapper.sh
 
 # Virtualenv && tmux integration
-# TODO: not working
 if [ -n "$VIRTUAL_ENV" ]; then
-  . "$VIRTUAL_ENV/bin/activate"
+    workon `basename $VIRTUAL_ENV`
 fi
 
 # ssh

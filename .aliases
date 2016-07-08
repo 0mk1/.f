@@ -1,14 +1,12 @@
 # Linux/Ubuntu
 alias agi="sudo apt-get install"
 alias aguu="sudo apt-get update; sudo apt-get upgrade;"
+alias agr="sudo apt-get remove"
+alias ags="sudo apt-cache search"
 alias t="thunar ."
 
 # Navigation
-alias p="cd ~/Programming/Projekty"
-alias prg="cd ~/Programming"
-alias drms="cd ~/Drums"
-alias study="cd ~/Studia"
-alias msc="cd ~/Inne"
+alias p="cd ~/Projekty"
 
 # Git aliases
 alias gall="git add -A"

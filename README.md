@@ -6,7 +6,7 @@ List of my tools of choice:
  * **Tmux** - terminal multiplexer
  * **Zsh** with oh-my-zsh - my shell
  * **Xubuntu** Core (xfce4 + ubuntu) - as my dev environment
- * **Chromium** - web browser (extensions: uBlock, Vimium, JSONView, LiveReload, Great Suspender)
+ * **Chromium** - web browser (extensions: uBlock, Vimium, JSONView, LiveReload, HTTP Everywhere)
  * **Spotify** Linux client - music
  * **Git** - version control
  * **Thunar** - file manager
@@ -18,7 +18,8 @@ List of my tools of choice:
  * **KeePassX** - password manager
  * **LibreOffice** - office suite
  * **DuckDuckGo** - as my search engine
- * I also use sometimes virtualbox, wine, firefox, and some other useful tools etc.
+ * **Pulse Audio Equilizer** - for better audio
+ * I also use sometimes virtualbox, wine, filezilla, xarchiver, firefox, opera, galculator and some other useful tools etc.
 
 ## Keyboard shortcuts
 
@@ -40,16 +41,5 @@ List of my tools of choice:
 Main colors are #121212, and standard blue from Xubuntu theme (Greybird).
 The notification theme is Numix.
 
-## Hardware
-I use Dell e6400 with Samsung 840pro SSD.
-It's a lovely notebook with 14" 16:10 1440x900 screen and badass keyboard.
-With this SSD it's reaching its limit.
 
-And I have encrypted disk :)
-
-----------
-
-If you have any questions, make an issue in this repo :)
-
-> Oh and this guy on wallpaper it's Benny Greb.
-> Check him out: [link](https://www.youtube.com/watch?v=K1E_y_jgM5A)
+> If you have any questions, make an issue in this repo :)

@@ -22,6 +22,7 @@ Plugin 'chase/nginx.vim'
 Plugin 'othree/html5.vim'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'klen/python-mode'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -53,8 +54,12 @@ set clipboard=unnamedplus             " use the system clipboard
 set wildmenu                      " enable bash style tab completion
 set wildmode=list:longest,full
 set list listchars=tab:»»,trail:·,eol:¬ " show extra space characters
+
+" Disable stupid backup and swap files - they trigger too many events
+" for file system watchers
+set nobackup
+set nowritebackup
 set noswapfile
-set textwidth=79
 
 " Looks
 set background=dark
@@ -70,6 +75,7 @@ endif
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:60,results:60'
 let g:ctrlp_show_hidden = 1
+set wildignore+=*.pyc
 
 " Netrw
 " relative numbers in netrw
@@ -86,12 +92,26 @@ let mapleader = ","
 map <Leader>q :q<cr>
 map <Leader>w :w<cr>
 map <F3> :nohlsearch<CR>
-nmap <Leader>ev :vsp ~/.vimrc<cr>
-nmap <Leader>et :vsp ~/.tmux.conf<cr>
-nmap <Leader>ez :vsp ~/.zshrc<cr>
-nmap <Leader>ea :vsp ~/.aliases<cr>
 nmap <Leader>n :e .<CR>
 nmap <Leader>cn :cnext<CR>
 nmap <Leader>cp :cprev<CR>
 nmap <Leader>v :vsp.<CR>
-nmap <Leader>fl :vertical resize<CR>
+
+" bind Ctrl+<movement> keys to move around the windows, instead of using Ctrl+w + <movement>
+" Every unnecessary keystroke that can be saved is good for your health :)
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-l> <c-w>l
+map <c-h> <c-w>h
+
+" easier moving of code blocks
+" Try to go into visual mode (v), thenselect several lines of code here and
+" then press ``>`` several times.
+vnoremap < <gv " better indentation
+vnoremap > >gv " better indentation
+
+
+nmap <Leader>ev :vsp ~/.vimrc<cr>
+nmap <Leader>et :vsp ~/.tmux.conf<cr>
+nmap <Leader>ez :vsp ~/.zshrc<cr>
+nmap <Leader>ea :vsp ~/.aliases<cr>
