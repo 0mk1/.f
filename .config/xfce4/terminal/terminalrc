@@ -1,15 +1,15 @@
 [Configuration]
-ColorCursor=#863186318631
+ColorCursor=#7575b5b5aaaa
 ColorForeground=#d0d0d0d0d0d0
 ColorBackground=#121212121212
 ColorPalette=#151515151515;#acac41414242;#9090a9a95959;#f4f4bfbf7575;#6a6a9f9fb5b5;#aaaa75759f9f;#7575b5b5aaaa;#d0d0d0d0d0d0;#505050505050;#acac41414242;#9090a9a95959;#f4f4bfbf7575;#6a6a9f9fb5b5;#aaaa75759f9f;#7575b5b5aaaa;#f5f5f5f5f5f5
-FontName=DejaVu Sans Mono 10.5
+FontName=Menlo for Powerline 10.5
 MiscAlwaysShowTabs=FALSE
 MiscBell=FALSE
 MiscBordersDefault=FALSE
 MiscCursorBlinks=FALSE
 MiscCursorShape=TERMINAL_CURSOR_SHAPE_BLOCK
-MiscDefaultGeometry=80x50
+MiscDefaultGeometry=175x52
 MiscInheritGeometry=FALSE
 MiscMenubarDefault=FALSE
 MiscMouseAutohide=FALSE

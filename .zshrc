@@ -9,7 +9,7 @@ export LANG=en_US.UTF-8
 export EDITOR='vim'
 
 ZSH_THEME="toffi9"
-export UPDATE_ZSH_DAYS=60
+export UPDATE_ZSH_DAYS=30
 
 # ============================================================================
 #   Plugins
@@ -54,7 +54,7 @@ stty -ixon
 # Always work in a tmux session if tmux is installed
 if which tmux 2>&1 >/dev/null; then
   if [ $TERM != "screen-256color" ] && [  $TERM != "screen" ]; then
-    tmux -2 attach -t 0 || tmux -2 new -s 0; exit
+    tmux -2 attach -t workspace || tmux -2 new -s workspace; exit
   fi
 fi
 

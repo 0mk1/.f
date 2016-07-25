@@ -6,7 +6,11 @@ alias ags="sudo apt-cache search"
 alias t="thunar ."
 
 # Navigation
-alias p="cd ~/Projekty"
+alias pw="cd ~/Projekty/work"
+alias pg="cd ~/Projekty/github"
+alias pv="cd ~/Projekty/videos/"
+alias docs="cd ~/Dokumenty/"
+alias pobr="cd ~/Pobrane/"
 
 # Git aliases
 alias gall="git add -A"
