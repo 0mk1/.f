@@ -2,9 +2,10 @@
 
 List of my tools of choice:
 
- * **Vim** with some cool plugins (i also use gvim) - text editor
+ * **Vim** with some cool plugins - text editor
  * **Tmux** - terminal multiplexer
  * **Zsh** with oh-my-zsh - my shell
+ * **mousepad** another text editor
  * **Xubuntu** Core (xfce4 + ubuntu) - as my dev environment
  * **Chromium** - web browser (extensions: uBlock, Vimium, JSONView, LiveReload, HTTP Everywhere)
  * **Spotify** Linux client - music
@@ -32,14 +33,5 @@ List of my tools of choice:
  * Super + F -> open thunar
  * Super + T -> open terminal
 
-## Screenshots
-
-![clean](screen-clean.png)
-
-![term](screen1.png)
-
-Main colors are #121212, and standard blue from Xubuntu theme (Greybird).
+Main colors are #121212 and standard blue from Xubuntu theme (Greybird).
 The notification theme is Numix.
-
-
-> If you have any questions, make an issue in this repo :)

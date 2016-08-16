@@ -28,8 +28,12 @@ Plugin 'SirVer/ultisnips'
 Plugin 'klen/python-mode'
 Plugin 'davidhalter/jedi-vim' " Using instead of python-mode Rope autocomplate
 
+" Javascript specific tools (i use js only for frontend stuff)
+
+" Go-lang specific tools
+Plugin 'fatih/vim-go'
+
 " Syntax highlighting
-Plugin 'JamshedVesuna/vim-markdown-preview'
 Plugin 'chase/nginx.vim'
 Plugin 'othree/html5.vim'
 Plugin 'hail2u/vim-css3-syntax'
@@ -77,8 +81,8 @@ set noswapfile
 
 " Looks
 set background=dark
-colorscheme jellybeans
 set t_Co=256
+colorscheme jellybeans
 
 " Vertical line colors
 hi VertSplit guibg=234 ctermbg=234 guifg=234 ctermfg=234
@@ -242,8 +246,6 @@ nmap <Leader>et :vsp ~/.tmux.conf<cr>
 nmap <Leader>ez :vsp ~/.zshrc<cr>
 nmap <Leader>ea :vsp ~/.aliases<cr>
 nmap <Leader>es :vsp ~/.vim/UltiSnips/<cr>
-nmap <Leader>ed :vsp ~/Dokumenty/perkusja.md<cr>
-nmap <Leader>ep :vsp ~/Dokumenty/programowanie.md<cr>
 
 " Reload vimrc config
 nmap <Leader><F6> :source ~/.vimrc<CR>

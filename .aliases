@@ -8,17 +8,13 @@ alias t="thunar ."
 # Navigation
 alias pw="cd ~/Projekty/work"
 alias pg="cd ~/Projekty/github"
-alias pv="cd ~/Projekty/videos/"
 alias docs="cd ~/Dokumenty/"
-alias pobr="cd ~/Pobrane/"
 
 # Git aliases
 alias gall="git add -A"
 alias gcmt="git commit"
 alias gstat="git status --porcelain"
 alias glog="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-alias gpll="git pull"
-alias gpsh="git push"
 
 # Vim alias
 alias v="vim"
