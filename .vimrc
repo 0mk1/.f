@@ -14,7 +14,6 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Colorscheme
 Plugin 'nanotech/jellybeans.vim'
-" Plugin 'toffi9/luna.vim'
 
 " Utils (processing, searching, etc.)
 Plugin 'kien/ctrlp.vim'
@@ -72,7 +71,7 @@ set nofoldenable                  " disable code folding
 set clipboard=unnamedplus             " use the system clipboard
 set wildmenu                      " enable bash style tab completion
 set wildmode=list:longest,full
-set list listchars=tab:»»,trail:·,eol:¬ " show extra space characters
+set list listchars=tab:»»,trail:· " show extra space characters
 
 " Disable stupid backup and swap files - they trigger too many events
 " for file system watchers
@@ -84,10 +83,13 @@ set noswapfile
 set background=dark
 set t_Co=256
 colorscheme jellybeans
+let s:background_color = "080808"
+" hi Normal ctermfg=252 ctermbg=232
+hi ColorColumn ctermbg=233
 
 " Statusline
 set statusline=
-set statusline +=%1*\ %{ModeStatusline()}\ %*  "Mode
+set statusline +=\ %{ModeStatusline()}\ %*  "Mode
 set statusline +=%m%r%h%w%q%*        "modified flag
 set statusline +=\ %<%f%*            "full path
 set statusline +=%=\[%{&ff}\]%*      "file format
@@ -95,9 +97,21 @@ set statusline +=%y%*                "file type
 set statusline +=\ %l%*             "current line
 set statusline +=/%L\ (%P)%*         "total lines
 
+" Vertical line colors
+hi VertSplit guibg=234 ctermbg=234 guifg=234 ctermfg=234
+
+" Signs colors
+hi SignColumn guibg=232 ctermbg=232
+
+" Omnicomplate hightlight
+hi Pmenu guibg=black ctermbg=black
+
+hi statusline guibg=230 ctermbg=230 guifg=black ctermfg=black
+hi statuslineNC guibg=234 ctermbg=234 guifg=white ctermfg=white
+
 " Insert special hightlight statusline
-au InsertEnter * hi statusline guibg=25 ctermbg=25
-au InsertLeave * hi statusline guibg=black ctermbg=black
+au InsertEnter * hi statusline guibg=green ctermbg=green
+au InsertLeave * hi statusline guibg=230 ctermbg=230
 
 " Mode Name in Statusline (Normal, Insert, Visual)
 function! ModeStatusline()
@@ -207,6 +221,8 @@ nmap <Leader>cp :cprev<CR>
 " F3 to toggle search hightlight
 nnoremap <F3> :set hlsearch! hlsearch?<cr>
 
+" Integration with zeal
+nnoremap <Leader>zz :!zeal "<cword>"&<CR><CR>
 
 " bind Ctrl+<movement> keys to move around the windows, instead of using Ctrl+w + <movement>
 " Every unnecessary keystroke that can be saved is good for your health :)
@@ -229,7 +245,6 @@ nmap <Leader>et :tabnew ~/.tmux.conf<cr>
 nmap <Leader>ez :tabnew ~/.zshrc<cr>
 nmap <Leader>ea :tabnew ~/.aliases<cr>
 nmap <Leader>es :tabnew ~/.vim/UltiSnips/<cr>
-nmap <Leader>ep :tabnew ~/Projekty/local/.plan/README.md<cr>
 
 " Reload vimrc config
 nmap <Leader><F6> :source ~/.vimrc<CR>
