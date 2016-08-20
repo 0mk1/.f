@@ -8,6 +8,7 @@ alias t="thunar ."
 # Navigation
 alias pw="cd ~/Projekty/work"
 alias pg="cd ~/Projekty/github"
+alias pl="cd ~/Projekty/local"
 alias docs="cd ~/Dokumenty/"
 
 # Git aliases

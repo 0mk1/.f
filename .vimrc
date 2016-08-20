@@ -14,6 +14,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Colorscheme
 Plugin 'nanotech/jellybeans.vim'
+" Plugin 'toffi9/luna.vim'
 
 " Utils (processing, searching, etc.)
 Plugin 'kien/ctrlp.vim'
@@ -48,7 +49,7 @@ filetype plugin indent on    " required
 " =============================================================================
 syntax on                         " show syntax highlighting
 set autoindent                    " set auto indent
-set tabstop=2                          " set indent to 2 spaces
+set tabstop=2                     " set indent to 2 spaces
 set shiftwidth=2
 set expandtab                     " use spaces, not tab characters
 set nocompatible                  " don't need to be compatible with old vim
@@ -58,7 +59,7 @@ set showmatch                     " show bracket matches
 set showcmd
 set noshowmode
 set ignorecase                    " ignore case in search
-set nohlsearch                      " highlight all search matches
+set nohlsearch                    " highlight all search matches
 set cursorline                    " highlight current line
 set smartcase                     " pay attention to case when caps are used
 set incsearch                     " show search results as I type
@@ -84,18 +85,6 @@ set background=dark
 set t_Co=256
 colorscheme jellybeans
 
-" Vertical line colors
-hi VertSplit guibg=234 ctermbg=234 guifg=234 ctermfg=234
-
-" Line Number colors
-hi LineNr guibg=black ctermbg=black
-
-" Signs colors
-hi SignColumn guibg=black ctermbg=black
-
-" Omnicomplate hightlight
-hi Pmenu guibg=black ctermbg=black
-
 " Statusline
 set statusline=
 set statusline +=%1*\ %{ModeStatusline()}\ %*  "Mode
@@ -105,10 +94,6 @@ set statusline +=%=\[%{&ff}\]%*      "file format
 set statusline +=%y%*                "file type
 set statusline +=\ %l%*             "current line
 set statusline +=/%L\ (%P)%*         "total lines
-
-hi statusline guibg=black ctermbg=black guifg=white ctermfg=white
-hi statuslineNC guibg=black ctermbg=black guifg=8 ctermfg=8
-hi User1 guibg=black ctermbg=black
 
 " Insert special hightlight statusline
 au InsertEnter * hi statusline guibg=25 ctermbg=25
@@ -214,8 +199,6 @@ nmap <Leader>n :e .<CR>
 " Vertical splits
 " two
 nmap <Leader>v :vsp.<CR>
-" three
-nmap <Leader>V :vsp.<CR>:vsp.<CR>
 
 " Vimgrep utils
 nmap <Leader>cn :cnext<CR>
@@ -241,11 +224,12 @@ vnoremap > >gv " better indentation
 
 
 " Quick config edits
-nmap <Leader>ev :vsp ~/.vimrc<cr>
-nmap <Leader>et :vsp ~/.tmux.conf<cr>
-nmap <Leader>ez :vsp ~/.zshrc<cr>
-nmap <Leader>ea :vsp ~/.aliases<cr>
-nmap <Leader>es :vsp ~/.vim/UltiSnips/<cr>
+nmap <Leader>ev :tabnew ~/.vimrc<cr>
+nmap <Leader>et :tabnew ~/.tmux.conf<cr>
+nmap <Leader>ez :tabnew ~/.zshrc<cr>
+nmap <Leader>ea :tabnew ~/.aliases<cr>
+nmap <Leader>es :tabnew ~/.vim/UltiSnips/<cr>
+nmap <Leader>ep :tabnew ~/Projekty/local/.plan/README.md<cr>
 
 " Reload vimrc config
 nmap <Leader><F6> :source ~/.vimrc<CR>

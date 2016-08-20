@@ -33,5 +33,5 @@ List of my tools of choice:
  * Super + F -> open thunar
  * Super + T -> open terminal
 
-Main colors are #121212 and standard blue from Xubuntu theme (Greybird).
+Main colors are #080808 and standard blue from Xubuntu theme (Greybird).
 The notification theme is Numix.
