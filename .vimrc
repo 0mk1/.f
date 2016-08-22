@@ -28,7 +28,7 @@ Plugin 'SirVer/ultisnips'
 Plugin 'klen/python-mode'
 Plugin 'davidhalter/jedi-vim' " Using instead of python-mode Rope autocomplate
 
-" Javascript specific tools (i use js only for frontend stuff)
+" Javascript specific tools
 
 " Go-lang specific tools
 Plugin 'fatih/vim-go'
@@ -83,22 +83,21 @@ set noswapfile
 set background=dark
 set t_Co=256
 colorscheme jellybeans
-let s:background_color = "080808"
-" hi Normal ctermfg=252 ctermbg=232
+" let s:background_color = "080808"
 hi ColorColumn ctermbg=233
 
 " Statusline
 set statusline=
-set statusline +=\ %{ModeStatusline()}\ %*  "Mode
+set statusline +=%<%f%*            "full path
 set statusline +=%m%r%h%w%q%*        "modified flag
-set statusline +=\ %<%f%*            "full path
+set statusline +=%=[%{ModeStatusline()}]%*  "Mode
 set statusline +=%=\[%{&ff}\]%*      "file format
 set statusline +=%y%*                "file type
 set statusline +=\ %l%*             "current line
 set statusline +=/%L\ (%P)%*         "total lines
 
 " Vertical line colors
-hi VertSplit guibg=234 ctermbg=234 guifg=234 ctermfg=234
+" hi VertSplit guibg=234 ctermbg=234 guifg=234 ctermfg=234
 
 " Signs colors
 hi SignColumn guibg=232 ctermbg=232
@@ -107,10 +106,10 @@ hi SignColumn guibg=232 ctermbg=232
 hi Pmenu guibg=black ctermbg=black
 
 hi statusline guibg=230 ctermbg=230 guifg=black ctermfg=black
-hi statuslineNC guibg=234 ctermbg=234 guifg=white ctermfg=white
+hi statuslineNC guibg=234 ctermbg=234 guifg=230 ctermfg=230
 
 " Insert special hightlight statusline
-au InsertEnter * hi statusline guibg=green ctermbg=green
+au InsertEnter * hi statusline guibg=9 ctermbg=9
 au InsertLeave * hi statusline guibg=230 ctermbg=230
 
 " Mode Name in Statusline (Normal, Insert, Visual)
@@ -244,6 +243,7 @@ nmap <Leader>ev :tabnew ~/.vimrc<cr>
 nmap <Leader>et :tabnew ~/.tmux.conf<cr>
 nmap <Leader>ez :tabnew ~/.zshrc<cr>
 nmap <Leader>ea :tabnew ~/.aliases<cr>
+nmap <Leader>ed :tabnew ~/Dokumenty/todo.md<cr>
 nmap <Leader>es :tabnew ~/.vim/UltiSnips/<cr>
 
 " Reload vimrc config
