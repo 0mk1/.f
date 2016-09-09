@@ -83,8 +83,6 @@ set noswapfile
 set background=dark
 set t_Co=256
 colorscheme jellybeans
-" let s:background_color = "080808"
-hi ColorColumn ctermbg=233
 
 " Statusline
 set statusline=
@@ -96,8 +94,7 @@ set statusline +=%y%*                "file type
 set statusline +=\ %l%*             "current line
 set statusline +=/%L\ (%P)%*         "total lines
 
-" Vertical line colors
-" hi VertSplit guibg=234 ctermbg=234 guifg=234 ctermfg=234
+hi ColorColumn ctermbg=233
 
 " Signs colors
 hi SignColumn guibg=232 ctermbg=232
@@ -109,8 +106,8 @@ hi statusline guibg=230 ctermbg=230 guifg=black ctermfg=black
 hi statuslineNC guibg=234 ctermbg=234 guifg=230 ctermfg=230
 
 " Insert special hightlight statusline
-au InsertEnter * hi statusline guibg=9 ctermbg=9
-au InsertLeave * hi statusline guibg=230 ctermbg=230
+au InsertEnter * hi statusline guibg=25 ctermbg=25 ctermfg=231
+au InsertLeave * hi statusline guibg=230 ctermbg=230 ctermfg=233
 
 " Mode Name in Statusline (Normal, Insert, Visual)
 function! ModeStatusline()
@@ -188,13 +185,8 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
-" Vim Markdown Preview
-let vim_markdown_preview_hotkey='<C-m>'
-let vim_markdown_preview_github=1
-let vim_markdown_preview_use_xdg_open=0
-let vim_markdown_preview_temp_file=0
-let vim_markdown_preview_browser='Firefox'
-
+autocmd FileType md setlocal set textwidth=80
+autocmd FileType md setlocal set formatoptions-=t
 
 " =============================================================================
 " Custom key bindings
@@ -243,7 +235,6 @@ nmap <Leader>ev :tabnew ~/.vimrc<cr>
 nmap <Leader>et :tabnew ~/.tmux.conf<cr>
 nmap <Leader>ez :tabnew ~/.zshrc<cr>
 nmap <Leader>ea :tabnew ~/.aliases<cr>
-nmap <Leader>ed :tabnew ~/Dokumenty/todo.md<cr>
 nmap <Leader>es :tabnew ~/.vim/UltiSnips/<cr>
 
 " Reload vimrc config
