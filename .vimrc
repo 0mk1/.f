@@ -29,11 +29,6 @@ Plugin 'SirVer/ultisnips'
 Plugin 'klen/python-mode'
 Plugin 'davidhalter/jedi-vim' " Using instead of python-mode Rope autocomplate
 
-" Javascript specific tools
-
-" Go-lang specific tools
-Plugin 'fatih/vim-go'
-
 " Syntax highlighting
 Plugin 'chase/nginx.vim'
 Plugin 'othree/html5.vim'
