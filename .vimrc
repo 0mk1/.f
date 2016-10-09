@@ -20,6 +20,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-surround'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'tpope/vim-fugitive'
 
 " Snippets
 Plugin 'SirVer/ultisnips'
@@ -49,6 +50,7 @@ filetype plugin indent on    " required
 syntax on                         " show syntax highlighting
 set autoindent                    " set auto indent
 set tabstop=2                     " set indent to 2 spaces
+set path+=**
 set shiftwidth=2
 set expandtab                     " use spaces, not tab characters
 set nocompatible                  " don't need to be compatible with old vim
@@ -135,6 +137,7 @@ let g:ctrlp_show_hidden = 1
 set wildignore+=*.pyc
 
 " Netrw
+let g:netrw_banner = 0
 " relative numbers in netrw
 let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
 " keeping file folder in netrw
