@@ -19,6 +19,9 @@ cp ~/.gitignore_global .
 echo "Copying ~/.tmux.conf"
 cp ~/.tmux.conf .
 
+echo "Copying ~/.ctags"
+cp ~/.ctags .
+
 echo "Copying ~/.toffi9.zsh-theme"
 cp -H ~/.toffi9.zsh-theme .
 
