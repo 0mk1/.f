@@ -20,7 +20,6 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-surround'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'tpope/vim-fugitive'
 
 " Snippets
 Plugin 'SirVer/ultisnips'
@@ -91,14 +90,10 @@ set statusline +=%y%*                "file type
 set statusline +=\ %l%*             "current line
 set statusline +=/%L\ (%P)%*         "total lines
 
-hi ColorColumn ctermbg=233
-
 " Signs colors
 hi SignColumn guibg=232 ctermbg=232
 
-" Omnicomplate hightlight
-hi Pmenu guibg=black ctermbg=black
-
+" Statusline colors
 hi statusline guibg=230 ctermbg=230 guifg=black ctermfg=black
 hi statuslineNC guibg=234 ctermbg=234 guifg=230 ctermfg=230
 
@@ -136,7 +131,7 @@ let g:netrw_banner = 0
 " relative numbers in netrw
 let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
 " keeping file folder in netrw
-let g:netrw_keepdir= 0
+let g:netrw_keepdir = 1
 
 " Python mode configs, pep8, pyflake, run script, breakpoint, better syntax,
 " folding, indent
@@ -210,9 +205,6 @@ nmap <Leader>cp :cprev<CR>
 " F3 to toggle search hightlight
 nnoremap <F3> :set hlsearch! hlsearch?<cr>
 
-" Integration with zeal
-nnoremap <Leader>zz :!zeal "<cword>"&<CR><CR>
-
 " bind Ctrl+<movement> keys to move around the windows, instead of using Ctrl+w + <movement>
 " Every unnecessary keystroke that can be saved is good for your health :)
 map <c-j> <c-w>j
@@ -220,6 +212,14 @@ map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
 
+" quick vimgrep search
+" vimgrep string filetype (**)
+" copen for open QuickFix list
+nnoremap <Leader>S :vimgrep 
+
+" ctags
+nnoremap <F9> :!ctags -R .<cr>
+nnoremap <Leader>T :CtrlPTag<cr>
 
 " easier moving of code blocks
 " Try to go into visual mode (v), thenselect several lines of code here and

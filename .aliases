@@ -4,6 +4,7 @@ alias aguu="sudo apt-get update; sudo apt-get upgrade;"
 alias agr="sudo apt-get remove"
 alias ags="sudo apt-cache search"
 alias t="thunar ."
+alias gsync="cd ~/Dokumenty/ && grive && cd ~"
 alias sshcopym="ssh-copy-id -i ~/.ssh/id_rsa_main.pub "
 alias sshcopyi="ssh-copy-id -i ~/.ssh/id_rsa_intalio.pub "
 
@@ -23,6 +24,7 @@ alias glog="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%
 # vim
 alias v="vim"
 alias v.="vim ."
+alias gentag="ctags -R ."
 
 # python/django
 alias djstartp="django-admin startproject "
