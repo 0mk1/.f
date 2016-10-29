@@ -132,6 +132,8 @@ let g:netrw_banner = 0
 let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
 " keeping file folder in netrw
 let g:netrw_keepdir = 1
+" Changing netrw listing style to tree
+let g:netrw_liststyle = 3
 
 " Python mode configs, pep8, pyflake, run script, breakpoint, better syntax,
 " folding, indent

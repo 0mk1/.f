@@ -1,12 +1,14 @@
 # linux
 alias agi="sudo apt-get install"
 alias aguu="sudo apt-get update; sudo apt-get upgrade;"
-alias agr="sudo apt-get remove"
+alias agr="sudo apt-get purge"
 alias ags="sudo apt-cache search"
+alias agl="sudo dpkg -l | grep "
 alias t="thunar ."
 alias gsync="cd ~/Dokumenty/ && grive && cd ~"
 alias sshcopym="ssh-copy-id -i ~/.ssh/id_rsa_main.pub "
 alias sshcopyi="ssh-copy-id -i ~/.ssh/id_rsa_intalio.pub "
+alias dockr="sudo docker "
 
 # navigation
 alias pw="cd ~/Projekty/work"
@@ -29,4 +31,4 @@ alias gentag="ctags -R ."
 # python/django
 alias djstartp="django-admin startproject "
 alias djstarta="python manage.py startapp "
-
+alias djmanage="python manage.py "
