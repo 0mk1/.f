@@ -11,9 +11,7 @@ alias sshcopyi="ssh-copy-id -i ~/.ssh/id_rsa_intalio.pub "
 alias dockr="sudo docker "
 
 # navigation
-alias pw="cd ~/Projekty/work"
-alias pg="cd ~/Projekty/github"
-alias pl="cd ~/Projekty/local"
+alias p="cd ~/Projekty/"
 alias docs="cd ~/Dokumenty/"
 alias pobr="cd ~/Pobrane/"
 
