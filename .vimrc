@@ -17,6 +17,7 @@ Plugin 'nanotech/jellybeans.vim'
 
 " Utils (processing, searching, etc.)
 Plugin 'kien/ctrlp.vim'
+Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-surround'
 Plugin 'jiangmiao/auto-pairs'
@@ -133,7 +134,7 @@ let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
 " keeping file folder in netrw
 let g:netrw_keepdir = 1
 " Changing netrw listing style to tree
-let g:netrw_liststyle = 3
+" let g:netrw_liststyle = 3
 
 " Python mode configs, pep8, pyflake, run script, breakpoint, better syntax,
 " folding, indent
@@ -203,6 +204,7 @@ nmap <Leader>v :vsp.<CR>
 " Vimgrep utils
 nmap <Leader>cn :cnext<CR>
 nmap <Leader>cp :cprev<CR>
+nmap <Leader>co :copen<CR>
 
 " F3 to toggle search hightlight
 nnoremap <F3> :set hlsearch! hlsearch?<cr>
@@ -222,6 +224,7 @@ nnoremap <Leader>S :vimgrep
 " ctags
 nnoremap <F9> :!ctags -R .<cr>
 nnoremap <Leader>T :CtrlPTag<cr>
+nmap <Leader><F9> :TagbarToggle<CR>
 
 " easier moving of code blocks
 " Try to go into visual mode (v), thenselect several lines of code here and
@@ -229,6 +232,8 @@ nnoremap <Leader>T :CtrlPTag<cr>
 vnoremap < <gv " better indentation
 vnoremap > >gv " better indentation
 
+" Opening file manger in current folder
+nnoremap <F10> :!thunar .<cr>
 
 " Quick config edits
 nmap <Leader>ev :tabnew ~/.vimrc<cr>

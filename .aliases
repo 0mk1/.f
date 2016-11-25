@@ -12,6 +12,8 @@ alias dockr="sudo docker "
 
 # navigation
 alias p="cd ~/Projekty/"
+alias github="cd ~/Projekty/github/"
+alias lokal="cd ~/Projekty/local/"
 alias docs="cd ~/Dokumenty/"
 alias pobr="cd ~/Pobrane/"
 
@@ -30,3 +32,4 @@ alias gentag="ctags -R ."
 alias djstartp="django-admin startproject "
 alias djstarta="python manage.py startapp "
 alias djmanage="python manage.py "
+alias serve="python manage.py runserver"
