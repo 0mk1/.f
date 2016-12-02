@@ -68,7 +68,7 @@ sudo service rc.local restart
 # create my folder
 cd $HOME
 rm Muzyka/ Obrazy/ Publiczny/ Szablony/ Wideo/ -rf
-mkdir -p Projekty/local Projekty/github
+mkdir Projekty
 
 sudo apt-get install -y apt-transport-https ca-certificates
 
@@ -157,17 +157,13 @@ cd $HOME
 sudo fc-cache -f -v
 # docker
 sudo service docker start
+
+# Copy all files
 # grive
 # cd $HOME/Dokumenty/ && grive -a && cd $HOME
 
-# Copy all files from backup
-
-# gitconfig, gitignore
-# vim
-# 
-
 # Config all stuff in xfce settings
-# whiptail manually
+# Shortcuts
 
 # Exit with reboot
 sudo reboot
