@@ -1,11 +1,11 @@
 #!/bin/bash
 
-echo "Changing directory to ~/Projekty/github/dotfiles/"
-cd ~/Projekty/github/dotfiles/
+echo "Changing directory to ~/Projekty/dotfiles/"
+cd ~/Projekty/dotfiles/
 
 echo "Syncing..."
 echo "Copying ~/.vim/UltiSnips/"
-cp -R ~/.vim/UltiSnips/ ./.vim/UltiSnips/
+cp -R ~/.vim/UltiSnips/ .vim/UltiSnips/
 
 echo "Copying ~/.aliases"
 cp ~/.aliases .
@@ -31,7 +31,6 @@ cp ~/.vimrc .
 echo "Copying ~/.zshrc"
 cp ~/.zshrc .
 
-echo ""
 echo "Git commiting & pushing"
 git add -A
 git commit -m "dotfiles sync $(date +"%Y%m%d")"

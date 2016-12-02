@@ -6,16 +6,12 @@ alias ags="sudo apt-cache search"
 alias agl="sudo dpkg -l | grep "
 alias t="thunar ."
 alias gsync="cd ~/Dokumenty/ && grive && cd ~"
-alias sshcopym="ssh-copy-id -i ~/.ssh/id_rsa_main.pub "
-alias sshcopyi="ssh-copy-id -i ~/.ssh/id_rsa_intalio.pub "
+alias sshcopy="ssh-copy-id -i ~/.ssh/id_rsa_main.pub "
 alias dockr="sudo docker "
 
 # navigation
 alias p="cd ~/Projekty/"
-alias github="cd ~/Projekty/github/"
-alias lokal="cd ~/Projekty/local/"
 alias docs="cd ~/Dokumenty/"
-alias pobr="cd ~/Pobrane/"
 
 # git
 alias gall="git add -A"
@@ -28,8 +24,16 @@ alias v="vim"
 alias v.="vim ."
 alias gentag="ctags -R ."
 
-# python/django
+# django
 alias djstartp="django-admin startproject "
 alias djstarta="python manage.py startapp "
 alias djmanage="python manage.py "
 alias serve="python manage.py runserver"
+
+# pip
+alias pf="pip freeze"
+alias pi="pip install "
+
+# virtualenv
+alias vnv="workon "
+alias mkvnv="mkvirtualenv -p python3 "
