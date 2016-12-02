@@ -5,7 +5,7 @@ cd ~/Projekty/dotfiles/
 
 echo "Syncing..."
 echo "Copying ~/.vim/UltiSnips/"
-cp -R ~/.vim/UltiSnips/ .vim/UltiSnips/
+cp -R ~/.vim/UltiSnips/ .vim/
 
 echo "Copying ~/.aliases"
 cp ~/.aliases .
