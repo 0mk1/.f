@@ -133,7 +133,8 @@ sudo apt-get install -y \
   ansible \
   docker-engine \
   ack-grep \
-  python3-pip
+  python3-pip \
+  zeal
 
 # virtualenv
 pip3 install virtualenvwrapper
