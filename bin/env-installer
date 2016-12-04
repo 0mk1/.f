@@ -68,7 +68,7 @@ sudo service rc.local restart
 # create my folder
 cd $HOME
 rm Muzyka/ Obrazy/ Publiczny/ Szablony/ Wideo/ -rf
-mkdir Projekty
+mkdir Projekty Dokumenty
 
 sudo apt-get install -y apt-transport-https ca-certificates
 
@@ -159,12 +159,61 @@ sudo fc-cache -f -v
 # docker
 sudo service docker start
 
+sudo apt-get autoclean
+sudo apt-get clean
+sudo apt-get autoremove
+
 # Copy all files
 # grive
-# cd $HOME/Dokumenty/ && grive -a && cd $HOME
+cd $HOME/Dokumenty/
+# Config gdrive
+grive -a
+# copy .vpn and .ssh folder to $HOME
+cd $HOME/Dokumenty/Dostępy/ssh_vpn/
+tar xzvf access.tar.gz
+mv .ssh/ $HOME/
+mv .vpn/ $HOME/
+mkdir $HOME/.virtualenvs
+
+# github
+cd $HOME/Projekty/
+git clone git@github.com:toffi9/mkamycki.com.git
+git clone git@github.com:toffi9/dotfiles.git
+git clone git@github.com:toffi9/rsync-watcher.git
+
+# install rsync-watcher
+cd $HOME/Projekty/rsync-watcher/
+./install.sh
+
+# install dotfiles
+cd $HOME/Projekty/dotfiles/bin/
+# TODO
+./symlink-dotfiles
 
 # Config all stuff in xfce settings
+whiptail --title "XFCE Configs" \
+  --msgbox "
+# Wallpaper
+# Panel 24px, #080808,
+  (whisker,obszary,przycisk okien, separator, minutnik, obszar powiadomień,
+  zasilanie, ikony powiado, separator, zegar, przycisk sesji)
+# XFCE4 settings manager (Numix, Noto Sans 8, greybird, elem xfce darker)
+# Set capslock esc swap
+" 40 70
+
 # Shortcuts
+whiptail --title "XFCE Shortcuts" \
+  --msgbox "
+# Super+1,2,3 switch workspaces
+# Super+e spotify
+# Super+z zeal
+# Super+w chrome
+# Super+f thunar
+# Super+t terminal
+# alt+shift+left,right attach to half
+# ctrl+alt+up maximaze
+# Alt+F1 whiskermenu
+" 40 70
 
 # Exit with reboot
 sudo reboot

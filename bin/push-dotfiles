@@ -1,0 +1,4 @@
+#!/bin/bash
+git add -A
+git commit -m "dotfiles sync $(date +"%Y%m%d")"
+git push origin master
