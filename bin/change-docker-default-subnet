@@ -1,5 +1,6 @@
 #!/bin/sh -e
-#
+# Author: Steve Kamerman @kamermans https://github.com/kamermans
+# gist: https://gist.github.com/kamermans/94b1c41086de0204750b
 # You can run this script directly from github as root like this:
 #   curl -sS https://gist.githubusercontent.com/kamermans/94b1c41086de0204750b/raw/configure_docker0.sh | sudo bash -s - 192.168.254.1/24
 #
