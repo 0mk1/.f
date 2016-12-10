@@ -134,7 +134,7 @@ sudo apt-get install -y \
   docker-engine \
   ack-grep \
   python3-pip \
-  zeal
+  xfce4-notes-plugin
 
 # virtualenv
 pip3 install virtualenvwrapper
