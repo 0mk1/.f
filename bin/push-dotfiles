@@ -1,4 +1,7 @@
 #!/bin/bash
+cd ~/Projekty/dotfiles/
+cp ~/.config/xfce4/terminal/terminalrc $PWD/.config/xfce4/terminal/
+
 git add -A
 git commit -m "dotfiles sync $(date +"%Y%m%d")"
 git push origin master
