@@ -3,35 +3,25 @@
 echo "Changing directory to ~/Projekty/dotfiles/"
 cd ~/Projekty/dotfiles/
 
-echo "Syncing..."
-echo "Copying ~/.vim/UltiSnips/"
-cp -R ~/.vim/UltiSnips/ .vim/
+echo "---- Creating symlinks ----"
 
-echo "Copying ~/.aliases"
-cp ~/.aliases .
+# Folders
+ln -s $PWD/bin/ $HOME
+ln -s $PWD/.vim/UltiSnips/ $HOME/.vim/
+ln -s $PWD/.fonts/ $HOME
+ln -s $PWD/.tmux/ $HOME
 
-echo "Copying ~/.gitconfig"
-cp ~/.gitconfig .
-
-echo "Copying ~/.gitignore_global"
-cp ~/.gitignore_global .
-
-echo "Copying ~/.tmux.conf"
-cp ~/.tmux.conf .
-
-echo "Copying ~/.ctags"
-cp ~/.ctags .
-
-echo "Copying ~/.toffi9.zsh-theme"
-cp -H ~/.toffi9.zsh-theme .
-
-echo "Copying ~/.vimrc"
-cp ~/.vimrc .
-
-echo "Copying ~/.zshrc"
-cp ~/.zshrc .
-
-echo "Git commiting & pushing"
-git add -A
-git commit -m "dotfiles sync $(date +"%Y%m%d")"
-git push origin master
+# Files
+ln -s $PWD/.config/redshift.conf $HOME/.config/
+ln -s $PWD/.config/zathura/zathurarc $HOME/.config/zathura/
+ln -s $PWD/.config/xfce4/terminal/terminalrc $HOME/.config/xfce4/terminal/
+ln -s $PWD/toffi9.zsh-theme $HOME/.oh-my-zsh/themes/
+ln -s $PWD/.aliases $HOME
+ln -s $PWD/.ctags $HOME
+ln -s $PWD/.gitconfig $HOME
+ln -s $PWD/.gitignore_global $HOME
+ln -s $PWD/.tmux.conf $HOME
+ln -s $PWD/.vimrc $HOME
+ln -s $PWD/.wallpaper.jpg $HOME
+ln -s $PWD/.wallpaper2.jpg $HOME
+ln -s $PWD/.zshrc $HOME

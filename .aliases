@@ -9,6 +9,11 @@ alias gsync="cd ~/Dokumenty/ && grive && cd ~"
 alias sshcopy="ssh-copy-id -i ~/.ssh/id_rsa_main.pub "
 alias dockr="sudo docker "
 
+# tmux
+alias ta="tmux -2 attach -t "
+alias ts="tmux -2 new -s "
+alias tm="tmux -2"
+
 # navigation
 alias p="cd ~/Projekty/"
 alias docs="cd ~/Dokumenty/"
@@ -27,7 +32,7 @@ alias gentag="ctags -R ."
 # django
 alias djstartp="django-admin startproject "
 alias djstarta="python manage.py startapp "
-alias djmanage="python manage.py "
+alias djm="python manage.py "
 alias serve="python manage.py runserver"
 
 # pip

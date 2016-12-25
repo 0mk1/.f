@@ -33,6 +33,8 @@ export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/g
 # MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH="$PATH:$HOME/bin"      # add my custom scripts
+export PATH="$HOME/.cargo/bin:$PATH"
 
 # Python3 virtualenv/venvwrapper
 export WORKON_HOME=~/.virtualenvs
@@ -40,23 +42,10 @@ VIRTUALENVWRAPPER_PYTHON='/usr/bin/python3' # This needs to be placed before the
 export PROJECT_HOME=$HOME/Projekty
 source /usr/local/bin/virtualenvwrapper.sh
 
-# Virtualenv && tmux integration
-if [ -n "$VIRTUAL_ENV" ]; then
-    workon `basename $VIRTUAL_ENV`
-fi
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
-
 # Ctrl + s not hanging vim
 stty -ixon
 
-# Always work in a tmux session if tmux is installed
-if which tmux 2>&1 >/dev/null; then
-  if [ $TERM != "screen-256color" ] && [  $TERM != "screen" ]; then
-    tmux -2 attach -t workspace || tmux -2 new -s workspace; exit
-  fi
-fi
+/usr/bin/setxkbmap -option "caps:swapescape"
 
 # ============================================================================
 #   Aliases
@@ -67,3 +56,4 @@ source $HOME/.aliases
 source $ZSH/oh-my-zsh.sh
 
 # ============================================================================
+export PATH="/home/toffi9/bin:$PATH"
