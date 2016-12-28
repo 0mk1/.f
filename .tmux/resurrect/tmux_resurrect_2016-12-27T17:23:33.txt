@@ -1,8 +1,0 @@
-pane	musichub	1	:vim	0	:-	1	:/home/toffi9/Projekty/musichub	1	vim	:vim
-pane	musichub	2	:zsh	0	:	1	:/home/toffi9/Projekty/musichub	1	zsh	:
-pane	musichub	2	:zsh	0	:	2	:/home/toffi9/Projekty/musichub	0	python	:python manage.py runserver
-pane	musichub	3	:piano-example	1	:*	1	:/home/toffi9/Projekty/channels-piano-example	1	vim	:vim .
-window	musichub	1	0	:-	ce7d,165x48,0,0,0
-window	musichub	2	0	:	d998,165x48,0,0[165x29,0,0,2,165x18,0,30,3]
-window	musichub	3	1	:*	ce84,165x48,0,0,7
-state	musichub	

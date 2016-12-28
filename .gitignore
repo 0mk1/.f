@@ -1,1 +1,2 @@
-/.tmux/ressurect/*
+.tmux/resurrect/last
+.tmux/resurrect/*
