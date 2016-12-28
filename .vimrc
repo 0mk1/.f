@@ -96,7 +96,7 @@ hi SignColumn guibg=232 ctermbg=232
 
 " Statusline colors
 hi statusline guibg=230 ctermbg=230 guifg=black ctermfg=black
-hi statuslineNC guibg=234 ctermbg=234 guifg=230 ctermfg=230
+hi statuslineNC guibg=234 ctermbg=234 guifg=240 ctermfg=240
 
 " Insert special hightlight statusline
 au InsertEnter * hi statusline guibg=25 ctermbg=25 ctermfg=231
@@ -122,7 +122,7 @@ if exists('+colorcolumn')
 endif
 
 " CTRL-P
-let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_working_path_mode = 'r'
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:60,results:60'
 let g:ctrlp_show_hidden = 1
 set wildignore+=*.pyc
@@ -134,7 +134,7 @@ let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
 " keeping file folder in netrw
 let g:netrw_keepdir = 1
 " Changing netrw listing style to tree
-" let g:netrw_liststyle = 3
+let g:netrw_liststyle = 3
 
 " Python mode configs, pep8, pyflake, run script, breakpoint, better syntax,
 " folding, indent
@@ -215,6 +215,18 @@ map <c-j> <c-w>j
 map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
+
+" Go to tab by number
+noremap <leader>1 1gt
+noremap <leader>2 2gt
+noremap <leader>3 3gt
+noremap <leader>4 4gt
+noremap <leader>5 5gt
+noremap <leader>6 6gt
+noremap <leader>7 7gt
+noremap <leader>8 8gt
+noremap <leader>9 9gt
+noremap <leader>0 :tabnext<cr>
 
 " quick vimgrep search
 " vimgrep string filetype (**)
