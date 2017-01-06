@@ -7,7 +7,9 @@ alias agl="sudo dpkg -l | grep "
 alias t="thunar ."
 alias gsync="cd ~/Dokumenty/ && grive && cd ~"
 alias sshcopy="ssh-copy-id -i ~/.ssh/id_rsa_main.pub "
-alias dockr="sudo docker "
+alias docker="sudo docker "
+alias dcomp="sudo docker-compose "
+alias rg="ranger"
 
 # tmux
 alias ta="tmux -2 attach -t "
@@ -20,7 +22,7 @@ alias docs="cd ~/Dokumenty/"
 
 # git
 alias gall="git add -A"
-alias gcmt="git commit"
+alias gcmt="git commit -v"
 alias gstat="git status --porcelain"
 alias glog="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 

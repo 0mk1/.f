@@ -28,6 +28,6 @@ ColorBold=#000000
 CommandLoginShell=TRUE
 ScrollingBar=TERMINAL_SCROLLBAR_NONE
 ScrollingLines=2000
-BackgroundDarkness=0,980000
+BackgroundDarkness=0,900000
 BackgroundMode=TERMINAL_BACKGROUND_TRANSPARENT
 
