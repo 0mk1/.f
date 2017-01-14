@@ -11,7 +11,7 @@
 #     * Xubuntu minimal installation
 #     * Large selection of font packages
 # everything else will be installed later
-
+#
 # RUN script below on your new installed xubuntu core system
 # ------------------------------------------------------------------
 
@@ -188,9 +188,9 @@ whiptail --title "XFCE Configs" \
   --msgbox "
 # Wallpaper
 # Panel 24px, #080808,
-  (whisker,obszary,przycisk okien, separator, timeout, notatki, obszar powiadomień,
-  zasilanie, ikony powiado, separator, zegar, przycisk sesji)
-# XFCE4 settings manager (Numix, Noto Sans 8, greybird, elem xfce darker)
+  (whisker,obszary,przycisk okien, separator, timeout, timer, obszar powiadomień,
+  zasilanie, ikony powiado, separator, zegar [%c], przycisk sesji)
+# XFCE4 settings manager (Numix, Noto Sans 8, Arc Darker Solid, elem xfce dark)
 # Set capslock esc swap
 " 40 70
 

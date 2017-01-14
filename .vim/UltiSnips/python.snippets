@@ -1,25 +1,102 @@
 snippet utf8 "utf 8 header" b
 # -*- coding: utf-8 -*-
+from __future__ import unicode_literals
 $0
-endsnippet
-
-snippet if "If" b
-if ${1:condition}:
-	${2:${VISUAL:pass}}
-endsnippet
-
-snippet def "function" b
-def ${1:name}(${2:args}):
-    ${3:body}
-endsnippet
-
-snippet ife "If / Else" b
-if ${1:condition}:
-	${2:${VISUAL:pass}}
-else:
-	${3:pass}
 endsnippet
 
 snippet todo "TODO statement" b
 # TODO: ${1:statement} (Author: Mateusz Kamycki @toffi9)
+endsnippet
+
+snippet Account "Account custom user model django" b
+from django.db import models
+from django.contrib.auth.models import (
+    BaseUserManager, AbstractBaseUser
+)
+
+
+class MyUserManager(BaseUserManager):
+    def create_user(self, email, date_of_birth, password=None):
+        """
+        Creates and saves a User with the given email, date of
+        birth and password.
+        """
+        if not email:
+            raise ValueError('Users must have an email address')
+
+        user = self.model(
+            email=self.normalize_email(email),
+            date_of_birth=date_of_birth,
+        )
+
+        user.set_password(password)
+        user.save(using=self._db)
+        return user
+
+    def create_superuser(self, email, date_of_birth, password):
+        """
+        Creates and saves a superuser with the given email, date of
+        birth and password.
+        """
+        user = self.create_user(
+            email,
+            password=password,
+            date_of_birth=date_of_birth,
+        )
+        user.is_admin = True
+        user.save(using=self._db)
+        return user
+
+
+class MyUser(AbstractBaseUser):
+    email = models.EmailField(
+        verbose_name='email address',
+        max_length=255,
+        unique=True,
+    )
+    date_of_birth = models.DateField()
+    is_active = models.BooleanField(default=True)
+    is_admin = models.BooleanField(default=False)
+
+    objects = MyUserManager()
+
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = ['date_of_birth']
+
+    def get_full_name(self):
+        # The user is identified by their email address
+        return self.email
+
+    def get_short_name(self):
+        # The user is identified by their email address
+        return self.email
+
+    def __str__(self):              # __unicode__ on Python 2
+        return self.email
+
+    def has_perm(self, perm, obj=None):
+        "Does the user have a specific permission?"
+        # Simplest possible answer: Yes, always
+        return True
+
+    def has_module_perms(self, app_label):
+        "Does the user have permissions to view the app `app_label`?"
+        # Simplest possible answer: Yes, always
+        return True
+
+    @property
+    def is_staff(self):
+        "Is the user a member of staff?"
+        # Simplest possible answer: All admins are staff
+        return self.is_admin
+endsnippet
+
+snippet populate_with_data "migrations.py addon" b
+def populate_with_data(apps, schema_editor):
+    # https://docs.djangoproject.com/en/dev/ref/migration-operations/#django.db.migrations.operations.RunPython
+    # Add this to your migrations
+    # migrations.RunPython(populate_with_data),
+    Model = apps.get_model("app", "Model")
+    model = Model()
+    model.save()
 endsnippet
