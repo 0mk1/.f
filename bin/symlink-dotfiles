@@ -23,5 +23,4 @@ ln -s $PWD/.gitignore_global $HOME
 ln -s $PWD/.tmux.conf $HOME
 ln -s $PWD/.vimrc $HOME
 ln -s $PWD/.wallpaper.jpg $HOME
-ln -s $PWD/.wallpaper2.jpg $HOME
 ln -s $PWD/.zshrc $HOME

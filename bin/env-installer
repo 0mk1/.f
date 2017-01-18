@@ -132,9 +132,10 @@ sudo apt-get install -y \
   network-manager-vpnc-gnome \
   ansible \
   docker-engine \
-  ack-grep \
+  ack-grep \ # TODO: nie działa
   python3-pip \
-  xfce4-notes-plugin
+  xfce4-notes-plugin \
+  arc-theme # TODO: dodać repo
 
 # virtualenv
 pip3 install virtualenvwrapper
@@ -168,6 +169,7 @@ cd $HOME/Dokumenty/
 # Config gdrive
 grive -a
 # copy .vpn and .ssh folder to $HOME
+# TODO: ogarnąć jak to dobrze robić
 cd $HOME/Dokumenty/Dostępy/ssh_vpn/
 tar xzvf access.tar.gz
 mv .ssh/ $HOME/
