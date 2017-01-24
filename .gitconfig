@@ -15,8 +15,5 @@
 [github]
   user = toffi9
 
-[help]
-  autocorrect = 1
-
 [push]
   default = current

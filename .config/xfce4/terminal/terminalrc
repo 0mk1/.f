@@ -1,15 +1,15 @@
 [Configuration]
 ColorCursor=#84b584b584b5
 ColorForeground=#d0d0d0d0d0d0
-ColorBackground=#080808080808
+ColorBackground=#121212121212
 ColorPalette=#121212121212;#acac41414242;#9090a9a95959;#f4f4bfbf7575;#6a6a9f9fb5b5;#aaaa75759f9f;#7575b5b5aaaa;#d0d0d0d0d0d0;#505050505050;#acac41414242;#9090a9a95959;#f4f4bfbf7575;#6a6a9f9fb5b5;#aaaa75759f9f;#7575b5b5aaaa;#f5f5f5f5f5f5
 FontName=Menlo for Powerline 10.5
 MiscAlwaysShowTabs=FALSE
 MiscBell=FALSE
-MiscBordersDefault=FALSE
+MiscBordersDefault=TRUE
 MiscCursorBlinks=FALSE
 MiscCursorShape=TERMINAL_CURSOR_SHAPE_BLOCK
-MiscDefaultGeometry=173x51
+MiscDefaultGeometry=155x45
 MiscInheritGeometry=FALSE
 MiscMenubarDefault=FALSE
 MiscMouseAutohide=FALSE
@@ -28,6 +28,5 @@ ColorBold=#000000
 CommandLoginShell=TRUE
 ScrollingBar=TERMINAL_SCROLLBAR_NONE
 ScrollingLines=2000
-BackgroundDarkness=0,980000
-BackgroundMode=TERMINAL_BACKGROUND_TRANSPARENT
+BackgroundDarkness=0,990000
 

@@ -1,18 +1,8 @@
 #!/bin/bash
 
 # Install xubuntu core from mini.iso (network installer) for latest ubuntu
-# Check Install
-# Don't autodetect keyboard, use polish
-# fullname:toffi9 and user: toffi9
-# don't encrypt home folder
-# check Przewodnik - cały dysk i ustawienie szyfrowanego LVM
-# don't do automatic updates
-# check software:
-#     * Xubuntu minimal installation
-#     * Large selection of font packages
-# everything else will be installed later
-#
-# RUN script below on your new installed xubuntu core system
+# Xubuntu minimal installation
+# Large selection of font packages
 # ------------------------------------------------------------------
 
 # Update and upgrade system
@@ -101,20 +91,17 @@ sudo apt-get install -y \
   tmux \
   zsh \
   git \
-  chromium-browser chromium-browser-l10n \
   firefox firefox-locale-pl \
   keepassx \
   xarchiver \
   thunar-archive-plugin \
   thunar-volman \
   redshift redshift-gtk \
-  xfce4-timeout-plugin \
   xfce4-taskmanager \
   zathura \
   gpicview \
   mousepad \
   filezilla \
-  gimp gimp-data gimp-data-extras \
   virtualbox virtualbox-ext-pack \
   skype \
   mpv \
@@ -124,8 +111,6 @@ sudo apt-get install -y \
   grive \
   xclip \
   unzip \
-  dnsmasq \
-  ntfs-3g \
   network-manager-openvpn-gnome \
   network-manager-pptp-gnome \
   network-manager-ssh-gnome \
@@ -134,7 +119,6 @@ sudo apt-get install -y \
   docker-engine \
   ack-grep \ # TODO: nie działa
   python3-pip \
-  xfce4-notes-plugin \
   arc-theme # TODO: dodać repo
 
 # virtualenv
@@ -143,6 +127,7 @@ whiptail --title "Notice" \
   --msgbox "
 Remember to adjust source of virtualenvwrapper.sh in your .zshrc
 " 10 70
+mkdir $HOME/.virtualenvs
 
 # oh-my-zsh
 cd $HOME
@@ -153,7 +138,8 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.9.0/docker-c
 sudo chmod +x /usr/local/bin/docker-compose
 
 # ack
-sudo dpkg-divert --local --divert /usr/bin/ack --rename --add /usr/bin/ack-grep
+# TODO
+# sudo dpkg-divert --local --divert /usr/bin/ack --rename --add /usr/bin/ack-grep
 
 cd $HOME
 # docker
@@ -174,42 +160,15 @@ cd $HOME/Dokumenty/Dostępy/ssh_vpn/
 tar xzvf access.tar.gz
 mv .ssh/ $HOME/
 mv .vpn/ $HOME/
-mkdir $HOME/.virtualenvs
 
 # github
 cd $HOME/Projekty/
-git clone git@github.com:toffi9/mkamycki.com.git
 git clone git@github.com:toffi9/dotfiles.git
 
 # install dotfiles
 cd $HOME/Projekty/dotfiles/bin/
 ./symlink-dotfiles
 
-# Config all stuff in xfce settings
-whiptail --title "XFCE Configs" \
-  --msgbox "
-# Wallpaper
-# Panel 24px, #080808,
-  (whisker,obszary,przycisk okien, separator, timeout, timer, obszar powiadomień,
-  zasilanie, ikony powiado, separator, zegar [%c], przycisk sesji)
-# XFCE4 settings manager (Numix, Noto Sans 8, Arc Darker Solid, elem xfce dark)
-# Set capslock esc swap
-" 40 70
-
-# Shortcuts
-whiptail --title "XFCE Shortcuts" \
-  --msgbox "
-# Super+1,2,3,4 switch workspaces
-# Super+e spotify
-# Super+w chrome
-# Super+f thunar
-# Super+t terminal
-# alt+shift+left,right attach to half
-# ctrl+alt+up maximaze
-# Alt+F1 whiskermenu
-" 40 70
-
-# Exit with reboot
 sudo fc-cache -f -v
 sudo reboot
 exit 0

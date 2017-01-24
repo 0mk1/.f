@@ -1,15 +1,20 @@
-# linux
+# apt-get and dpkg
 alias agi="sudo apt-get install"
 alias aguu="sudo apt-get update; sudo apt-get upgrade;"
 alias agr="sudo apt-get purge"
 alias ags="sudo apt-cache search"
 alias agl="sudo dpkg -l | grep "
+
+# thunar
 alias t="thunar ."
+
+# linux
 alias gsync="cd ~/Dokumenty/ && grive && cd ~"
 alias sshcopy="ssh-copy-id -i ~/.ssh/id_rsa_main.pub "
-alias docker="sudo docker "
-alias dcomp="sudo docker-compose "
-alias rg="ranger"
+
+# docker
+alias dk="sudo docker "
+alias dcmp="sudo docker-compose "
 
 # tmux
 alias ta="tmux -2 attach -t "
