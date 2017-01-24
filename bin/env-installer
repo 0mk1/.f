@@ -72,7 +72,6 @@ sudo apt-key adv \
                --keyserver hkp://ha.pool.sks-keyservers.net:80 \
                --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
 
-sudo add-apt-repository ppa:nilarimogard/webupd8
 echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
 sudo apt-add-repository ppa:ansible/ansible
 
@@ -84,6 +83,7 @@ sudo apt-get update
 sudo apt-get install -y linux-image-extra-$(uname -r) linux-image-extra-virtual
 
 # Install and config all needed software
+# TODO: vagrant, chrome-stable
 sudo apt-get install -y \
   software-properties-common \
   htop \
@@ -91,7 +91,6 @@ sudo apt-get install -y \
   tmux \
   zsh \
   git \
-  firefox firefox-locale-pl \
   keepassx \
   xarchiver \
   thunar-archive-plugin \
@@ -106,7 +105,6 @@ sudo apt-get install -y \
   skype \
   mpv \
   kazam \
-  pulseaudio-equalizer \
   spotify-client \
   grive \
   xclip \
@@ -115,6 +113,7 @@ sudo apt-get install -y \
   network-manager-pptp-gnome \
   network-manager-ssh-gnome \
   network-manager-vpnc-gnome \
+  golang \
   ansible \
   docker-engine \
   ack-grep \ # TODO: nie działa
@@ -145,21 +144,17 @@ cd $HOME
 # docker
 sudo service docker start
 
-sudo apt-get autoclean
-sudo apt-get clean
-sudo apt-get autoremove
 
-# Copy all files
-# grive
 cd $HOME/Dokumenty/
-# Config gdrive
+# grive
 grive -a
+
 # copy .vpn and .ssh folder to $HOME
 # TODO: ogarnąć jak to dobrze robić
-cd $HOME/Dokumenty/Dostępy/ssh_vpn/
-tar xzvf access.tar.gz
-mv .ssh/ $HOME/
-mv .vpn/ $HOME/
+# cd $HOME/Dokumenty/Dostępy/ssh_vpn/
+# tar xzvf access.tar.gz
+# mv .ssh/ $HOME/
+# mv .vpn/ $HOME/
 
 # github
 cd $HOME/Projekty/
@@ -168,7 +163,9 @@ git clone git@github.com:toffi9/dotfiles.git
 # install dotfiles
 cd $HOME/Projekty/dotfiles/bin/
 ./symlink-dotfiles
-
 sudo fc-cache -f -v
-sudo reboot
+
+sudo apt-get autoclean
+sudo apt-get clean
+sudo apt-get autoremove
 exit 0
