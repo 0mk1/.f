@@ -1,9 +1,9 @@
 [Configuration]
-ColorCursor=#84b584b584b5
-ColorForeground=#d0d0d0d0d0d0
+ColorCursor=#4a524a524a52
+ColorForeground=#dcdcdc
 ColorBackground=#121212121212
-ColorPalette=#121212121212;#acac41414242;#9090a9a95959;#f4f4bfbf7575;#6a6a9f9fb5b5;#aaaa75759f9f;#7575b5b5aaaa;#d0d0d0d0d0d0;#505050505050;#acac41414242;#9090a9a95959;#f4f4bfbf7575;#6a6a9f9fb5b5;#aaaa75759f9f;#7575b5b5aaaa;#f5f5f5f5f5f5
-FontName=Menlo for Powerline 10.5
+ColorPalette=#181818181818;#82e715de15de;#6060b4b48a8a;#dfdfafaf8f8f;#9a9ab8b8d7d7;#dcdc8c8cc3c3;#8c8cd0d0d3d3;#dcdcdcdcdcdc;#707090908080;#dcdca3a3a3a3;#7272d5d5a3a3;#f0f0dfdfafaf;#9494bfbff3f3;#ecec9393d3d3;#9393e0e0e3e3;#ffffffffffff
+FontName=Liberation Mono 10.5
 MiscAlwaysShowTabs=FALSE
 MiscBell=FALSE
 MiscBordersDefault=TRUE
@@ -21,10 +21,6 @@ MiscTabCloseMiddleClick=TRUE
 MiscTabPosition=GTK_POS_TOP
 MiscHighlightUrls=TRUE
 MiscScrollAlternateScreen=TRUE
-TabActivityColor=#0f4999
-ColorSelection=#dddddd
-ColorSelectionUseDefault=FALSE
-ColorBold=#000000
 CommandLoginShell=TRUE
 ScrollingBar=TERMINAL_SCROLLBAR_NONE
 ScrollingLines=2000

@@ -16,6 +16,9 @@ VIRTUALENVWRAPPER_PYTHON='/usr/bin/python3' # This needs to be placed before the
 export PROJECT_HOME=$HOME/Projekty
 source /usr/local/bin/virtualenvwrapper.sh
 
+export GOPATH=$HOME/Projekty/golang
+export PATH="$PATH:$GOPATH/bin"
+
 stty -ixon  # Ctrl + s not hanging vim
 /usr/bin/setxkbmap -option "caps:swapescape"
 

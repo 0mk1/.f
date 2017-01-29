@@ -13,7 +13,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Colorscheme
-Plugin 'nanotech/jellybeans.vim'
+Plugin 'toffi9/nord-vim'
 
 " Utils (processing, searching, etc.)
 Plugin 'kien/ctrlp.vim'
@@ -28,6 +28,9 @@ Plugin 'SirVer/ultisnips'
 " Python specific tools
 Plugin 'klen/python-mode'
 Plugin 'davidhalter/jedi-vim' " Using instead of python-mode Rope autocomplate
+
+" Go specific tools
+Plugin 'fatih/vim-go'
 
 " Syntax highlighting
 Plugin 'chase/nginx.vim'
@@ -79,7 +82,7 @@ set noswapfile
 " Looks
 set background=dark
 set t_Co=256
-colorscheme jellybeans
+colorscheme nord
 
 " Statusline
 set statusline=
