@@ -20,9 +20,11 @@ MiscScrollAlternateScreen=TRUE
 CommandLoginShell=TRUE
 ScrollingBar=TERMINAL_SCROLLBAR_NONE
 ScrollingLines=2000
-BackgroundDarkness=0,990000
-ColorPalette=#3f3f3f;#705050;#60b48a;#dfaf8f;#9ab8d7;#dc8cc3;#8cd0d3;#dcdcdc;#709080;#dca3a3;#72d5a3;#f0dfaf;#94bff3;#ec93d3;#93e0e3;#ffffff
-ColorBackground=#2c2c2c
-ColorForeground=#dcdcdc
-ColorCursor=#dcdcdc
+ColorCursor=#D8DEE9
+ColorForeground=#D8DEE9
+ColorBackground=#242424242424
+TabActivityColor=#88C0D0
+ColorPalette=#353535353535;#bfbf61616a6a;#a3a3bebe8c8c;#ebebcbcb8b8b;#8181a1a1c1c1;#b4b48e8eadad;#8888c0c0d0d0;#e5e5e9e9f0f0;#4c4c56566a6a;#bfbf61616a6a;#a3a3bebe8c8c;#ebebcbcb8b8b;#8181a1a1c1c1;#b4b48e8eadad;#8f8fbcbcbbbb;#ececefeff4f4
+ColorBold=#D8DEE9
+ColorBoldUseDefault=FALSE
 

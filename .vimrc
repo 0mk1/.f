@@ -71,7 +71,7 @@ set nofoldenable                  " disable code folding
 set clipboard=unnamedplus             " use the system clipboard
 set wildmenu                      " enable bash style tab completion
 set wildmode=list:longest,full
-set list listchars=tab:»»,trail:· " show extra space characters
+" set list listchars=tab:»»,trail:· " show extra space characters
 
 " Disable stupid backup and swap files - they trigger too many events
 " for file system watchers
