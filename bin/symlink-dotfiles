@@ -8,7 +8,6 @@ echo "---- Creating symlinks ----"
 # Folders
 ln -fs $PWD/bin/ $HOME
 ln -fs $PWD/.vim/UltiSnips/ $HOME/.vim/
-ln -fs $PWD/.fonts/ $HOME
 ln -fs $PWD/.tmux/ $HOME
 
 # Files

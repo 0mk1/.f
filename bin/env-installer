@@ -83,7 +83,7 @@ sudo apt-get update
 sudo apt-get install -y linux-image-extra-$(uname -r) linux-image-extra-virtual
 
 # Install and config all needed software
-# TODO: vagrant, chrome-stable
+# TODO: chrome-stable
 sudo apt-get install -y \
   software-properties-common \
   htop \
@@ -163,7 +163,6 @@ git clone git@github.com:toffi9/dotfiles.git
 # install dotfiles
 cd $HOME/Projekty/dotfiles/bin/
 ./symlink-dotfiles
-sudo fc-cache -f -v
 
 sudo apt-get autoclean
 sudo apt-get clean
