@@ -13,31 +13,16 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Colorscheme
-Plugin 'toffi9/nord-vim'
+Plugin 'arcticicestudio/nord-vim'
 
 " Utils (processing, searching, etc.)
 Plugin 'kien/ctrlp.vim'
-Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-surround'
 Plugin 'jiangmiao/auto-pairs'
 
-" Snippets
-Plugin 'SirVer/ultisnips'
-
-" Python specific tools
-Plugin 'klen/python-mode'
-Plugin 'davidhalter/jedi-vim' " Using instead of python-mode Rope autocomplate
-
-" Go specific tools
-Plugin 'fatih/vim-go'
-
 " Syntax highlighting
 Plugin 'chase/nginx.vim'
-Plugin 'othree/html5.vim'
-Plugin 'hail2u/vim-css3-syntax'
-Plugin 'cakebaker/scss-syntax.vim'
-
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -124,12 +109,6 @@ if exists('+colorcolumn')
   set colorcolumn=80
 endif
 
-" CTRL-P
-let g:ctrlp_working_path_mode = 'r'
-let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:60,results:60'
-let g:ctrlp_show_hidden = 1
-set wildignore+=*.pyc
-
 " Netrw
 let g:netrw_banner = 0
 " relative numbers in netrw
@@ -138,54 +117,6 @@ let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
 let g:netrw_keepdir = 1
 " Changing netrw listing style to tree
 let g:netrw_liststyle = 3
-
-" Python mode configs, pep8, pyflake, run script, breakpoint, better syntax,
-" folding, indent
-let g:pymode = 1
-let g:pymode_options = 1
-let g:pymode_trim_whitespaces = 1
-let g:pymode_quickfix_maxheight = 4
-let g:pymode_options_colorcolumn = 1
-let g:pymode_options_max_line_length = 79
-let g:pymode_indent = 1
-let g:pymode_folding = 1
-let g:pymode_doc = 0
-let g:pymode_doc_bind = ''
-let g:pymode_virtualenv = 0
-let g:pymode_run = 1
-let g:pymode_run_bind = '<leader>r'
-let g:pymode_breakpoint = 1
-let g:pymode_breakpoint_bind = '<leader>b'
-let g:pymode_lint = 1
-let g:pymode_lint_checkers = ['pyflakes', 'pep8']
-let g:pymode_lint_signs = 1
-let g:pymode_lint_cwindow = 0
-let g:pymode_rope = 0 " Rope Project turned off (no autocomplate, and magic)
-let g:pymode_rope_completion = 0 " Using jedi-vim instead
-let g:pymode_syntax = 1
-let g:pymode_motion = 0 " Dont want to use motions
-
-" Jedi vim no docs preview when autocomplate
-autocmd FileType python setlocal completeopt-=preview
-
-" Jedi Vim bindings autocomplate, goto, documentation, rename
-let g:jedi#goto_command = "<leader>d"
-let g:jedi#goto_assignments_command = "<leader>g"
-let g:jedi#goto_definitions_command = ""
-let g:jedi#usages_command = "<leader>u"
-let g:jedi#rename_command = ""
-let g:jedi#documentation_command = "<F8>"
-let g:jedi#completions_command = "<C-Space>"
-
-" UltiSnips config. Snippets for quick text editing
-let g:UltiSnipsExpandTrigger="<tab>u"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
-
-autocmd FileType md setlocal set textwidth=80
-autocmd FileType md setlocal set formatoptions-=t
 
 " =============================================================================
 " Custom key bindings
@@ -199,63 +130,3 @@ map <Leader>w :w<cr>
 
 " Open netrw in current window
 nmap <Leader>n :e .<CR>
-
-" Vertical splits
-" two
-nmap <Leader>v :vsp.<CR>
-
-" Vimgrep utils
-nmap <Leader>cn :cnext<CR>
-nmap <Leader>cp :cprev<CR>
-nmap <Leader>co :copen<CR>
-
-" F3 to toggle search hightlight
-nnoremap <F3> :set hlsearch! hlsearch?<cr>
-
-" bind Ctrl+<movement> keys to move around the windows, instead of using Ctrl+w + <movement>
-" Every unnecessary keystroke that can be saved is good for your health :)
-map <c-j> <c-w>j
-map <c-k> <c-w>k
-map <c-l> <c-w>l
-map <c-h> <c-w>h
-
-" Go to tab by number
-noremap <leader>1 1gt
-noremap <leader>2 2gt
-noremap <leader>3 3gt
-noremap <leader>4 4gt
-noremap <leader>5 5gt
-noremap <leader>6 6gt
-noremap <leader>7 7gt
-noremap <leader>8 8gt
-noremap <leader>9 9gt
-noremap <leader>0 :tabnext<cr>
-
-" quick vimgrep search
-" vimgrep string filetype (**)
-" copen for open QuickFix list
-nnoremap <Leader>S :vimgrep 
-
-" ctags
-nnoremap <F9> :!ctags -R .<cr>
-nnoremap <Leader>T :CtrlPTag<cr>
-nmap <Leader><F9> :TagbarToggle<CR>
-
-" easier moving of code blocks
-" Try to go into visual mode (v), thenselect several lines of code here and
-" then press ``>`` several times.
-vnoremap < <gv " better indentation
-vnoremap > >gv " better indentation
-
-" Opening file manger in current folder
-nnoremap <F10> :!thunar .<cr>
-
-" Quick config edits
-nmap <Leader>ev :tabnew ~/.vimrc<cr>
-nmap <Leader>et :tabnew ~/.tmux.conf<cr>
-nmap <Leader>ez :tabnew ~/.zshrc<cr>
-nmap <Leader>ea :tabnew ~/.aliases<cr>
-nmap <Leader>es :tabnew ~/.vim/UltiSnips/<cr>
-
-" Reload vimrc config
-nmap <Leader><F6> :source ~/.vimrc<CR>

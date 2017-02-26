@@ -8,18 +8,12 @@ alias agl="sudo dpkg -l | grep "
 # thunar
 alias t="thunar ."
 
+# docker
+alias dcomp="docker-compose "
+
 # linux
 alias gsync="cd ~/Dokumenty/ && grive && cd ~"
 alias sshcopy="ssh-copy-id -i ~/.ssh/id_rsa_main.pub "
-
-# docker
-alias dk="sudo docker "
-alias dcmp="sudo docker-compose "
-
-# tmux
-alias ta="tmux -2 attach -t "
-alias ts="tmux -2 new -s "
-alias tm="tmux -2"
 
 # navigation
 alias p="cd ~/Projekty/"
@@ -34,7 +28,6 @@ alias glog="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%
 # vim
 alias v="vim"
 alias v.="vim ."
-alias gentag="ctags -R ."
 
 # django
 alias djstartp="django-admin startproject "
