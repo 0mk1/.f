@@ -7,8 +7,7 @@ echo "---- Creating symlinks ----"
 
 # Folders
 ln -fs $PWD/bin/ $HOME
-ln -fs $PWD/.vim/UltiSnips/ $HOME/.vim/
-ln -fs $PWD/.tmux/ $HOME
+ln -fs $PWD/.atom/ $HOME
 
 # Files
 ln -fs $PWD/.config/redshift.conf $HOME/.config/
@@ -16,7 +15,6 @@ ln -fs $PWD/.config/zathura/zathurarc $HOME/.config/zathura/
 ln -fs $PWD/.config/xfce4/terminal/terminalrc $HOME/.config/xfce4/terminal/
 ln -fs $PWD/toffi9.zsh-theme $HOME/.oh-my-zsh/themes/
 ln -fs $PWD/.aliases $HOME
-ln -fs $PWD/.ctags $HOME
 ln -fs $PWD/.gitconfig $HOME
 ln -fs $PWD/.gitignore_global $HOME
 ln -fs $PWD/.tmux.conf $HOME

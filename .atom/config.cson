@@ -1,0 +1,26 @@
+"*":
+  autosave:
+    enabled: true
+  core:
+    autoHideMenuBar: true
+    projectHome: "/home/toffi9/Projekty"
+    telemetryConsent: "limited"
+    themes: [
+      "one-dark-ui"
+      "nord-atom-syntax"
+    ]
+  editor:
+    fontFamily: "Liberation Mono"
+    lineHeight: 1.2
+  "exception-reporting":
+    userId: "62fad7d7-e332-45c0-9cf6-fe66566c37db"
+  linter:
+    errorPanelHeight: 48
+  minimap: {}
+  "one-dark-ui":
+    layoutMode: "Compact"
+    tabSizing: "Even"
+  "vim-mode-plus":
+    highlightSearch: true
+  welcome:
+    showOnStartup: false

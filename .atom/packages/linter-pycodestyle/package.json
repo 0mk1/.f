@@ -1,0 +1,80 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "/tmp/d-117125-6087-zenbyi/package.tgz",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "/tmp/d-117125-6087-zenbyi/package.tgz",
+        "spec": "/tmp/d-117125-6087-zenbyi/package.tgz",
+        "type": "local"
+      },
+      "/tmp/apm-install-dir-117125-6087-m9wzsh"
+    ]
+  ],
+  "_from": "../d-117125-6087-zenbyi/package.tgz",
+  "_id": "linter-pycodestyle@2.0.0",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/linter-pycodestyle",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "/tmp/d-117125-6087-zenbyi/package.tgz",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "/tmp/d-117125-6087-zenbyi/package.tgz",
+    "spec": "/tmp/d-117125-6087-zenbyi/package.tgz",
+    "type": "local"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "file:../d-117125-6087-zenbyi/package.tgz",
+  "_shasum": "425481543a854a9aa2bdbc4572b54a1dddf97304",
+  "_shrinkwrap": null,
+  "_spec": "/tmp/d-117125-6087-zenbyi/package.tgz",
+  "_where": "/tmp/apm-install-dir-117125-6087-m9wzsh",
+  "bugs": {
+    "url": "https://github.com/AtomLinter/linter-pycodestyle/issues"
+  },
+  "dependencies": {
+    "atom-linter": "^8.0.0",
+    "atom-package-deps": "^4.0.1"
+  },
+  "description": "Linter plugin for pycodestyle",
+  "devDependencies": {},
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "homepage": "https://github.com/AtomLinter/linter-pycodestyle#readme",
+  "keywords": [
+    "atom",
+    "python",
+    "linter",
+    "pep8",
+    "pycodestyle"
+  ],
+  "license": "MIT",
+  "main": "./lib/main",
+  "name": "linter-pycodestyle",
+  "optionalDependencies": {},
+  "package-deps": [
+    "linter"
+  ],
+  "providedServices": {
+    "linter": {
+      "versions": {
+        "1.0.0": "provideLinter"
+      }
+    }
+  },
+  "readme": "# linter-pycodestyle\n\nThis linter plugin for [Linter](https://github.com/AtomLinter/Linter) provides\nan interface to [pycodestyle](https://pypi.python.org/pypi/pycodestyle). It will be used\nwith Python files.\n\n## Installation\n\nLinter package must be installed in order to use this plugin. If Linter is not\ninstalled, please follow the instructions [here](https://github.com/AtomLinter/Linter).\n\n### pycodestyle installation\n\nBefore using this plugin, you must ensure that `pycodestyle` is installed on your\nsystem. To install `pycodestyle`, do the following:\n\nInstall [pycodestyle](https://pypi.python.org/pypi/pycodestyle) by typing the following in a\nterminal:\n\n```ShellSession\npip install pycodestyle\n```\n\nNow you can proceed to install the linter-pycodestyle plugin.\n\n### Plugin installation\n\n```ShellSession\n apm install linter-pycodestyle\n```\n\n## Settings\n\nYou can configure linter-pycodestyle from the settings menu:\n\n*   **executablePath** Path to your pycodestyle executable. This is useful if you\n    have different versions of pylint for Python 2 and 3 or if you are using a\n    virtualenv\n\n*   **maxLineLength** The max line length for your python code, defaults to 79\n\n*   **ignoreErrorCodes** A list of pycodestyle error codes to ignore. For a list of\n    code visit <http://pycodestyle.readthedocs.org/en/latest/intro.html#error-codes>\n\n    Example: To ignore `W191` and `E501` you would enter something like this:\n\n    ```coffeescript\n    W191, E501\n    ```\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AtomLinter/linter-pycodestyle.git"
+  },
+  "version": "2.0.0"
+}
