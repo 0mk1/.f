@@ -10,7 +10,8 @@
       "nord-atom-syntax"
     ]
   editor:
-    fontFamily: "Liberation Mono"
+    fontFamily: "PT Mono"
+    fontSize: 15
     lineHeight: 1.2
   "exception-reporting":
     userId: "62fad7d7-e332-45c0-9cf6-fe66566c37db"

@@ -1,5 +1,5 @@
 # .zshrc
-export ZSH=/home/toffi9/.oh-my-zsh  # Oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh  # Oh-my-zsh
 export LANG=en_US.UTF-8
 export EDITOR='vim'
 export UPDATE_ZSH_DAYS=30

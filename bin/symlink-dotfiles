@@ -8,6 +8,7 @@ echo "---- Creating symlinks ----"
 # Folders
 ln -fs $PWD/bin/ $HOME
 ln -fs $PWD/.atom/ $HOME
+ln -fs $PWD/.fonts/ $HOME
 
 # Files
 ln -fs $PWD/.config/redshift.conf $HOME/.config/
