@@ -2,40 +2,40 @@
   "_args": [
     [
       {
-        "raw": "/tmp/d-117125-4988-1ybx35i/package.tgz",
+        "raw": "/tmp/d-117219-8873-q4b2cm/package.tgz",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "/tmp/d-117125-4988-1ybx35i/package.tgz",
-        "spec": "/tmp/d-117125-4988-1ybx35i/package.tgz",
+        "rawSpec": "/tmp/d-117219-8873-q4b2cm/package.tgz",
+        "spec": "/tmp/d-117219-8873-q4b2cm/package.tgz",
         "type": "local"
       },
-      "/tmp/apm-install-dir-117125-4988-nlhq0o"
+      "/tmp/apm-install-dir-117219-8873-8medrr"
     ]
   ],
-  "_from": "../d-117125-4988-1ybx35i/package.tgz",
-  "_id": "linter-flake8@2.1.4",
+  "_from": "../d-117219-8873-q4b2cm/package.tgz",
+  "_id": "linter-flake8@2.1.5",
   "_inCache": true,
   "_installable": true,
   "_location": "/linter-flake8",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/tmp/d-117125-4988-1ybx35i/package.tgz",
+    "raw": "/tmp/d-117219-8873-q4b2cm/package.tgz",
     "scope": null,
     "escapedName": null,
     "name": null,
-    "rawSpec": "/tmp/d-117125-4988-1ybx35i/package.tgz",
-    "spec": "/tmp/d-117125-4988-1ybx35i/package.tgz",
+    "rawSpec": "/tmp/d-117219-8873-q4b2cm/package.tgz",
+    "spec": "/tmp/d-117219-8873-q4b2cm/package.tgz",
     "type": "local"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-117125-4988-1ybx35i/package.tgz",
-  "_shasum": "b631d49c7323ea3dd811b0d7f5acdb4a833ed408",
+  "_resolved": "file:../d-117219-8873-q4b2cm/package.tgz",
+  "_shasum": "3db7d48d824d66555294f57f5c24d90c40d78c7f",
   "_shrinkwrap": null,
-  "_spec": "/tmp/d-117125-4988-1ybx35i/package.tgz",
-  "_where": "/tmp/apm-install-dir-117125-4988-nlhq0o",
+  "_spec": "/tmp/d-117219-8873-q4b2cm/package.tgz",
+  "_where": "/tmp/apm-install-dir-117219-8873-8medrr",
   "activationHooks": [
     "language-python:grammar-used",
     "MagicPython:grammar-used",
@@ -104,14 +104,14 @@
     }
   },
   "dependencies": {
-    "atom-linter": "^8.0.0",
+    "atom-linter": "^9.0.0",
     "atom-package-deps": "^4.0.1",
-    "fs-plus": "^2.9.3"
+    "fs-plus": "^3.0.0"
   },
   "description": "Atom linter plugin for Python, using flake8",
   "devDependencies": {
-    "eslint": "^3.12.0",
-    "eslint-config-airbnb-base": "^11.0.0",
+    "eslint": "^3.16.1",
+    "eslint-config-airbnb-base": "^11.1.1",
     "eslint-plugin-import": "^2.2.0"
   },
   "engines": {
@@ -162,5 +162,5 @@
     "lint": "eslint .",
     "test": "apm test"
   },
-  "version": "2.1.4"
+  "version": "2.1.5"
 }

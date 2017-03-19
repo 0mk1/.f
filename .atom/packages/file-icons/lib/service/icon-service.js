@@ -30,7 +30,8 @@ class IconService{
 	addIconToElement(element, path, options = {}){
 		const {
 			isDirectory,
-			isSymlink
+			isSymlink,
+			isTabIcon,
 		} = options;
 		
 		let type = isDirectory
@@ -40,14 +41,23 @@ class IconService{
 		if(isSymlink)
 			type |= EntityType.SYMLINK;
 		
-		return IconNode.forElement(element, path, type);
+		return IconNode.forElement(element, path, type, isTabIcon);
 	}
 	
 	
 	suppressFOUC(){
 		return {
-			iconClassForPath(path){
+			iconClassForPath(path, context = ""){
 				const file = FileSystem.get(path);
+				
+				// HACK: Fix #550 by ignoring old icon-service if consumed by Tabs
+				// package, and the user disabled tab-icons. This can be deleted if
+				// atom/tabs#412 is accepted by the Atom team. Since (we hope) this
+				// code-block to be shortlived, we're being sloppy by not bothering
+				// to `require` the Options class beforehand.
+				if("tabs" === context && !atom.config.get("file-icons.tabPaneIcon"))
+					return null;
+				
 				return file && file.icon
 					? file.icon.getClasses() || null
 					: null;

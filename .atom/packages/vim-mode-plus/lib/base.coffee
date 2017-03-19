@@ -11,12 +11,13 @@ Delegato = require 'delegato'
 } = require './utils'
 swrap = require './selection-wrapper'
 Input = require './input'
-settings = require './settings'
 selectList = null
 getEditorState = null # set by Base.init()
 {OperationAbortedError} = require './errors'
 
 vimStateMethods = [
+  "assert"
+  "assertWithException"
   "onDidChangeSearch"
   "onDidConfirmSearch"
   "onDidCancelSearch"
@@ -56,6 +57,7 @@ vimStateMethods = [
   "getBlockwiseSelections"
   "getLastBlockwiseSelection"
   "addToClassList"
+  "getConfig"
 ]
 
 class Base
@@ -66,7 +68,7 @@ class Base
     {@editor, @editorElement, @globalState} = @vimState
     _.extend(this, properties) if properties?
 
-  # Template
+  # To override
   initialize: ->
 
   # Operation processor execute only when isComplete() return true.
@@ -101,11 +103,10 @@ class Base
 
   # Intended to be used by TextObject or Motion
   operator: null
-  hasOperator: -> @operator?
   getOperator: -> @operator
   setOperator: (@operator) -> @operator
-  isAsOperatorTarget: ->
-    @hasOperator() and not @getOperator().instanceof('Select')
+  isAsTargetExceptSelect: ->
+    @operator? and not @operator.instanceof('Select')
 
   abort: ->
     throw new OperationAbortedError('aborted')
@@ -227,9 +228,6 @@ class Base
   isTextObject: ->
     @instanceof('TextObject')
 
-  isTarget: ->
-    @isMotion() or @isTextObject()
-
   getName: ->
     @constructor.name
 
@@ -252,8 +250,7 @@ class Base
       cursor.getBufferPosition()
 
   getCursorPositionForSelection: (selection) ->
-    options = {fromProperty: true, allowFallback: true}
-    swrap(selection).getBufferPositionFor('head', options)
+    swrap(selection).getBufferPositionFor('head', from: ['property', 'selection'])
 
   toString: ->
     str = @getName()

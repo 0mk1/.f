@@ -629,6 +629,34 @@ describe "Occurrence", ->
             ensure 'g U o $', textC: "This text |HAVE 3 instance of 'text' in the whole text"
             expect(vimState.globalState.get('lastOccurrencePattern')).toEqual(/te/g)
 
+        describe "restore last occurrence marker by add-preset-occurrence-from-last-occurrence-pattern", ->
+          beforeEach ->
+            set
+              textC: """
+              camel
+              camelCase
+              camels
+              camel
+              """
+          it "can restore occurrence-marker added by `g o` in normal-mode", ->
+            set cursor: [0, 0]
+            ensure "g o", occurrenceText: ['camel', 'camel']
+            ensure 'escape', occurrenceCount: 0
+            ensure "g .", occurrenceText: ['camel', 'camel']
+
+          it "can restore occurrence-marker added by `g o` in visual-mode", ->
+            set cursor: [0, 0]
+            ensure "v i w", selectedText: "camel"
+            ensure "g o", occurrenceText: ['camel', 'camel', 'camel', 'camel']
+            ensure 'escape', occurrenceCount: 0
+            ensure "g .", occurrenceText: ['camel', 'camel', 'camel', 'camel']
+
+          it "can restore occurrence-marker added by `g O` in normal-mode", ->
+            set cursor: [0, 0]
+            ensure "g O", occurrenceText: ['camel', 'camel', 'camel']
+            ensure 'escape', occurrenceCount: 0
+            ensure "g .", occurrenceText: ['camel', 'camel', 'camel']
+
         describe "css class has-occurrence", ->
           describe "manually toggle by toggle-preset-occurrence command", ->
             it 'is auto-set/unset wheter at least one preset-occurrence was exists or not', ->

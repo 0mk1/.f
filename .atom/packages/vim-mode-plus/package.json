@@ -2,40 +2,40 @@
   "_args": [
     [
       {
-        "raw": "/tmp/d-117125-4230-g8hnlq/package.tgz",
+        "raw": "/tmp/d-117211-11328-cceysk/package.tgz",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "/tmp/d-117125-4230-g8hnlq/package.tgz",
-        "spec": "/tmp/d-117125-4230-g8hnlq/package.tgz",
+        "rawSpec": "/tmp/d-117211-11328-cceysk/package.tgz",
+        "spec": "/tmp/d-117211-11328-cceysk/package.tgz",
         "type": "local"
       },
-      "/tmp/apm-install-dir-117125-4230-9mcvfy"
+      "/tmp/apm-install-dir-117211-11328-yx87h3"
     ]
   ],
-  "_from": "../d-117125-4230-g8hnlq/package.tgz",
-  "_id": "vim-mode-plus@0.82.3",
+  "_from": "../d-117211-11328-cceysk/package.tgz",
+  "_id": "vim-mode-plus@0.84.1",
   "_inCache": true,
   "_installable": true,
   "_location": "/vim-mode-plus",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/tmp/d-117125-4230-g8hnlq/package.tgz",
+    "raw": "/tmp/d-117211-11328-cceysk/package.tgz",
     "scope": null,
     "escapedName": null,
     "name": null,
-    "rawSpec": "/tmp/d-117125-4230-g8hnlq/package.tgz",
-    "spec": "/tmp/d-117125-4230-g8hnlq/package.tgz",
+    "rawSpec": "/tmp/d-117211-11328-cceysk/package.tgz",
+    "spec": "/tmp/d-117211-11328-cceysk/package.tgz",
     "type": "local"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-117125-4230-g8hnlq/package.tgz",
-  "_shasum": "8153e28c78e5b88da110244a2b9b9f3d33ae8321",
+  "_resolved": "file:../d-117211-11328-cceysk/package.tgz",
+  "_shasum": "6ac0cc4752604cf56fcf461247e495927069f0be",
   "_shrinkwrap": null,
-  "_spec": "/tmp/d-117125-4230-g8hnlq/package.tgz",
-  "_where": "/tmp/apm-install-dir-117125-4230-9mcvfy",
+  "_spec": "/tmp/d-117211-11328-cceysk/package.tgz",
+  "_where": "/tmp/apm-install-dir-117211-11328-yx87h3",
   "bugs": {
     "url": "https://github.com/t9md/atom-vim-mode-plus/issues"
   },
@@ -60,7 +60,7 @@
     "semver": "^5.3.0"
   },
   "engines": {
-    "atom": "^1.13.0-beta1"
+    "atom": "^1.14.0"
   },
   "homepage": "https://github.com/t9md/atom-vim-mode-plus#readme",
   "license": "MIT",
@@ -86,5 +86,5 @@
     "test": "apm test",
     "watch": "fswatch -0 spec lib | xargs -0 -n1 -I{} apm test"
   },
-  "version": "0.82.3"
+  "version": "0.84.1"
 }

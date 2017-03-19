@@ -11,6 +11,8 @@ SearchInputElement = require './search-input'
 {
   getVisibleEditors
   matchScopes
+  assert
+  assertWithException
 } = require './utils'
 swrap = require './selection-wrapper'
 
@@ -78,13 +80,22 @@ class VimState
     @subscriptions.add @editor.onDidStopChanging(refreshHighlightSearch)
 
     @editorElement.classList.add(packageScope)
-    if settings.get('startInInsertMode') or matchScopes(@editorElement, settings.get('startInInsertModeScopes'))
+    if @getConfig('startInInsertMode') or matchScopes(@editorElement, @getConfig('startInInsertModeScopes'))
       @activate('insert')
     else
       @activate('normal')
 
     @subscriptions.add @editor.onDidDestroy(@destroy.bind(this))
     @constructor.vimStatesByEditor.set(@editor, this)
+
+  assert: (args...) ->
+    assert(args...)
+
+  assertWithException: (args...) ->
+    assertWithException(args...)
+
+  getConfig: (param) ->
+    settings.get(param)
 
   # BlockwiseSelections
   # -------------------------
@@ -249,13 +260,13 @@ class VimState
 
     nonEmptySelecitons = @editor.getSelections().filter (selection) -> not selection.isEmpty()
     if nonEmptySelecitons.length
-      submode = swrap.detectVisualModeSubmode(@editor)
-      if @isMode('visual', submode)
+      wise = swrap.detectWise(@editor)
+      if @isMode('visual', wise)
         for selection in nonEmptySelecitons when not swrap(selection).hasProperties()
           swrap(selection).saveProperties()
         @updateCursorsVisibility()
       else
-        @activate('visual', submode)
+        @activate('visual', wise)
     else
       @activate('normal') if @isMode('visual')
 
@@ -287,12 +298,12 @@ class VimState
       if @editor.hasMultipleCursors()
         @clearSelections()
 
-      else if @hasPersistentSelections() and settings.get('clearPersistentSelectionOnResetNormalMode')
+      else if @hasPersistentSelections() and @getConfig('clearPersistentSelectionOnResetNormalMode')
         @clearPersistentSelections()
       else if @occurrenceManager.hasPatterns()
         @occurrenceManager.resetPatterns()
 
-      if settings.get('clearHighlightSearchOnResetNormalMode')
+      if @getConfig('clearHighlightSearchOnResetNormalMode')
         @globalState.set('highlightSearchPattern', null)
     else
       @clearSelections()
@@ -357,8 +368,8 @@ class VimState
     @originalCursorPositionByMarker?.destroy()
 
     if @mode is 'visual'
-      options = {fromProperty: true, allowFallback: true}
-      point = swrap(@editor.getLastSelection()).getBufferPositionFor('head', options)
+      selection = @editor.getLastSelection()
+      point = swrap(selection).getBufferPositionFor('head', from: ['property', 'selection'])
     else
       point = @editor.getCursorBufferPosition()
     @originalCursorPosition = point

@@ -27,14 +27,12 @@ _ = require 'underscore-plus'
   limitNumber
   getIndex
   smartScrollToBufferPosition
-  getKeystrokeForEvent
   pointIsAtEndOfLineAtNonEmptyRow
   getEndOfLineForBufferRow
   findRangeInBufferRow
 } = require './utils'
 
 swrap = require './selection-wrapper'
-settings = require './settings'
 Base = require './base'
 
 class Motion extends Base
@@ -96,7 +94,7 @@ class Motion extends Base
       @vimState.mark.set("'", cursorPosition)
 
   execute: ->
-    if @hasOperator()
+    if @operator?
       @select()
     else
       @editor.moveCursors (cursor) =>
@@ -114,7 +112,7 @@ class Motion extends Base
       # AFTER cursor move and BEFORE return to submode-wise state
       swrap.saveProperties(@editor)
 
-    if @hasOperator()
+    if @operator?
       if @isMode('visual')
         if @isMode('visual', 'linewise') and @editor.getLastSelection().isReversed()
           @vimState.mutationManager.setCheckpoint('did-move')
@@ -145,7 +143,7 @@ class Motion extends Base
     swrap(selection).translateSelectionEndAndClip('forward')
 
   setCursorBuffeRow: (cursor, row, options) ->
-    if @isVerticalMotion() and settings.get('moveToFirstCharacterOnVerticalMotion')
+    if @isVerticalMotion() and @getConfig('moveToFirstCharacterOnVerticalMotion')
       cursor.setBufferPosition(@getFirstCharacterPositionForBufferRow(row), options)
     else
       setBufferRow(cursor, row, options)
@@ -215,17 +213,17 @@ class CurrentSelection extends Motion
 class MoveLeft extends Motion
   @extend()
   moveCursor: (cursor) ->
-    allowWrap = settings.get('wrapLeftRightMotion')
+    allowWrap = @getConfig('wrapLeftRightMotion')
     @moveCursorCountTimes cursor, ->
       moveCursorLeft(cursor, {allowWrap})
 
 class MoveRight extends Motion
   @extend()
   canWrapToNextLine: (cursor) ->
-    if @isAsOperatorTarget() and not cursor.isAtEndOfLine()
+    if @isAsTargetExceptSelect() and not cursor.isAtEndOfLine()
       false
     else
-      settings.get('wrapLeftRightMotion')
+      @getConfig('wrapLeftRightMotion')
 
   moveCursor: (cursor) ->
     @moveCursorCountTimes cursor, =>
@@ -401,15 +399,16 @@ class MoveToNextWord extends Motion
   moveCursor: (cursor) ->
     return if cursorIsAtVimEndOfFile(cursor)
     wasOnWhiteSpace = pointIsOnWhiteSpace(@editor, cursor.getBufferPosition())
-    isAsOperatorTarget = @isAsOperatorTarget()
+
+    isAsTargetExceptSelect = @isAsTargetExceptSelect()
     @moveCursorCountTimes cursor, ({isFinal}) =>
       cursorPosition = cursor.getBufferPosition()
-      if isEmptyRow(@editor, cursorPosition.row) and isAsOperatorTarget
+      if isEmptyRow(@editor, cursorPosition.row) and isAsTargetExceptSelect
         point = cursorPosition.traverse([1, 0])
       else
         pattern = @wordRegex ? cursor.wordRegExp()
         point = @getPoint(pattern, cursorPosition)
-        if isFinal and isAsOperatorTarget
+        if isFinal and isAsTargetExceptSelect
           if @getOperator().is('Change') and (not wasOnWhiteSpace)
             point = cursor.getEndOfCurrentWordBufferPosition({@wordRegex})
           else
@@ -764,7 +763,7 @@ class MoveToTopOfScreen extends Motion
     @setCursorBuffeRow(cursor, bufferRow)
 
   getScrolloff: ->
-    if @isAsOperatorTarget()
+    if @isAsTargetExceptSelect()
       0
     else
       @scrolloff
@@ -811,15 +810,15 @@ class Scroll extends Motion
 
   isSmoothScrollEnabled: ->
     if Math.abs(@amountOfPage) is 1
-      settings.get('smoothScrollOnFullScrollMotion')
+      @getConfig('smoothScrollOnFullScrollMotion')
     else
-      settings.get('smoothScrollOnHalfScrollMotion')
+      @getConfig('smoothScrollOnHalfScrollMotion')
 
   getSmoothScrollDuation: ->
     if Math.abs(@amountOfPage) is 1
-      settings.get('smoothScrollOnFullScrollMotionDuration')
+      @getConfig('smoothScrollOnFullScrollMotionDuration')
     else
-      settings.get('smoothScrollOnHalfScrollMotionDuration')
+      @getConfig('smoothScrollOnHalfScrollMotionDuration')
 
   getPixelRectTopForSceenRow: (row) ->
     point = new Point(row, 0)
@@ -1121,7 +1120,7 @@ class MoveToNextOccurrence extends Motion
         @editor.unfoldBufferRow(point.row)
         smartScrollToBufferPosition(@editor, point)
 
-      if settings.get('flashOnMoveToOccurrence')
+      if @getConfig('flashOnMoveToOccurrence')
         @vimState.flash(range, type: 'search')
 
   getIndex: (fromPoint) ->

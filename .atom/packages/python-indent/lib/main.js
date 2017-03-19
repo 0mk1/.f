@@ -1,6 +1,6 @@
 "use babel";
 
-import { CompositeDisposable } from "atom"; // eslint-disable-line import/no-unresolved
+import { CompositeDisposable } from "atom"; // eslint-disable-line
 import PythonIndent from "./python-indent";
 
 export default {
@@ -15,10 +15,11 @@ export default {
             ],
         },
     },
-    activate: () => {
+
+    activate() {
         this.pythonIndent = new PythonIndent();
         this.subscriptions = new CompositeDisposable();
         this.subscriptions.add(atom.commands.add("atom-text-editor",
-            { "editor:newline": () => this.pythonIndent.properlyIndent() }));
+            { "editor:newline": () => this.pythonIndent.indent() }));
     },
 };

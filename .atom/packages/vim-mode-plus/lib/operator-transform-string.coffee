@@ -4,12 +4,12 @@ _ = require 'underscore-plus'
 
 {
   isSingleLineText
+  isLinewiseRange
   limitNumber
   toggleCaseForCharacter
   splitTextByNewLine
 } = require './utils'
 swrap = require './selection-wrapper'
-settings = require './settings'
 Base = require './base'
 Operator = Base.getClass('Operator')
 
@@ -434,7 +434,7 @@ class SurroundBase extends TransformString
       open += "\n"
       close += "\n"
 
-    if char in settings.get('charactersToAddSpaceOnSurround') and isSingleLineText(text)
+    if char in @getConfig('charactersToAddSpaceOnSurround') and isSingleLineText(text)
       text = ' ' + text + ' '
 
     open + text + close
@@ -560,8 +560,7 @@ class Join extends TransformString
   restorePositions: false
 
   mutateSelection: (selection) ->
-    if swrap(selection).isLinewise()
-      range = selection.getBufferRange()
+    if isLinewiseRange(range = selection.getBufferRange())
       selection.setBufferRange(range.translate([0, 0], [-1, Infinity]))
     selection.joinLines()
     end = selection.getBufferRange().end

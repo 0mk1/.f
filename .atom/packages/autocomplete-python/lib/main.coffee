@@ -152,6 +152,10 @@ module.exports =
       Logger,
       StateController
     } = require 'kite-installer'
+
+    if atom.config.get('kite.loggingLevel')
+      Logger.LEVEL = Logger.LEVELS[atom.config.get('kite.loggingLevel').toUpperCase()]
+
     AccountManager.initClient 'alpha.kite.com', -1, true
     atom.views.addViewProvider Installation, (m) -> m.element
     editorCfg =
@@ -189,13 +193,16 @@ module.exports =
           atom.config.set 'autocomplete-python.useKite', false
         )
         [projectPath] = atom.project.getPaths()
-        root = if path.relative(os.homedir(), projectPath).indexOf('..') is 0
+        root = if projectPath? and path.relative(os.homedir(), projectPath).indexOf('..') is 0
           path.parse(projectPath).root
         else
           os.homedir()
 
         installer = new Installer([root])
-        installer.init @installation.flow
+        installer.init @installation.flow, ->
+          Logger.verbose('in onFinish')
+          atom.packages.activatePackage('kite')
+
         pane = atom.workspace.getActivePane()
         @installation.flow.onSkipInstall () =>
           atom.config.set 'autocomplete-python.useKite', false

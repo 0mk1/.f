@@ -1,3 +1,29 @@
+# 0.84.1:
+- Fix: To fix vim-mode-plus-move-selected-text degradation.
+
+# 0.84.0:
+- Fix, Improve: #689 Occurrence was not worked for the word which include non-word char such as `$` and `@`.
+  - E.g. `$var` in Perl, PHP.
+  - This was because when finding occurrences, it searched by `\bword\b` pattern.
+  - But `\b\$var\b` never match `$var`, in this case find by `\$var\b` pattern from this release( auto relax `\b` boundary ).
+- Improve: Preserve fold on `g v`
+- Internal:
+  - Cleanup selection-wrapper code.
+  - Remove unused functions from `utils.coffee`
+
+# 0.83.0:
+- Support: set minimum engines to `^1.14.0`
+- Fix: When `o` was executed in `vL` mode, didn't correctly restore column on shift to `vC` or `normal`.
+  - Now correctly restore `characterwise` column after `o` in `linewise` mode.
+- Improve: `g .` correctly restore subword-occurrence-marker
+  - `g .`( `vim-mode-plus:add-preset-occurrence-from-last-occurrence-pattern` ) is command to restore last cleared preset-occurrence.
+  - It is useful when you mistakenly cleared it by `escape` and quickly recover last preset-occurrence marker.
+  - Previously `preset-subword-occurrence` was not correctly restored by `g .`, but now fixed.
+- Improve: Use faster `displayMarkerLayer::clear()` for hlsearch, occurrence-manager, search-model etc.
+- Internal: add `dev` prefix for setting for dev-use.
+- Internal: Remove lots of unused function in `utils.coffee`.
+- Internal: add `vimState::getConfig` to access package settings.
+
 # 0.82.3:
 - Fix: `move-to-previous-subword` stops boundary of white-space unnecessarily( upstream issue auto-fixed)
   - Spec to accommodating wrong behavior removed.

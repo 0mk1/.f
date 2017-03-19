@@ -1,0 +1,59 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "/tmp/d-11724-3912-dareci/package.tgz",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "/tmp/d-11724-3912-dareci/package.tgz",
+        "spec": "/tmp/d-11724-3912-dareci/package.tgz",
+        "type": "local"
+      },
+      "/tmp/apm-install-dir-11724-3912-1shpdg8"
+    ]
+  ],
+  "_from": "../d-11724-3912-dareci/package.tgz",
+  "_id": "language-nginx@0.6.2",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/language-nginx",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "/tmp/d-11724-3912-dareci/package.tgz",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "/tmp/d-11724-3912-dareci/package.tgz",
+    "spec": "/tmp/d-11724-3912-dareci/package.tgz",
+    "type": "local"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "file:../d-11724-3912-dareci/package.tgz",
+  "_shasum": "5f559ae0ca19864152d410d3ffeb1c4a460dcdff",
+  "_shrinkwrap": null,
+  "_spec": "/tmp/d-11724-3912-dareci/package.tgz",
+  "_where": "/tmp/apm-install-dir-11724-3912-1shpdg8",
+  "bugs": {
+    "url": "https://github.com/hnagato/atom-language-nginx/issues"
+  },
+  "dependencies": {},
+  "description": "Syntax and snippet support for Nginx configuration files",
+  "devDependencies": {},
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "homepage": "https://github.com/hnagato/atom-language-nginx#readme",
+  "license": "MIT",
+  "name": "language-nginx",
+  "optionalDependencies": {},
+  "readme": "# Nginx syntax support in Atom\n\nAdds syntax highlighting and snippet support to Nginx configuration files.\nPorted from [textmate/nginx](https://github.com/johnmuhl/nginx-tmbundle) for Atom.\n\n##How to use\nGive Nginx configuration files the extension `.conf` or `.nginx`\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hnagato/atom-language-nginx.git"
+  },
+  "version": "0.6.2"
+}

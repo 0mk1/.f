@@ -1,0 +1,73 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "/tmp/d-117211-14201-cj4pwu/package.tgz",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "/tmp/d-117211-14201-cj4pwu/package.tgz",
+        "spec": "/tmp/d-117211-14201-cj4pwu/package.tgz",
+        "type": "local"
+      },
+      "/tmp/apm-install-dir-117211-14201-1c62oxt"
+    ]
+  ],
+  "_from": "../d-117211-14201-cj4pwu/package.tgz",
+  "_id": "northem-dark-atom-syntax@2.0.0",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/northem-dark-atom-syntax",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "/tmp/d-117211-14201-cj4pwu/package.tgz",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "/tmp/d-117211-14201-cj4pwu/package.tgz",
+    "spec": "/tmp/d-117211-14201-cj4pwu/package.tgz",
+    "type": "local"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "file:../d-117211-14201-cj4pwu/package.tgz",
+  "_shasum": "559ab68771c975a2792f4773908d8f7a8e877aa6",
+  "_shrinkwrap": null,
+  "_spec": "/tmp/d-117211-14201-cj4pwu/package.tgz",
+  "_where": "/tmp/apm-install-dir-117211-14201-1c62oxt",
+  "author": {
+    "name": "Arctic Ice Studio",
+    "email": "development@arcticicestudio.com"
+  },
+  "bugs": {
+    "url": "https://github.com/arcticicestudio/northem-dark-atom-syntax/issues"
+  },
+  "dependencies": {},
+  "description": "A north-bluish, dark clean and elegant Atom syntax theme.",
+  "devDependencies": {},
+  "engines": {
+    "atom": ">=0.174.0 <2.0.0"
+  },
+  "homepage": "http://arcticicestudio.com/northem",
+  "keywords": [
+    "northem",
+    "north",
+    "bluish",
+    "dark",
+    "clean",
+    "elegant",
+    "syntax"
+  ],
+  "license": "MIT",
+  "name": "northem-dark-atom-syntax",
+  "optionalDependencies": {},
+  "readme": "<p align=\"center\"><img src=\"https://cdn.rawgit.com/arcticicestudio/northem-dark-atom-syntax/develop/assets/northem-dark-atom-syntax-banner.svg\"/></p>\n\n<p align=\"center\"><img src=\"https://cdn.travis-ci.org/images/favicon-c566132d45ab1a9bcae64d8d90e4378a.svg\" width=24 height=24/> <a href=\"https://travis-ci.org/arcticicestudio/northem-dark-atom-syntax\"><img src=\"https://img.shields.io/travis/arcticicestudio/northem-dark-atom-syntax/develop.svg\"/></a> <img src=\"https://circleci.com/favicon.ico\" width=24 height=24/> <a href=\"https://circleci.com/gh/arcticicestudio/northem-dark-atom-syntax\"><img src=\"https://circleci.com/gh/arcticicestudio/northem-dark-atom-syntax.svg?style=shield&circle-token=c224c82abbb79d32565eb0e3528e1b05f5f2046e\"/></a> <img src=\"https://assets-cdn.github.com/favicon.ico\" width=24 height=24/> <a href=\"https://github.com/arcticicestudio/northem-dark-atom-syntax/releases/latest\"><img src=\"https://img.shields.io/github/release/arcticicestudio/northem-dark-atom-syntax.svg\"/></a> <a href=\"https://github.com/arcticicestudio/northem-dark/releases/tag/v2.0.0\"><img src=\"https://img.shields.io/badge/Northem_Dark-v2.0.0-blue.svg\"/></a> <img src=\"https://atom.io/favicon.ico\" width=24 height=24/> <a href=\"https://atom.io/themes/northem-dark-atom-syntax\"><img src=\"https://img.shields.io/apm/v/northem-dark-atom-syntax.svg\"/></a> <a href=\"https://atom.io/themes/northem-dark-atom-syntax\"><img src=\"https://img.shields.io/apm/dm/northem-dark-atom-syntax.svg\"/></a></p>\n\n<p align=\"center\">A north-bluish, dark clean and elegant Atom syntax theme.</p>\n\n<p align=\"center\">Designed for a fluent and clear workflow.<br>\nBased on the <a href=\"https://github.com/arcticicestudio/northem-dark\">Northem Dark</a> color palette.<br>\nFits the <a href=\"https://atom.io/themes/northem-dark-atom-ui\">northem-dark-atom-ui</a> theme.</p>\n\n<p align=\"center\">This project is a more blue-tinged variation of the origin project <a href=\"https://github.com/arcticicestudio/northem-atom-syntax\">Northem Atom Syntax</a>.</p>\n\n---\n\n![][scrot-top]\n> Icons provided by [file-icons](https://atom.io/packages/file-icons).  \nFont is [Source Code Pro](https://adobe-fonts.github.io/source-code-pro) 20px.\n\n## Getting started\n### Installation\n**<img src=\"https://atom.io/favicon.ico\" width=16 height=16/> [apm](https://github.com/atom/apm)**  \n```shell\napm install northem-dark-atom-syntax\n```\n\n**<img src=\"https://atom.io/favicon.ico\" width=16 height=16/> [Atom](https://atom.io)**  \n  1. Open *Settings > Install*\n  2. Set the filter to *Themes*\n  3. Search for `northem-dark-atom-syntax` and install\n\n**Activation**\n  1. Open *Settings > Themes*\n  2. Select `Northem Dark Atom` from the *Syntax Theme* drop-down menu\n\n## Features\n<p align=\"center\">Non-obtrusive bracket matching- and <code>find-and-replace</code> marker.<br>Unselected line numbers are hidden in order to keep the focus.<br><img src=\"https://raw.githubusercontent.com/arcticicestudio/northem-dark-atom-syntax/develop/assets/scrot-feature-bracketmarker.png\"/><br><img src=\"https://raw.githubusercontent.com/arcticicestudio/northem-dark-atom-syntax/develop/assets/scrot-feature-findandreplace.png\"/><br>Smooth transitions for gutter- and <code>find-and-replace</code> interactions.<br><img src=\"https://raw.githubusercontent.com/arcticicestudio/northem-dark-atom-syntax/develop/assets/scrcast-feature-smoothtransition.gif\"/><br><img src=\"https://raw.githubusercontent.com/arcticicestudio/northem-dark-atom-syntax/develop/assets/scrcast-feature-findandreplace.gif\"/><br>Colors of selected code can still be easily recognized.<br><img src=\"https://raw.githubusercontent.com/arcticicestudio/northem-dark-atom-syntax/develop/assets/scrcast-feature-selection.gif\"/></p>\n\n## Languages\nThis theme contains optimized styles to achieve a consistent and uniform coloring across languages.  \nDetailed descriptions for supported languages can be found in the [project wiki](https://github.com/arcticicestudio/northem-dark-atom-syntax/wiki/Optimized-Language-Styles).\n\n![][scrot-lang-c]\n![][scrot-lang-java]\n![][scrot-lang-javascript]\n![][scrot-lang-json]\n![][scrot-lang-markdown]\n![][scrot-lang-php]\n![][scrot-lang-python]\n![][scrot-lang-ruby]\n\n## Development\n[![](https://img.shields.io/badge/Changelog-2.0.0-blue.svg)](https://github.com/arcticicestudio/northem-dark-atom-syntax/blob/v2.0.0/CHANGELOG.md) [![](https://img.shields.io/badge/Workflow-gitflow--branching--model-blue.svg)](http://nvie.com/posts/a-successful-git-branching-model) [![](https://img.shields.io/badge/Versioning-ArcVer_0.8.0-blue.svg)](https://github.com/arcticicestudio/arcver)\n\n### Contribution\nPlease report issues/bugs, feature requests and suggestions for improvements to the [issue tracker](https://github.com/arcticicestudio/northem-dark-atom-syntax/issues).\n\n<p align=\"center\"><img src=\"https://cdn.rawgit.com/arcticicestudio/nord/develop/src/assets/banner-footer-mountains.svg\" /></p>\n\n<p align=\"center\"> <img src=\"http://arcticicestudio.com/favicon.ico\" width=16 height=16/> Copyright &copy; 2016 Arctic Ice Studio</p>\n\n<p align=\"center\"><a href=\"https://github.com/arcticicestudio/northem-dark-atom-syntax/develop/LICENSE.md\"><img src=\"https://img.shields.io/badge/License-MIT-blue.svg\"/></a></p>\n\n[scrot-lang-c]: https://raw.githubusercontent.com/arcticicestudio/northem-dark-atom-syntax/develop/assets/scrot-lang-c.png\n[scrot-lang-java]: https://raw.githubusercontent.com/arcticicestudio/northem-dark-atom-syntax/develop/assets/scrot-lang-java.png\n[scrot-lang-javascript]: https://raw.githubusercontent.com/arcticicestudio/northem-dark-atom-syntax/develop/assets/scrot-lang-javascript.png\n[scrot-lang-json]: https://raw.githubusercontent.com/arcticicestudio/northem-dark-atom-syntax/develop/assets/scrot-lang-json.png\n[scrot-lang-markdown]: https://raw.githubusercontent.com/arcticicestudio/northem-dark-atom-syntax/develop/assets/scrot-lang-markdown.png\n[scrot-lang-php]: https://raw.githubusercontent.com/arcticicestudio/northem-dark-atom-syntax/develop/assets/scrot-lang-php.png\n[scrot-lang-python]: https://raw.githubusercontent.com/arcticicestudio/northem-dark-atom-syntax/develop/assets/scrot-lang-python.png\n[scrot-lang-ruby]: https://raw.githubusercontent.com/arcticicestudio/northem-dark-atom-syntax/develop/assets/scrot-lang-ruby.png\n[scrot-top]: https://raw.githubusercontent.com/arcticicestudio/northem-dark-atom-syntax/develop/assets/scrot-top.png\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arcticicestudio/northem-dark-atom-syntax.git"
+  },
+  "theme": "syntax",
+  "version": "2.0.0"
+}

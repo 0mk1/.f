@@ -8,7 +8,6 @@ echo "---- Creating symlinks ----"
 # Folders
 ln -fs $PWD/bin/ $HOME
 ln -fs $PWD/.atom/ $HOME
-ln -fs $PWD/.fonts/ $HOME
 
 # Files
 ln -fs $PWD/.config/redshift.conf $HOME/.config/
@@ -20,5 +19,4 @@ ln -fs $PWD/.gitconfig $HOME
 ln -fs $PWD/.gitignore_global $HOME
 ln -fs $PWD/.tmux.conf $HOME
 ln -fs $PWD/.vimrc $HOME
-ln -fs $PWD/.wallpaper.jpg $HOME
 ln -fs $PWD/.zshrc $HOME

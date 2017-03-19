@@ -1,6 +1,5 @@
 {Range, Point} = require 'atom'
 _ = require 'underscore-plus'
-settings = require './settings'
 
 # [TODO] Need overhaul
 #  - [ ] must have getRange(selection) ->
@@ -73,7 +72,7 @@ class TextObject extends Base
 
   needToKeepColumn: ->
     @wise is 'linewise' and
-      settings.get('keepColumnOnSelectTextObject') and
+      @getConfig('keepColumnOnSelectTextObject') and
       @getOperator().instanceof('Select')
 
   execute: ->
@@ -81,7 +80,7 @@ class TextObject extends Base
     # Called from Operator::selectTarget()
     #  - `v i p`, is `Select` operator with @target = `InnerParagraph`.
     #  - `d i p`, is `Delete` operator with @target = `InnerParagraph`.
-    if @hasOperator()
+    if @operator?
       @select()
     else
       throw new Error('in TextObject: Must not happen')
@@ -93,20 +92,17 @@ class TextObject extends Base
 
       for selection in @editor.getSelections()
         selectResults.push(@selectTextObject(selection))
-        unless @isSuportCount()
-          @stopSelection() # FIXME: quick-fix for #560
 
+      unless @isSuportCount()
+        stop() # FIXME: quick-fix for #560
 
     if @needToKeepColumn()
       for selection in @editor.getSelections()
         swrap(selection).clipPropertiesTillEndOfLine()
 
     @editor.mergeIntersectingSelections()
-    if @isMode('visual') and @wise is 'characterwise'
-      swrap.saveProperties(@editor)
-
     if selectResults.some((value) -> value)
-      @wise ?= swrap.detectVisualModeSubmode(@editor)
+      @wise ?= swrap.detectWise(@editor)
     else
       @wise = null
 
@@ -710,8 +706,7 @@ class SearchMatchForward extends TextObject
 
   selectTextObject: (selection) ->
     return unless range = @getRange(selection)
-    reversed = @reversed ? @backward
-    swrap(selection).setBufferRange(range, {reversed})
+    swrap(selection).setBufferRange(range, {reversed: @reversed ? @backward})
     selection.cursor.autoscroll()
     true
 
@@ -738,7 +733,7 @@ class PreviousSelection extends TextObject
     {properties, submode} = @vimState.previousSelection
     if properties? and submode?
       selection = @editor.getLastSelection()
-      swrap(selection).selectByProperties(properties)
+      swrap(selection).selectByProperties(properties, keepGoalColumn: false)
       @wise = submode
 
 class PersistentSelection extends TextObject
@@ -748,7 +743,7 @@ class PersistentSelection extends TextObject
     {persistentSelection} = @vimState
     unless persistentSelection.isEmpty()
       persistentSelection.setSelectedBufferRanges()
-      @wise = swrap.detectVisualModeSubmode(@editor)
+      @wise = swrap.detectWise(@editor)
 
 class APersistentSelection extends PersistentSelection
   @extend()

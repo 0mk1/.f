@@ -1,4 +1,3 @@
-# .zshrc
 export ZSH=$HOME/.oh-my-zsh  # Oh-my-zsh
 export LANG=en_US.UTF-8
 export EDITOR='vim'
@@ -9,7 +8,6 @@ ZSH_THEME="toffi9"
 plugins=(virtualenv docker docker-compose)
 
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 export WORKON_HOME=~/.virtualenvs
 VIRTUALENVWRAPPER_PYTHON='/usr/bin/python3' # This needs to be placed before the virtualenvwrapper command

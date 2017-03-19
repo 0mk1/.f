@@ -2,45 +2,45 @@
   "_args": [
     [
       {
-        "raw": "/tmp/d-117125-10174-1elgw8s/package.tgz",
+        "raw": "/tmp/d-117219-8862-1v39zy3/package.tgz",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "/tmp/d-117125-10174-1elgw8s/package.tgz",
-        "spec": "/tmp/d-117125-10174-1elgw8s/package.tgz",
+        "rawSpec": "/tmp/d-117219-8862-1v39zy3/package.tgz",
+        "spec": "/tmp/d-117219-8862-1v39zy3/package.tgz",
         "type": "local"
       },
-      "/tmp/apm-install-dir-117125-10174-frb2ky"
+      "/tmp/apm-install-dir-117219-8862-1mz8h1m"
     ]
   ],
-  "_from": "../d-117125-10174-1elgw8s/package.tgz",
-  "_id": "linter-docker@0.1.4",
+  "_from": "../d-117219-8862-1v39zy3/package.tgz",
+  "_id": "linter-docker@0.1.5",
   "_inCache": true,
   "_installable": true,
   "_location": "/linter-docker",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/tmp/d-117125-10174-1elgw8s/package.tgz",
+    "raw": "/tmp/d-117219-8862-1v39zy3/package.tgz",
     "scope": null,
     "escapedName": null,
     "name": null,
-    "rawSpec": "/tmp/d-117125-10174-1elgw8s/package.tgz",
-    "spec": "/tmp/d-117125-10174-1elgw8s/package.tgz",
+    "rawSpec": "/tmp/d-117219-8862-1v39zy3/package.tgz",
+    "spec": "/tmp/d-117219-8862-1v39zy3/package.tgz",
     "type": "local"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-117125-10174-1elgw8s/package.tgz",
-  "_shasum": "1d72f6ce16ea688566476819b63766f904891394",
+  "_resolved": "file:../d-117219-8862-1v39zy3/package.tgz",
+  "_shasum": "0dc083dc42392536fa1c1494f66bce09b0057a3a",
   "_shrinkwrap": null,
-  "_spec": "/tmp/d-117125-10174-1elgw8s/package.tgz",
-  "_where": "/tmp/apm-install-dir-117125-10174-frb2ky",
+  "_spec": "/tmp/d-117219-8862-1v39zy3/package.tgz",
+  "_where": "/tmp/apm-install-dir-117219-8862-1mz8h1m",
   "bugs": {
     "url": "https://github.com/AtomLinter/linter-docker/issues"
   },
   "dependencies": {
-    "atom-linter": "^8.0.0",
+    "atom-linter": "^9.0.0",
     "dockerlint": "~0.2.0"
   },
   "description": "Linter plugin for Dockerfile's, using dockerlint",
@@ -66,5 +66,5 @@
     "type": "git",
     "url": "git+https://github.com/AtomLinter/linter-docker.git"
   },
-  "version": "0.1.4"
+  "version": "0.1.5"
 }

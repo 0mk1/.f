@@ -10,11 +10,10 @@ class HoverManager
 
   getPoint: ->
     if @vimState.isMode('visual', 'blockwise')
-      # FIXME #179
-      @vimState.getLastBlockwiseSelection()?.getHeadSelection().getHeadBufferPosition()
+      @vimState.getLastBlockwiseSelection().getHeadSelection().getHeadBufferPosition()
     else
-      swrapOptions = {fromProperty: true, allowFallback: true}
-      swrap(@editor.getLastSelection()).getBufferPositionFor('head', swrapOptions)
+      selection = @editor.getLastSelection()
+      swrap(selection).getBufferPositionFor('head', from: ['property', 'selection'])
 
   set: (text, point=@getPoint(), options={}) ->
     unless @marker?

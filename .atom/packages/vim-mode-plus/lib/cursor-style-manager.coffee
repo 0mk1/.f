@@ -1,6 +1,5 @@
 {Point, Disposable, CompositeDisposable} = require 'atom'
 
-settings = require './settings'
 swrap = require './selection-wrapper'
 isSpecMode = atom.inSpecMode()
 lineHeight = null
@@ -26,12 +25,8 @@ getOffset = (submode, cursor) ->
       new Point(0, -1)
 
     when 'linewise'
-      bufferPoint = swrap(selection).getBufferPositionFor('head', fromProperty: true)
+      bufferPoint = swrap(selection).getBufferPositionFor('head', from: ['property'])
       editor = cursor.editor
-
-      # FIXME: This adjustment should not necessary if selection property is always believable.
-      if selection.isReversed()
-        bufferPoint.row = selection.getBufferRange().start.row
 
       if editor.isSoftWrapped()
         screenPoint = editor.screenPositionForBufferPosition(bufferPoint)
@@ -67,7 +62,7 @@ class CursorStyleManager
     {mode, submode} = @vimState
     @styleDisporser?.dispose()
     @styleDisporser = new CompositeDisposable
-    return unless mode is 'visual' and settings.get('showCursorInVisualMode')
+    return unless mode is 'visual' and @vimState.getConfig('showCursorInVisualMode')
 
     cursors = cursorsToShow = @editor.getCursors()
     if submode is 'blockwise'

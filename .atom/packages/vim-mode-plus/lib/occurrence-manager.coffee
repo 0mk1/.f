@@ -77,8 +77,9 @@ class OccurrenceManager
     occurrenceType ?= 'base'
     @emitter.emit('did-change-patterns', {pattern, occurrenceType})
 
-  saveLastPattern: ->
+  saveLastPattern: (occurrenceType=null) ->
     @vimState.globalState.set("lastOccurrencePattern", @buildPattern())
+    @vimState.globalState.set("lastOccurrenceType", occurrenceType)
 
   # Return regex representing final pattern.
   # Used to cache final pattern to each instance of operator so that we can
@@ -91,7 +92,8 @@ class OccurrenceManager
   # Markers
   # -------------------------
   clearMarkers: ->
-    @destroyMarkers(@getMarkers())
+    @markerLayer.clear()
+    @updateEditorElement()
 
   destroyMarkers: (markers) ->
     marker.destroy() for marker in markers
@@ -119,10 +121,8 @@ class OccurrenceManager
     # So I need extra check to filter out unwanted marker.
     # But basically I should prefer findMarker since It's fast than iterating
     # whole markers manually.
-    ranges = ranges.map (range) -> shrinkRangeEndToBeforeNewLine(range)
-
     results = []
-    for range in ranges
+    for range in ranges.map(shrinkRangeEndToBeforeNewLine)
       markers = @markerLayer.findMarkers(intersectsBufferRange: range).filter (marker) ->
         range.intersectsWith(marker.getBufferRange(), exclusive)
       results.push(markers...)

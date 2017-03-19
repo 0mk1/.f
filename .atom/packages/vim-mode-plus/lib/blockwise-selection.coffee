@@ -1,7 +1,6 @@
-{Range} = require 'atom'
 _ = require 'underscore-plus'
 
-{sortRanges, getBufferRows, isEmpty} = require './utils'
+{sortRanges, isEmpty} = require './utils'
 swrap = require './selection-wrapper'
 
 class BlockwiseSelection
@@ -16,13 +15,10 @@ class BlockwiseSelection
 
     for memberSelection in @getSelections()
       swrap(memberSelection).saveProperties()
-      swrap(memberSelection).setWise('blockwise')
+      swrap(memberSelection).setWiseProperty('blockwise')
 
   getSelections: ->
     @selections
-
-  isBlockwise: ->
-    true
 
   isEmpty: ->
     @getSelections().every(isEmpty)
@@ -135,10 +131,6 @@ class BlockwiseSelection
     @clearSelections(except: head)
     head.cursor.setBufferPosition(point)
 
-  removeEmptySelections: ->
-    for selection in @selections.slice() when selection.isEmpty()
-      @removeSelection(selection)
-
   removeSelection: (selection) ->
     _.remove(@selections, selection)
     selection.destroy()
@@ -187,13 +179,9 @@ class BlockwiseSelection
     properties = @getCharacterwiseProperties()
     head = @getHeadSelection()
     @clearSelections(except: head)
-    {goalColumn} = head.cursor
     swrap(head).selectByProperties(properties)
-
     if head.getBufferRange().end.column is 0
       swrap(head).translateSelectionEndAndClip('forward')
-
-    head.cursor.goalColumn ?= goalColumn if goalColumn?
 
   autoscroll: (options) ->
     @getHeadSelection().autoscroll(options)

@@ -1,44 +1,20 @@
-# apt-get and dpkg
 alias agi="sudo apt-get install"
-alias aguu="sudo apt-get update; sudo apt-get upgrade;"
+alias agl="sudo dpkg -l | grep "
 alias agr="sudo apt-get purge"
 alias ags="sudo apt-cache search"
-alias agl="sudo dpkg -l | grep "
-
-# thunar
-alias t="thunar ."
-
-# docker
+alias aguu="sudo apt-get update; sudo apt-get upgrade;"
 alias dcomp="docker-compose "
-
-# linux
-alias gsync="cd ~/Dokumenty/ && grive && cd ~"
-alias sshcopy="ssh-copy-id -i ~/.ssh/id_rsa_main.pub "
-
-# navigation
-alias p="cd ~/Projekty/"
-alias docs="cd ~/Dokumenty/"
-
-# git
+alias djm="python manage.py "
+alias djstarta="python manage.py startapp "
+alias djstartp="django-admin startproject "
 alias gall="git add -A"
 alias gcmt="git commit -v"
-alias gstat="git status --porcelain"
 alias glog="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-
-# vim
-alias v="vim"
-alias v.="vim ."
-
-# django
-alias djstartp="django-admin startproject "
-alias djstarta="python manage.py startapp "
-alias djm="python manage.py "
-alias serve="python manage.py runserver"
-
-# pip
+alias gstat="git status --porcelain"
+alias mkvnv="mkvirtualenv -p python3 "
+alias p="cd ~/Projekty/"
 alias pf="pip freeze"
 alias pi="pip install "
-
-# virtualenv
+alias serve="python manage.py runserver"
+alias sshcopy="ssh-copy-id -i ~/.ssh/id_rsa.pub "
 alias vnv="workon "
-alias mkvnv="mkvirtualenv -p python3 "
