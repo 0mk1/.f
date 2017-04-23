@@ -15,16 +15,8 @@ export PROJECT_HOME=$HOME/Projekty
 source /usr/local/bin/virtualenvwrapper.sh
 
 stty -ixon  # Ctrl + s not hanging vim
-/usr/bin/setxkbmap -option "caps:swapescape"
+# /usr/bin/setxkbmap -option "caps:swapescape"
 
 export PATH="$PATH:$HOME/bin"      # add my custom scripts
-
-# Always work in a tmux session if tmux is installed
-if which tmux 2>&1 >/dev/null; then
-  if [ $TERM != "screen-256color" ] && [  $TERM != "screen" ]; then
-    tmux -2 attach -t workspace || tmux -2 new -s workspace; exit
-  fi
-fi
-
 source $HOME/.aliases
 source $ZSH/oh-my-zsh.sh

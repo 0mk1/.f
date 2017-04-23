@@ -1,4 +1,0 @@
-'.text.html.django':
-  'editor':
-    'commentStart': '{# '
-    'commentEnd': '#}'

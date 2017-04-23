@@ -3,9 +3,6 @@
 .DS_Store?
 .agignore
 Thumbs.db
-tags
 .netrwhist
 .bundle
 .svn
-*.ideas
-.ideas
