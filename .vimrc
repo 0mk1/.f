@@ -12,6 +12,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'mileszs/ack.vim'
 Plugin 'nvie/vim-flake8'
+Plugin 'SirVer/ultisnips'
 call vundle#end()
 
 filetype on 
@@ -119,3 +120,4 @@ nnoremap <F3> :set hlsearch! hlsearch?<cr>
 nmap <Leader>ev :tabnew ~/.vimrc<CR>
 nmap <Leader>ez :tabnew ~/.zshrc<CR>
 nmap <Leader>ea :tabnew ~/.aliases<CR>
+nmap <Leader>es :tabnew ~/.vim/UltiSnips/<CR>

@@ -1,0 +1,31 @@
+snippet todo "TODO statement" b
+# TODO: ${1:statement}
+endsnippet
+
+snippet ipdb "ipdb" b
+import ipdb; ipdb.set_trace()  # BREAKPOINT
+endsnippet
+
+snippet pdb "pdb" b
+import ipdb; ipdb.set_trace()  # BREAKPOINT
+endsnippet
+
+snippet cls "basic class" b
+class ${1:statement}(${2:statement}):
+		pass
+endsnippet
+
+snippet defm "method" b
+def ${1:statement}(self, ${2:statement}):
+		pass
+endsnippet
+
+snippet def "method" b
+def ${1:statement}(${2:statement}):
+		pass
+endsnippet
+
+snippet overr "override method" b
+def ${1:method_name}(self, ${2:arguments}):
+    super().${1:method_name}()
+endsnippet

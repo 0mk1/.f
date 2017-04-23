@@ -7,6 +7,7 @@ echo "---- Creating symlinks ----"
 
 # Folders
 ln -fs $PWD/bin/ $HOME
+ln -fs $PWD/.vim/ $HOME
 
 # Files
 ln -fs $PWD/.config/redshift.conf $HOME/.config/
