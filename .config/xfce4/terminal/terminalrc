@@ -1,11 +1,11 @@
 [Configuration]
-FontName=Noto Mono 10.5
+FontName=DejaVu Sans Mono 10.5
 MiscAlwaysShowTabs=FALSE
 MiscBell=FALSE
 MiscBordersDefault=TRUE
 MiscCursorBlinks=FALSE
 MiscCursorShape=TERMINAL_CURSOR_SHAPE_BLOCK
-MiscDefaultGeometry=118x33
+MiscDefaultGeometry=150x45
 MiscInheritGeometry=FALSE
 MiscMenubarDefault=FALSE
 MiscMouseAutohide=FALSE
@@ -20,11 +20,14 @@ MiscScrollAlternateScreen=TRUE
 CommandLoginShell=TRUE
 ScrollingBar=TERMINAL_SCROLLBAR_NONE
 ScrollingLines=2000
-ColorCursor=#D8DEE9
-ColorForeground=#D8DEE9
-ColorBackground=#22381fd91fd9
-TabActivityColor=#88C0D0
-ColorPalette=#3B4252;#BF616A;#A3BE8C;#EBCB8B;#81A1C1;#B48EAD;#88C0D0;#E5E9F0;#4C566A;#BF616A;#A3BE8C;#EBCB8B;#81A1C1;#B48EAD;#8FBCBB;#ECEFF4
-ColorBold=#D8DEE9
-ColorBoldUseDefault=FALSE
+ColorForeground=#1f3566
 TabActivityTimeout=0
+ColorBackground=#f1f1f1
+ColorCursor=#0f4999
+ColorSelection=#bbbbbb
+ColorSelectionUseDefault=FALSE
+ColorBold=#000000
+ColorBoldUseDefault=FALSE
+ColorPalette=#000000;#aa0000;#44aa44;#aa5500;#0039aa;#aa22aa;#1a92aa;#aaaaaa;#888888;#ff8787;#4ce64c;#ded82c;#295fcc;#cc58cc;#4ccce6;#ffffff
+TabActivityColor=#0f4999
+

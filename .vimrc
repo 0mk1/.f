@@ -11,7 +11,11 @@ Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-surround'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'mileszs/ack.vim'
+Plugin 'tpope/vim-fugitive'
 Plugin 'nvie/vim-flake8'
+Plugin 'Vimjas/vim-python-pep8-indent'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'integralist/vim-mypy'
 Plugin 'SirVer/ultisnips'
 call vundle#end()
 
@@ -87,11 +91,12 @@ set wildignore+=*.pyc
 
 autocmd BufWritePost *.py call Flake8()
 let g:flake8_show_in_gutter = 1
+let g:jedi#use_tabs_not_buffers = 1
 
 let mapleader = ","
 map <Leader>q :q<cr>
 map <Leader>w :w<cr>
-nmap <Leader>n :e .<CR>
+nmap <Leader>f :e .<CR>
 nmap <Leader><F6> :source ~/.vimrc<CR>
 vnoremap < <gv " better indentation
 vnoremap > >gv " better indentation
@@ -106,6 +111,7 @@ noremap <leader>7 7gt
 noremap <leader>8 8gt
 noremap <leader>9 9gt
 noremap <leader>0 :tabnext<cr>
+nmap <leader>v :vsp<cr>
 nmap <leader>tn :tabnew .<cr>
 nmap <c-j> <c-w>j
 nmap <c-k> <c-w>k
