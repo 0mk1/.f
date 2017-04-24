@@ -6,12 +6,16 @@ set rtp+=~/.vim/bundle/Vundle.vim
 " Plugins
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'gregsexton/Muon'
+Plugin 'endel/vim-github-colorscheme'
+Plugin 'vim-airline/vim-airline'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-surround'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'mileszs/ack.vim'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rhubarb'
 Plugin 'nvie/vim-flake8'
 Plugin 'Vimjas/vim-python-pep8-indent'
 Plugin 'davidhalter/jedi-vim'
@@ -52,32 +56,7 @@ set nowritebackup
 set noswapfile
 set colorcolumn=80
 
-" Statusline
-set statusline=
-set statusline +=%<%f%*            "full path
-set statusline +=%m%r%h%w%q%*        "modified flag
-set statusline +=%=[%{ModeStatusline()}]%*  "Mode
-set statusline +=%=\[%{&ff}\]%*      "file format
-set statusline +=%y%*                "file type
-set statusline +=\ %l%*             "current line
-set statusline +=/%L\ (%P)%*         "total lines
-
-" Mode Name in Statusline (Normal, Insert, Visual)
-function! ModeStatusline()
- if mode() == 'n'
-   return 'Normal'
- elseif mode() == 'i'
-   return 'Insert'
- elseif mode() == 'v' || mode() == 'V' || mode() == '^V'
-   return 'Visual'
- else
-   return mode()
- endif
-endfunction
-
-" Insert special hightlight statusline
-au InsertEnter * hi statusline ctermfg=blue
-au InsertLeave * hi statusline ctermfg=black
+colorscheme muon
 
 let g:netrw_banner = 0
 let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
@@ -127,3 +106,5 @@ nmap <Leader>ev :tabnew ~/.vimrc<CR>
 nmap <Leader>ez :tabnew ~/.zshrc<CR>
 nmap <Leader>ea :tabnew ~/.aliases<CR>
 nmap <Leader>es :tabnew ~/.vim/UltiSnips/<CR>
+nmap <Leader>csd :colorscheme muon<CR>
+nmap <Leader>csl :colorscheme github<CR>
