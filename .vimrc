@@ -1,6 +1,6 @@
 set encoding=utf-8
-set nocompatible        
-filetype off             
+set nocompatible
+filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 
 " Plugins
@@ -22,28 +22,28 @@ Plugin 'davidhalter/jedi-vim'
 Plugin 'SirVer/ultisnips'
 call vundle#end()
 
-filetype on 
-filetype plugin indent on 
-syntax on                
-set autoindent            
-set tabstop=2              
+filetype on
+filetype plugin indent on
+syntax on
+set autoindent
+set tabstop=2
 set path+=**
 set shiftwidth=2
-set expandtab               
-set nocompatible             
-set relativenumber            
+set expandtab
+set nocompatible
+set relativenumber
 set number
-set showmatch                  
+set showmatch
 set showcmd
 set noshowmode
-set ignorecase                  
+set ignorecase
 set nohlsearch
-set cursorline  
-set smartcase    
-set incsearch     
+set cursorline
+set smartcase
+set incsearch
 set ttimeoutlen=100
-set vb       
-set ruler     
+set vb
+set ruler
 set scrolloff=2
 set laststatus=2
 set nofoldenable
@@ -54,6 +54,9 @@ set nobackup
 set nowritebackup
 set noswapfile
 set colorcolumn=80
+set list listchars=tab:»·,trail:·,nbsp:·
+set spelllang=en
+set complete+=kspell
 
 colorscheme muon
 
