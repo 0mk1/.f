@@ -23,12 +23,15 @@ source $ZSH/oh-my-zsh.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Install
+# TOOLS
 # vim
 # tmux
 # zsh
 # oh-my-zsh
 # fzf
-# flake8, mypy, virtualenvwrapper
+# docker, docker-compose
+# ansible
+# flake8, virtualenvwrapper
 # spotify
 # chrome
+# xfce-terminal

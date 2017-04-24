@@ -19,7 +19,6 @@ Plugin 'tpope/vim-rhubarb'
 Plugin 'nvie/vim-flake8'
 Plugin 'Vimjas/vim-python-pep8-indent'
 Plugin 'davidhalter/jedi-vim'
-Plugin 'integralist/vim-mypy'
 Plugin 'SirVer/ultisnips'
 call vundle#end()
 
