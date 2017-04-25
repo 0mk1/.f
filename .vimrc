@@ -58,7 +58,7 @@ set list listchars=tab:»·,trail:·,nbsp:·
 set spelllang=en
 set complete+=kspell
 
-colorscheme muon
+colorscheme github
 
 let g:netrw_banner = 0
 let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
