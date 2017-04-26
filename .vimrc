@@ -60,6 +60,8 @@ set complete+=kspell
 
 colorscheme github
 
+let g:airline_powerline_fonts = 1
+
 let g:netrw_banner = 0
 let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
 let g:netrw_keepdir = 1

@@ -1,0 +1,4 @@
+#!/bin/bash
+cd ~/Projekty/dotfiles/
+
+git pull
