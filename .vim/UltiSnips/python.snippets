@@ -16,7 +16,9 @@ class ${1:Name}(${2:object}):
 endsnippet
 
 snippet doc "simple docstring" b
-"""$0"""
+"""
+$0
+"""
 endsnippet
 
 snippet defm "method" b
@@ -26,22 +28,6 @@ endsnippet
 
 snippet super "override method" b
 super().${1:method_name}(${2:args})
-endsnippet
-
-snippet docs "Google Docstring" b
-"""${1:short_desc}
-
-${2:longer_desc}
-
-Args:
-		${3:arg}: ${4:desc}
-
-Returns:
-		${5:return_desc}
-
-Raises:
-		${6:Exception}: ${7:desc}
-"""
 endsnippet
 
 snippet api-auth "Api auth url, when JWT is on" b
