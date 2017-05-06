@@ -6,7 +6,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 " Plugins
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'gregsexton/Muon'
 Plugin 'endel/vim-github-colorscheme'
 Plugin 'vim-airline/vim-airline'
 Plugin 'kien/ctrlp.vim'
@@ -14,12 +13,12 @@ Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-surround'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'mileszs/ack.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-rhubarb'
+Plugin 'janko-m/vim-test'
 Plugin 'nvie/vim-flake8'
 Plugin 'Vimjas/vim-python-pep8-indent'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'SirVer/ultisnips'
+Plugin 'moby/moby' , {'rtp': '/contrib/syntax/vim/'}  " Dockerfile Vim syntax
 call vundle#end()
 
 filetype on
@@ -70,7 +69,11 @@ let g:netrw_liststyle = 3
 let g:ctrlp_working_path_mode = 'r'
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:60,results:60'
 let g:ctrlp_show_hidden = 1
-set wildignore+=*.pyc
+set wildignore+=*.pyc,node_modules
+set wildignore+=node_modules/*
+
+let test#python#runner = 'pytest'
+let test#python#pytest#executable = 'docker-compose -f ../dev.yml run --rm backend pytest'
 
 autocmd BufWritePost *.py call Flake8()
 let g:flake8_show_in_gutter = 1
@@ -79,36 +82,38 @@ let g:jedi#use_tabs_not_buffers = 1
 let mapleader = ","
 map <Leader>q :q<cr>
 map <Leader>w :w<cr>
-nmap <Leader>f :e .<CR>
 nmap <Leader><F6> :source ~/.vimrc<CR>
-vnoremap < <gv " better indentation
-vnoremap > >gv " better indentation
-nnoremap <F9> :!ctags -R .<cr>
-noremap <leader>1 1gt
-noremap <leader>2 2gt
-noremap <leader>3 3gt
-noremap <leader>4 4gt
-noremap <leader>5 5gt
-noremap <leader>6 6gt
-noremap <leader>7 7gt
-noremap <leader>8 8gt
-noremap <leader>9 9gt
-noremap <leader>0 :tabnext<cr>
-nmap <leader>v :vsp<cr>
-nmap <leader>tn :tabnew .<cr>
+nmap <Leader>S :Ack! -i 
+nmap <Leader>cn :cnext<CR>
+nmap <Leader>co :copen<CR>
+nmap <Leader>cp :cprev<CR>
+nmap <Leader>cx :cclose<CR>
+nmap <Leader>ea :tabnew ~/.aliases<CR>
+nmap <Leader>es :tabnew ~/.vim/UltiSnips/<CR>
+nmap <Leader>ev :tabnew ~/.vimrc<CR>
+nmap <Leader>ez :tabnew ~/.zshrc<CR>
+nmap <Leader>f :e .<CR>
+nmap <Leader>F :tabnew .<cr>
+nmap <Leader>v :vsp<cr>
+nmap <c-h> <c-w>h
 nmap <c-j> <c-w>j
 nmap <c-k> <c-w>k
 nmap <c-l> <c-w>l
-nmap <c-h> <c-w>h
-nmap <Leader>S :Ack! -i 
-nmap <Leader>cn :cnext<CR>
-nmap <Leader>cp :cprev<CR>
-nmap <Leader>co :copen<CR>
-nmap <Leader>cx :cclose<CR>
+nmap <silent> <Leader>tf :TestFile<CR>
+nmap <silent> <Leader>ts :TestSuite<CR>
+nmap <silent> <Leader>tv :TestVisit<CR>
+nmap <silent> <Leader>tl :TestLast<CR>
+nmap <silent> <Leader>tn :TestNearest<CR>
 nnoremap <F3> :set hlsearch! hlsearch?<cr>
-nmap <Leader>ev :tabnew ~/.vimrc<CR>
-nmap <Leader>ez :tabnew ~/.zshrc<CR>
-nmap <Leader>ea :tabnew ~/.aliases<CR>
-nmap <Leader>es :tabnew ~/.vim/UltiSnips/<CR>
-nmap <Leader>csd :colorscheme muon<CR>
-nmap <Leader>csl :colorscheme github<CR>
+noremap <Leader>0 :tabnext<cr>
+noremap <Leader>1 1gt
+noremap <Leader>2 2gt
+noremap <Leader>3 3gt
+noremap <Leader>4 4gt
+noremap <Leader>5 5gt
+noremap <Leader>6 6gt
+noremap <Leader>7 7gt
+noremap <Leader>8 8gt
+noremap <Leader>9 9gt
+vnoremap < <gv
+vnoremap > >gv

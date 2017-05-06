@@ -19,19 +19,5 @@ stty -ixon  # Ctrl + s not hanging vim
 
 export PATH="$PATH:$HOME/bin"      # add my custom scripts
 source $HOME/.aliases
-source $ZSH/oh-my-zsh.sh
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# TOOLS
-# vim
-# tmux
-# zsh
-# oh-my-zsh
-# fzf
-# docker, docker-compose
-# ansible
-# flake8, virtualenvwrapper
-# spotify
-# chrome
-# xfce-terminal
+source $ZSH/oh-my-zsh.sh
