@@ -5,7 +5,7 @@ export UPDATE_ZSH_DAYS=30
 
 ZSH_THEME="toffi9"
 
-plugins=(virtualenv docker docker-compose)
+plugins=(virtualenv docker docker-compose mercurial)
 
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 
@@ -15,7 +15,7 @@ export PROJECT_HOME=$HOME/Projekty
 source /usr/local/bin/virtualenvwrapper.sh
 
 stty -ixon  # Ctrl + s not hanging vim
-# /usr/bin/setxkbmap -option "caps:swapescape"
+/usr/bin/setxkbmap -option "caps:swapescape"
 
 export PATH="$PATH:$HOME/bin"      # add my custom scripts
 source $HOME/.aliases
