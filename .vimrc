@@ -59,8 +59,6 @@ set complete+=kspell
 
 colorscheme github
 
-let g:airline_powerline_fonts = 1
-
 let g:netrw_banner = 0
 let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
 let g:netrw_keepdir = 1
@@ -94,6 +92,7 @@ nmap <Leader>ev :tabnew ~/.vimrc<CR>
 nmap <Leader>ez :tabnew ~/.zshrc<CR>
 nmap <Leader>f :e .<CR>
 nmap <Leader>F :tabnew .<cr>
+nmap <Leader><F8> :call Flake8()<cr>
 nmap <Leader>v :vsp<cr>
 nmap <c-h> <c-w>h
 nmap <c-j> <c-w>j

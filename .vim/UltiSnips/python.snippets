@@ -12,7 +12,7 @@ endsnippet
 
 snippet cls "basic class" b
 class ${1:Name}(${2:object}):
-		$3
+	$3
 endsnippet
 
 snippet doc "simple docstring" b
@@ -21,13 +21,60 @@ endsnippet
 
 snippet defm "method" b
 def ${1:name}(self, ${2:arg}):
-		$3
+	$3
 endsnippet
 
-snippet super "override method" b
+snippet super "override method"
 super().${1:method_name}(${2:args})
 endsnippet
 
 snippet api-auth "Api auth url, when JWT is on" b
 url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+endsnippet
+
+snippet fkeyf "Foreign Key Field" b
+field_name = models.ForeignKey(
+	model,
+	verbose_name=_(''),
+	related_name='',
+	on_delete=models.CASCADE,
+)
+endsnippet
+
+snippet charf "CharField with choices" b
+name = models.CharField(
+	_('name'),
+	max_length=255,
+	choices=CHOICES,
+)
+endsnippet
+
+snippet choices "Choices" b
+NAME = 'c'
+CHOICES = Choices(
+	(NAME, _('name')),
+)
+endsnippet
+
+snippet modelcls "Description" b
+class ModelName(TimeStampedModel):
+	"""model docstring"""
+	class Meta:
+		verbose_name = _('')
+		verbose_name_plural = _('')
+
+	def __str__(self):
+		return self.field
+endsnippet
+
+snippet _t "import translation" b
+from django.utils.translation import ugettext_lazy as _
+endsnippet
+
+snippet timestampmodel "" b
+from model_utils.models import TimeStampedModel
+endsnippet
+
+snippet settings "" b
+from django.conf import settings
 endsnippet
