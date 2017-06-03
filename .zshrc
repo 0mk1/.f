@@ -19,5 +19,5 @@ stty -ixon  # Ctrl + s not hanging vim
 
 export PATH="$PATH:$HOME/bin"      # add my custom scripts
 source $HOME/.aliases
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source $ZSH/oh-my-zsh.sh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
