@@ -7,6 +7,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'endel/vim-github-colorscheme'
+Plugin 'gregsexton/Muon'
 Plugin 'vim-airline/vim-airline'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-commentary'
@@ -57,7 +58,7 @@ set list listchars=tab:»·,trail:·,nbsp:·
 set spelllang=en
 set complete+=kspell
 
-colorscheme github
+colorscheme muon
 
 let g:netrw_banner = 0
 let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
