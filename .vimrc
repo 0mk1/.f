@@ -19,6 +19,7 @@ Plugin 'nvie/vim-flake8'
 Plugin 'Vimjas/vim-python-pep8-indent'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'SirVer/ultisnips'
+Plugin 'martinda/Jenkinsfile-vim-syntax'
 Plugin 'moby/moby' , {'rtp': '/contrib/syntax/vim/'}  " Dockerfile Vim syntax
 call vundle#end()
 

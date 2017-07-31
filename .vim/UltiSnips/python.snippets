@@ -49,6 +49,13 @@ name = models.CharField(
 )
 endsnippet
 
+snippet boolf "boolean field" b
+name = models.BooleanField(
+	_('name'),
+	default=False,
+)
+endsnippet
+
 snippet choices "Choices" b
 NAME = 'c'
 CHOICES = Choices(
