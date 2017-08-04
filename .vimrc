@@ -73,7 +73,7 @@ set wildignore+=*.pyc,node_modules
 set wildignore+=node_modules/*
 
 let test#python#runner = 'pytest'
-let test#python#pytest#executable = 'docker-compose -f ../dev.yml run --rm backend pytest'
+let test#python#pytest#executable = 'docker-compose -f dev.yml run --rm --no-deps django pytest'
 
 autocmd BufWritePost *.py call Flake8()
 let g:flake8_show_in_gutter = 1
