@@ -12,6 +12,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-dispatch'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'mileszs/ack.vim'
 Plugin 'janko-m/vim-test'
@@ -74,6 +75,7 @@ set wildignore+=node_modules/*
 
 let test#python#runner = 'pytest'
 let test#python#pytest#executable = 'docker-compose -f dev.yml run --rm --no-deps django pytest'
+let test#strategy = "dispatch"
 
 autocmd BufWritePost *.py call Flake8()
 let g:flake8_show_in_gutter = 1
@@ -106,6 +108,8 @@ nmap <silent> <Leader>tv :TestVisit<CR>
 nmap <silent> <Leader>tl :TestLast<CR>
 nmap <silent> <Leader>tn :TestNearest<CR>
 nnoremap <F3> :set hlsearch! hlsearch?<cr>
+noremap <Leader>ss :resize 10<cr>
+noremap <Leader>bs :resize 80<cr>
 noremap <Leader>0 :tabnext<cr>
 noremap <Leader>1 1gt
 noremap <Leader>2 2gt
