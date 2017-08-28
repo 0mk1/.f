@@ -66,6 +66,10 @@ let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
 let g:netrw_keepdir = 1
 let g:netrw_liststyle = 3
 
+let vim_markdown_preview_hotkey='<C-m>'
+let vim_markdown_preview_github=1
+let vim_markdown_preview_browser='Google Chrome'
+
 let g:ctrlp_working_path_mode = 'r'
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:60,results:60'
 let g:ctrlp_show_hidden = 1
