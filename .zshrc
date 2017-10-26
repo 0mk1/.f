@@ -10,12 +10,11 @@ plugins=(virtualenv docker docker-compose mercurial)
 export PATH="/usr/local/sbin:/usr/local/bin:$HOME/.local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 
 export WORKON_HOME=~/.virtualenvs
-VIRTUALENVWRAPPER_PYTHON='/usr/bin/python3' # This needs to be placed before the virtualenvwrapper command
+VIRTUALENVWRAPPER_PYTHON=$(which python3) # This needs to be placed before the virtualenvwrapper command
 export PROJECT_HOME=$HOME/Projekty
 source /usr/local/bin/virtualenvwrapper.sh
 
 stty -ixon  # Ctrl + s not hanging vim
-/usr/bin/setxkbmap -option "caps:swapescape"
 
 export PATH="$PATH:$HOME/bin"      # add my custom scripts
 source $HOME/.aliases

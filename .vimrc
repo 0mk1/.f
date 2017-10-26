@@ -30,6 +30,7 @@ set autoindent
 set tabstop=2
 set path+=**
 set shiftwidth=2
+set backspace=2
 set expandtab
 set nocompatible
 set relativenumber
@@ -48,7 +49,7 @@ set ruler
 set scrolloff=2
 set laststatus=2
 set nofoldenable
-set clipboard=unnamedplus
+set clipboard=unnamed
 set wildmenu
 set wildmode=list:longest,full
 set nobackup
@@ -56,8 +57,6 @@ set nowritebackup
 set noswapfile
 set colorcolumn=80
 set list listchars=tab:»·,trail:·,nbsp:·
-set spelllang=en
-set complete+=kspell
 
 colorscheme muon
 
@@ -109,7 +108,6 @@ nmap <silent> <Leader>ts :TestSuite<CR>
 nmap <silent> <Leader>tv :TestVisit<CR>
 nmap <silent> <Leader>tl :TestLast<CR>
 nmap <silent> <Leader>tn :TestNearest<CR>
-nmap <silent> <Leader>cov :!docker-compose -f dev.yml run --rm --no-deps django pytest --cov=src --cov-report=html<CR>
 nnoremap <F3> :set hlsearch! hlsearch?<cr>
 noremap <Leader>ss :resize 10<cr>
 noremap <Leader>bs :resize 80<cr>
