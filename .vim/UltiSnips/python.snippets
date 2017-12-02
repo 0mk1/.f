@@ -7,12 +7,7 @@ import ipdb; ipdb.set_trace()  # BREAKPOINT
 endsnippet
 
 snippet pdb "pdb" b
-import ipdb; ipdb.set_trace()  # BREAKPOINT
-endsnippet
-
-snippet cls "basic class" b
-class ${1:Name}(${2:object}):
-	$3
+import pdb; pdb.set_trace()  # BREAKPOINT
 endsnippet
 
 snippet doc "simple docstring" b
@@ -78,15 +73,14 @@ snippet _t "import translation" b
 from django.utils.translation import ugettext_lazy as _
 endsnippet
 
-snippet timestampmodel "" b
-from model_utils.models import TimeStampedModel
-endsnippet
-
 snippet settings "" b
 from django.conf import settings
 endsnippet
 
-snippet test_deps "" b
-import pytest
-from mixer.backend.django import mixer
+snippet noqa ""
+  # noqa: E501
+endsnippet
+
+snippet get_user_model "" b
+from django.contrib.auth import get_user_model
 endsnippet

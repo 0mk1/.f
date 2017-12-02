@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Changing directory to ~/Projekty/dotfiles/"
+echo "Changing directory to ~/Projects/dotfiles/"
 cd ~/Projects/dotfiles/
 
 echo "---- Creating symlinks ----"
@@ -10,7 +10,6 @@ ln -fs $PWD/bin/ $HOME
 ln -fs $PWD/.vim/ $HOME
 
 # Files
-ln -fs $PWD/toffi9.zsh-theme $HOME/.oh-my-zsh/themes/
 ln -fs $PWD/.aliases $HOME
 ln -fs $PWD/.gitconfig $HOME
 ln -fs $PWD/.gitignore_global $HOME
@@ -19,3 +18,5 @@ ln -fs $PWD/.vimrc $HOME
 ln -fs $PWD/.hgrc $HOME
 ln -fs $PWD/.zshrc $HOME
 ln -fs $PWD/.ctags $HOME
+ln -fs $PWD/.npmrc $HOME
+ln -fs $PWD/.isort.cfg $HOME

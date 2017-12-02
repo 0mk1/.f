@@ -1,22 +1,40 @@
-export ZSH=$HOME/.oh-my-zsh  # Oh-my-zsh
+source $HOME/antigen.zsh
 export LANG=en_US.UTF-8
 export EDITOR='vim'
-export UPDATE_ZSH_DAYS=30
-
-ZSH_THEME="toffi9"
-
-plugins=(virtualenv docker docker-compose mercurial)
-
-export PATH="/usr/local/sbin:/usr/local/bin:$HOME/.local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
-
 export WORKON_HOME=~/.virtualenvs
-VIRTUALENVWRAPPER_PYTHON=$(which python3) # This needs to be placed before the virtualenvwrapper command
-export PROJECT_HOME=$HOME/Projekty
-source /usr/local/bin/virtualenvwrapper.sh
+export PROJECT_HOME=$HOME/Projects
+export VIRTUALENVWRAPPER_PYTHON=$(which python3)
+
+antigen use oh-my-zsh
+antigen bundle ssh-agent
+antigen bundle git
+antigen bundle mercurial
+antigen bundle docker
+antigen bundle docker-compose
+antigen bundle virtualenv
+antigen bundle denolfe/zsh-travis
+antigen bundle zsh-users/zsh-completions
+antigen bundle unixorn/autoupdate-antigen.zshplugin
+# antigen bundle virtualenvwrapper
+antigen apply
+
+PROMPT='%F{cyan}%n@%m%{$reset_color%}%{$fg[blue]%} %~/ %{$reset_color%}$(git_prompt_status)$(git_prompt_info)$(hg_prompt_info) $(virtualenv_prompt_info)
+%{$fg[white]%}λ %{$reset_color%}'
+
+ZSH_THEME_VIRTUALENV_PREFIX="%{$fg[red]%}"
+ZSH_THEME_VIRTUALENV_SUFFIX="%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[green]%}"
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
+ZSH_THEME_HG_PROMPT_PREFIX="%{$fg[green]%}"
+ZSH_THEME_HG_PROMPT_SUFFIX="%{$reset_color%}"
+
+export PATH="/usr/local/sbin:/usr/local/bin:$HOME/.local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$HOME/bin"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_OPTS="--color=spinner:159,pointer:80,marker:159"
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 
 stty -ixon  # Ctrl + s not hanging vim
-
-export PATH="$PATH:$HOME/bin"      # add my custom scripts
 source $HOME/.aliases
-source $ZSH/oh-my-zsh.sh
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# workon workspace
