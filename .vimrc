@@ -1,37 +1,34 @@
-set encoding=utf-8
 set nocompatible
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
+set encoding=utf-8
 
-" Plugins
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'endel/vim-github-colorscheme'
-Plugin 'gregsexton/Muon'
-Plugin 'itchyny/lightline.vim'
-Plugin 'junegunn/fzf.vim'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-fugitive'
-Plugin 'junegunn/gv.vim'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'w0rp/ale'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'mileszs/ack.vim'
-Plugin 'janko-m/vim-test'
-Plugin 'Vimjas/vim-python-pep8-indent'
-Plugin 'tyru/open-browser.vim'
-Plugin 'Shougo/deoplete.nvim'
-Plugin 'roxma/nvim-yarp'
-Plugin 'roxma/vim-hug-neovim-rpc'
-Plugin 'zchee/deoplete-jedi'
-Plugin 'davidhalter/jedi-vim'
-" FIX isort to take local apps
-Plugin 'fisadev/vim-isort'
-Plugin 'SirVer/ultisnips'
-Plugin 'sheerun/vim-polyglot'
-call vundle#end()
+call plug#begin('~/.vim/plugged')
+Plug 'endel/vim-github-colorscheme'
+Plug 'gregsexton/Muon'
+Plug 'itchyny/lightline.vim'
+Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-fugitive'
+Plug 'junegunn/gv.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'w0rp/ale'  " make this work in docker django
+Plug 'craigemery/vim-autotag'
+Plug 'jiangmiao/auto-pairs'
+Plug 'mileszs/ack.vim'
+Plug 'janko-m/vim-test'
+Plug 'Vimjas/vim-python-pep8-indent'
+Plug 'tyru/open-browser.vim'
+Plug 'Shougo/deoplete.nvim'
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
+Plug 'zchee/deoplete-jedi'  "make this work in docker jango
+Plug 'davidhalter/jedi-vim' " make this work in docker
+Plug 'fisadev/vim-isort'  " docker django and proper isorting
+Plug 'SirVer/ultisnips'
+Plug 'sheerun/vim-polyglot'
+call plug#end()
 
 filetype on
 filetype plugin indent on
@@ -70,23 +67,22 @@ set nowritebackup
 set noswapfile
 set colorcolumn=80
 set list listchars=tab:»·,trail:·,nbsp:·
+set rtp+=/usr/local/opt/fzf
+set rtp+=~/.fzf
+set wildignore+=*.pyc,node_modules
+set wildignore+=node_modules/*
 
 colorscheme github
 
+let g:indent_guides_enable_on_vim_startup = 1
 let g:netrw_banner = 0
 let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
 let g:netrw_keepdir = 1
 let g:netrw_liststyle = 3
 
-set rtp+=/usr/local/opt/fzf
-set rtp+=~/.fzf
-
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
-
-set wildignore+=*.pyc,node_modules
-set wildignore+=node_modules/*
 
 let test#python#runner = 'pytest'
 let test#python#pytest#executable = 'docker-compose -f dev.yml run --rm --no-deps django pytest -v'
@@ -195,6 +191,11 @@ augroup _fzf
   autocmd ColorScheme * call <sid>update_fzf_colors()
 augroup END
 
+" Per default, netrw leaves unmodified buffers open. This autocommand
+" deletes netrw's buffer once it's hidden (using ':q', for example)
+" https://vi.stackexchange.com/a/13012
+" https://github.com/tpope/vim-vinegar/issues/13#issuecomment-47133890
+autocmd FileType netrw setl bufhidden=delete
 
 let mapleader = ","
 map <Leader>q :q<cr>
