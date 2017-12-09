@@ -11,16 +11,7 @@ alias p="cd ~/Projects/"
 alias pull="git pull"
 alias push="git push origin"
 alias serve="dcomp -f dev.yml run --rm --service-ports django"
-alias ssh_public="cat ~/.ssh/id_rsa.pub"
 alias st="git status --porcelain"
 alias ta="tmux -2 attach -t "
 alias tm="tmux -2"
 alias v="vim "
-
-alias docker-bench-security="docker run -it --net host --pid host --cap-add audit_control \
-    -e DOCKER_CONTENT_TRUST=$DOCKER_CONTENT_TRUST \
-    -v /var/lib:/var/lib \
-    -v /var/run/docker.sock:/var/run/docker.sock \
-    -v /usr/lib/systemd:/usr/lib/systemd \
-    -v /etc:/etc --label docker_bench_security \
-    docker/docker-bench-security"

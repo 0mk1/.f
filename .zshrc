@@ -1,6 +1,9 @@
 source $HOME/antigen.zsh
 export LANG=en_US.UTF-8
 export EDITOR='vim'
+export WORKON_HOME=~/.virtualenvs
+export PROJECT_HOME=$HOME/Projects
+export VIRTUALENVWRAPPER_PYTHON=$(which python3)
 
 antigen use oh-my-zsh
 antigen bundle ssh-agent
@@ -8,12 +11,16 @@ antigen bundle git
 antigen bundle mercurial
 antigen bundle docker
 antigen bundle docker-compose
+antigen bundle virtualenv
+# antigen bundle virtualenvwrapper
 antigen bundle unixorn/autoupdate-antigen.zshplugin
 antigen apply
 
-PROMPT='%F{cyan}%n@%m%{$reset_color%}%{$fg[blue]%} %~/ %{$reset_color%}$(git_prompt_status)$(git_prompt_info)$(hg_prompt_info)
+PROMPT='%F{cyan}%n@%m%{$reset_color%}%{$fg[blue]%} %~/ %{$reset_color%}$(git_prompt_status)$(git_prompt_info)$(hg_prompt_info) $(virtualenv_prompt_info)
 %{$fg[white]%}λ %{$reset_color%}'
 
+ZSH_THEME_VIRTUALENV_PREFIX="%{$fg[red]%}"
+ZSH_THEME_VIRTUALENV_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[green]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_HG_PROMPT_PREFIX="%{$fg[green]%}"

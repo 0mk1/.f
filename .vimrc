@@ -1,8 +1,6 @@
 set nocompatible
 set encoding=utf-8
 
-" TODO: isort, flake8, pylint, completation working with docker
-
 call plug#begin('~/.vim/plugged')
 Plug 'endel/vim-github-colorscheme'
 Plug 'gregsexton/Muon'
@@ -27,10 +25,12 @@ Plug 'Shougo/deoplete.nvim'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'zchee/deoplete-jedi'
-Plug 'davidhalter/jedi-vim'
+Plug 'fisadev/vim-isort'
 Plug 'SirVer/ultisnips'
 Plug 'sheerun/vim-polyglot'
 call plug#end()
+
+" TODO: completation, isort, flake8, pylint run in docker
 
 filetype on
 filetype plugin indent on
@@ -57,7 +57,6 @@ set vb
 set ruler
 set scrolloff=2
 set laststatus=2
-" set nofoldenable
 set foldmethod=indent
 set foldnestmax=1
 set foldlevel=1
@@ -76,7 +75,12 @@ set wildignore+=node_modules/*
 
 colorscheme github
 
-let g:indent_guides_enable_on_vim_startup = 1
+
+" Per default, netrw leaves unmodified buffers open. This autocommand
+" deletes netrw's buffer once it's hidden (using ':q', for example)
+" https://vi.stackexchange.com/a/13012
+" https://github.com/tpope/vim-vinegar/issues/13#issuecomment-47133890
+autocmd FileType netrw setl bufhidden=delete
 let g:netrw_banner = 0
 let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
 let g:netrw_keepdir = 1
@@ -89,12 +93,11 @@ endif
 let test#python#runner = 'pytest'
 let test#python#pytest#executable = 'docker-compose -f dev.yml run --rm --no-deps django pytest -v --durations=3'
 
-let g:jedi#use_tabs_not_buffers = 1
 let g:jedi#completions_enabled = 0
+let g:jedi#use_tabs_not_buffers = 1
 let g:python_host_prog  = '/usr/local/bin/python'
 let g:python3_host_prog = '/usr/local/bin/python3'
-
-au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
+let g:deoplete#enable_at_startup = 1
 
 let g:ale_sign_warning = '▲'
 let g:ale_sign_error = '✗'
@@ -154,15 +157,6 @@ function! s:MaybeUpdateLightline()
     call lightline#update()
   end
 endfunction
-
-" Use deoplete.
-let g:deoplete#enable_at_startup = 1
-
-" Per default, netrw leaves unmodified buffers open. This autocommand
-" deletes netrw's buffer once it's hidden (using ':q', for example)
-" https://vi.stackexchange.com/a/13012
-" https://github.com/tpope/vim-vinegar/issues/13#issuecomment-47133890
-autocmd FileType netrw setl bufhidden=delete
 
 let mapleader = ","
 map <Leader>q :q<cr>
