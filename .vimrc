@@ -1,6 +1,8 @@
 set nocompatible
 set encoding=utf-8
 
+" TODO: isort, flake8, pylint, completation working with docker
+
 call plug#begin('~/.vim/plugged')
 Plug 'endel/vim-github-colorscheme'
 Plug 'gregsexton/Muon'
@@ -13,7 +15,8 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
 Plug 'airblade/vim-gitgutter'
-Plug 'w0rp/ale'  " make this work in docker django
+Plug 'danro/rename.vim'
+Plug 'w0rp/ale'
 Plug 'craigemery/vim-autotag'
 Plug 'jiangmiao/auto-pairs'
 Plug 'mileszs/ack.vim'
@@ -23,9 +26,8 @@ Plug 'tyru/open-browser.vim'
 Plug 'Shougo/deoplete.nvim'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
-Plug 'zchee/deoplete-jedi'  "make this work in docker jango
-Plug 'davidhalter/jedi-vim' " make this work in docker
-Plug 'fisadev/vim-isort'  " docker django and proper isorting
+Plug 'zchee/deoplete-jedi'
+Plug 'davidhalter/jedi-vim'
 Plug 'SirVer/ultisnips'
 Plug 'sheerun/vim-polyglot'
 call plug#end()
@@ -85,7 +87,7 @@ if executable('ag')
 endif
 
 let test#python#runner = 'pytest'
-let test#python#pytest#executable = 'docker-compose -f dev.yml run --rm --no-deps django pytest -v'
+let test#python#pytest#executable = 'docker-compose -f dev.yml run --rm --no-deps django pytest -v --durations=3'
 
 let g:jedi#use_tabs_not_buffers = 1
 let g:jedi#completions_enabled = 0
@@ -156,41 +158,6 @@ endfunction
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
 
-" FZF colorscheme
-function! s:update_fzf_colors()
-  let rules =
-  \ { 'fg':      [['Normal',       'fg']],
-    \ 'bg':      [['Normal',       'bg']],
-    \ 'hl':      [['Comment',      'fg']],
-    \ 'fg+':     [['CursorColumn', 'fg'], ['Normal', 'fg']],
-    \ 'bg+':     [['CursorColumn', 'bg']],
-    \ 'hl+':     [['Statement',    'fg']],
-    \ 'info':    [['PreProc',      'fg']],
-    \ 'prompt':  [['Conditional',  'fg']],
-    \ 'pointer': [['Exception',    'fg']],
-    \ 'marker':  [['Keyword',      'fg']],
-    \ 'spinner': [['Label',        'fg']],
-    \ 'header':  [['Comment',      'fg']] }
-  let cols = []
-  for [name, pairs] in items(rules)
-    for pair in pairs
-      let code = synIDattr(synIDtrans(hlID(pair[0])), pair[1])
-      if !empty(name) && code > 0
-        call add(cols, name.':'.code)
-        break
-      endif
-    endfor
-  endfor
-  let s:orig_fzf_default_opts = get(s:, 'orig_fzf_default_opts', $FZF_DEFAULT_OPTS)
-  let $FZF_DEFAULT_OPTS = s:orig_fzf_default_opts .
-        \ empty(cols) ? '' : (' --color='.join(cols, ','))
-endfunction
-
-augroup _fzf
-  autocmd!
-  autocmd ColorScheme * call <sid>update_fzf_colors()
-augroup END
-
 " Per default, netrw leaves unmodified buffers open. This autocommand
 " deletes netrw's buffer once it's hidden (using ':q', for example)
 " https://vi.stackexchange.com/a/13012
@@ -212,6 +179,7 @@ nmap <Leader>cx :cclose<CR>
 nmap <Leader>ea :tabnew ~/.aliases<CR>
 nmap <Leader>es :tabnew ~/.vim/UltiSnips/<CR>
 nmap <Leader>ev :tabnew ~/.vimrc<CR>
+nmap <Leader>et :tabnew ~/.tmux.conf<CR>
 nmap <Leader>ez :tabnew ~/.zshrc<CR>
 nmap <Leader>f :e .<CR>
 nmap <c-t> :Tags<CR>

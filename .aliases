@@ -7,7 +7,6 @@ alias diff="git diff"
 alias gcmt="git commit -v"
 alias gco="git checkout"
 alias glog="git log --color --graph"
-alias mkvnv="mkvirtualenv -p python3 "
 alias p="cd ~/Projects/"
 alias pull="git pull"
 alias push="git push origin"
@@ -17,7 +16,6 @@ alias st="git status --porcelain"
 alias ta="tmux -2 attach -t "
 alias tm="tmux -2"
 alias v="vim "
-alias vnv="workon "
 
 alias docker-bench-security="docker run -it --net host --pid host --cap-add audit_control \
     -e DOCKER_CONTENT_TRUST=$DOCKER_CONTENT_TRUST \

@@ -7,6 +7,7 @@ username = Mateusz Kamycki <m.kamycki@merixstudio.com>
 # (see "hg help extensions" for more info)
 #
 pager =
+shelve =
 progress =
 color =
 purge =
