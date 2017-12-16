@@ -25,7 +25,12 @@ Plug 'Shougo/deoplete.nvim'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'zchee/deoplete-jedi'
+Plug 'plasticboy/vim-markdown'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
+Plug 'davidhalter/jedi-vim'
 Plug 'fisadev/vim-isort'
+Plug 'google/yapf', { 'rtp': 'plugins/vim' }
 Plug 'SirVer/ultisnips'
 Plug 'sheerun/vim-polyglot'
 call plug#end()
@@ -75,6 +80,12 @@ set wildignore+=node_modules/*
 
 colorscheme github
 
+" writing
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
+autocmd BufNewFile,BufRead *.notes set filetype=markdown
+autocmd FileType markdown set spell spelllang=en_us
+set sps=best,10
 
 " Per default, netrw leaves unmodified buffers open. This autocommand
 " deletes netrw's buffer once it's hidden (using ':q', for example)
@@ -175,6 +186,7 @@ nmap <Leader>es :tabnew ~/.vim/UltiSnips/<CR>
 nmap <Leader>ev :tabnew ~/.vimrc<CR>
 nmap <Leader>et :tabnew ~/.tmux.conf<CR>
 nmap <Leader>ez :tabnew ~/.zshrc<CR>
+nmap <Leader>en :new ~/Dysk Google/.notes<CR>
 nmap <Leader>f :e .<CR>
 nmap <c-t> :Tags<CR>
 nmap <c-p> :Files<CR>
@@ -205,5 +217,6 @@ noremap <Leader>8 8gt
 noremap <Leader>9 9gt
 noremap <Leader>bs :resize 90<cr>
 noremap <Leader>ss :resize 10<cr>
+vnoremap <Leader>fy :'<,'>call yapf#YAPF()<cr>
 vnoremap < <gv
 noremap > >gv
