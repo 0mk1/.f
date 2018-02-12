@@ -12,7 +12,7 @@ antigen bundle mercurial
 antigen bundle docker
 antigen bundle docker-compose
 antigen bundle virtualenv
-# antigen bundle virtualenvwrapper
+antigen bundle virtualenvwrapper
 antigen bundle unixorn/autoupdate-antigen.zshplugin
 antigen apply
 

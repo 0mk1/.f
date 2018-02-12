@@ -14,6 +14,11 @@ snippet doc "simple docstring" b
 """$0"""
 endsnippet
 
+snippet def "function" b
+def ${1:name}(${2:arg}):
+	$3
+endsnippet
+
 snippet defm "method" b
 def ${1:name}(self, ${2:arg}):
 	$3
@@ -83,4 +88,30 @@ endsnippet
 
 snippet get_user_model "" b
 from django.contrib.auth import get_user_model
+endsnippet
+
+snippet validation "validation" b
+def validate(self, data):
+		validated_data = super().validate(data)
+		errors = defaultdict(list)
+		start_date = validated_data['start_date']
+		end_date = validated_data['end_date']
+
+		errors = self.validate_start_and_end_dates(
+				errors,
+				start_date,
+				end_date
+		)
+
+		if errors:
+				raise serializers.ValidationError(errors)
+
+		return validated_data
+
+def validate_start_and_end_dates(self, errors, start_date, end_date):
+		if start_date >= end_date:
+				errors['end_date'].append(
+						_('User {} had activated account'),
+				)
+		return errors
 endsnippet

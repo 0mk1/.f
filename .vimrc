@@ -25,17 +25,16 @@ Plug 'Shougo/deoplete.nvim'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'zchee/deoplete-jedi'
-Plug 'plasticboy/vim-markdown'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'davidhalter/jedi-vim'
+Plug 'plytophogy/vim-virtualenv'
 Plug 'fisadev/vim-isort'
 Plug 'google/yapf', { 'rtp': 'plugins/vim' }
 Plug 'SirVer/ultisnips'
 Plug 'sheerun/vim-polyglot'
+Plug 'Glench/Vim-Jinja2-Syntax'
 call plug#end()
-
-" TODO: completation, isort, flake8, pylint run in docker
 
 filetype on
 filetype plugin indent on
@@ -63,8 +62,8 @@ set ruler
 set scrolloff=2
 set laststatus=2
 set foldmethod=indent
-set foldnestmax=1
-set foldlevel=1
+set foldnestmax=3
+set foldlevel=3
 set clipboard=unnamed
 set wildmenu
 set wildmode=list:longest,full
@@ -77,15 +76,14 @@ set rtp+=/usr/local/opt/fzf
 set rtp+=~/.fzf
 set wildignore+=*.pyc,node_modules
 set wildignore+=node_modules/*
+set autoread
 
 colorscheme github
+" colorscheme muon
 
 " writing
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
-autocmd BufNewFile,BufRead *.notes set filetype=markdown
-autocmd FileType markdown set spell spelllang=en_us
-set sps=best,10
 
 " Per default, netrw leaves unmodified buffers open. This autocommand
 " deletes netrw's buffer once it's hidden (using ':q', for example)
@@ -101,8 +99,10 @@ if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
 
+let g:python_docker_command = 'docker-compose -f dev.yml run --rm --no-deps django '
+
 let test#python#runner = 'pytest'
-let test#python#pytest#executable = 'docker-compose -f dev.yml run --rm --no-deps django pytest -v --durations=3'
+let test#python#pytest#executable = python_docker_command . 'pytest -v --durations=3'
 
 let g:jedi#completions_enabled = 0
 let g:jedi#use_tabs_not_buffers = 1
@@ -110,6 +110,9 @@ let g:python_host_prog  = '/usr/local/bin/python'
 let g:python3_host_prog = '/usr/local/bin/python3'
 let g:deoplete#enable_at_startup = 1
 
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_sign_warning = '▲'
 let g:ale_sign_error = '✗'
 highlight link ALEWarningSign String
@@ -186,7 +189,9 @@ nmap <Leader>es :tabnew ~/.vim/UltiSnips/<CR>
 nmap <Leader>ev :tabnew ~/.vimrc<CR>
 nmap <Leader>et :tabnew ~/.tmux.conf<CR>
 nmap <Leader>ez :tabnew ~/.zshrc<CR>
-nmap <Leader>en :new ~/Dysk Google/.notes<CR>
+nmap <Leader>en :new ~/Documents/notes.md<CR>
+nmap <Leader>eN :new ~/Documents/notes-weekends.md<CR>
+nmap <Leader>gy :Goyo<CR>
 nmap <Leader>f :e .<CR>
 nmap <c-t> :Tags<CR>
 nmap <c-p> :Files<CR>
