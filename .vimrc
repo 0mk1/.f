@@ -21,6 +21,7 @@ Plug 'mileszs/ack.vim'
 Plug 'janko-m/vim-test'
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'tyru/open-browser.vim'
+Plug 'iamcco/markdown-preview.vim'
 Plug 'Shougo/deoplete.nvim'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
@@ -77,8 +78,8 @@ set wildignore+=node_modules/*
 set autoread
 
 colorscheme github
-" colorscheme muon
 
+autocmd Filetype gitcommit setlocal spell textwidth=72
 " Per default, netrw leaves unmodified buffers open. This autocommand
 " deletes netrw's buffer once it's hidden (using ':q', for example)
 " https://vi.stackexchange.com/a/13012
@@ -183,9 +184,9 @@ nmap <Leader>es :tabnew ~/.vim/UltiSnips/<CR>
 nmap <Leader>ev :tabnew ~/.vimrc<CR>
 nmap <Leader>et :tabnew ~/.tmux.conf<CR>
 nmap <Leader>ez :tabnew ~/.zshrc<CR>
+nmap <Leader>eg :tabnew ~/.gitconfig<CR>
 nmap <Leader>en :vsp ~/Documents/todo.md<CR>
-nmap <Leader>eN :vsp ~/Documents/notes-work.md<CR>
-nmap <Leader>eB :vsp ~/Documents/notes-book.md<CR>
+nmap <Leader>eN :vsp ~/Documents/notes-book.md<CR>
 nmap <Leader>f :e .<CR>
 nmap <c-t> :Tags<CR>
 nmap <c-p> :Files<CR>

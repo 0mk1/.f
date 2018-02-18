@@ -1,19 +1,29 @@
 [user]
   name = Mateusz Kamycki
   email = mateusz.kamycki@gmail.com
-
 [color]
   ui = true
   diff = auto
   status = auto
   branch = auto
-
 [core]
-	excludesfile = /Users/mkamycki/.gitignore_global
+  excludesfile = /Users/mkamycki/.gitignore_global
   editor = vim
-
 [github]
   user = toffi9
-
 [push]
   default = current
+[merge]
+  ff = only
+[help]
+  autocorrect = 1
+[alias]
+  all = add -A
+  bdel = branch --delete
+  bls = branch -a
+  cb = checkout -b
+  cmt = commit -v
+  co = checkout
+  lg = log --color --graph
+  rbdel = push origin --delete
+  st = status --porcelain
