@@ -25,8 +25,6 @@ Plug 'Shougo/deoplete.nvim'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'zchee/deoplete-jedi'
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
 Plug 'davidhalter/jedi-vim'
 Plug 'plytophogy/vim-virtualenv'
 Plug 'fisadev/vim-isort'
@@ -81,10 +79,6 @@ set autoread
 colorscheme github
 " colorscheme muon
 
-" writing
-autocmd! User GoyoEnter Limelight
-autocmd! User GoyoLeave Limelight!
-
 " Per default, netrw leaves unmodified buffers open. This autocommand
 " deletes netrw's buffer once it's hidden (using ':q', for example)
 " https://vi.stackexchange.com/a/13012
@@ -102,7 +96,7 @@ endif
 let g:python_docker_command = 'docker-compose -f dev.yml run --rm --no-deps django '
 
 let test#python#runner = 'pytest'
-let test#python#pytest#executable = python_docker_command . 'pytest -v --durations=3'
+let test#python#pytest#executable = python_docker_command . 'pytest -vv'
 
 let g:jedi#completions_enabled = 0
 let g:jedi#use_tabs_not_buffers = 1
@@ -189,9 +183,9 @@ nmap <Leader>es :tabnew ~/.vim/UltiSnips/<CR>
 nmap <Leader>ev :tabnew ~/.vimrc<CR>
 nmap <Leader>et :tabnew ~/.tmux.conf<CR>
 nmap <Leader>ez :tabnew ~/.zshrc<CR>
-nmap <Leader>en :new ~/Documents/notes.md<CR>
-nmap <Leader>eN :new ~/Documents/notes-weekends.md<CR>
-nmap <Leader>gy :Goyo<CR>
+nmap <Leader>en :vsp ~/Documents/todo.md<CR>
+nmap <Leader>eN :vsp ~/Documents/notes-work.md<CR>
+nmap <Leader>eB :vsp ~/Documents/notes-book.md<CR>
 nmap <Leader>f :e .<CR>
 nmap <c-t> :Tags<CR>
 nmap <c-p> :Files<CR>

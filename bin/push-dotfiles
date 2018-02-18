@@ -1,5 +1,5 @@
 #!/bin/bash
-cd ~/Projects/dotfiles/
+cd ~/Projects/github/dotfiles/
 
 git add -A
 git commit -m "dotfiles sync $(date +"%Y%m%d")"
