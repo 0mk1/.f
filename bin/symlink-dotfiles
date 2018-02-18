@@ -7,7 +7,7 @@ echo "---- Creating symlinks ----"
 
 # Folders
 ln -fs $PWD/bin/ $HOME
-ln -fs $PWD/.vim/ $HOME
+ln -fs $PWD/.vim/UltiSnips/ $HOME/.vim/
 
 # Files
 ln -fs $PWD/.aliases $HOME
