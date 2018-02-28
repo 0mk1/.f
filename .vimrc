@@ -1,4 +1,3 @@
-set nocompatible
 set encoding=utf-8
 
 call plug#begin('~/.vim/plugged')
@@ -19,7 +18,6 @@ Plug 'craigemery/vim-autotag'
 Plug 'jiangmiao/auto-pairs'
 Plug 'mileszs/ack.vim'
 Plug 'janko-m/vim-test'
-Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'tyru/open-browser.vim'
 Plug 'iamcco/markdown-preview.vim'
 Plug 'Shougo/deoplete.nvim'
@@ -186,7 +184,7 @@ nmap <Leader>et :tabnew ~/.tmux.conf<CR>
 nmap <Leader>ez :tabnew ~/.zshrc<CR>
 nmap <Leader>eg :tabnew ~/.gitconfig<CR>
 nmap <Leader>en :vsp ~/Documents/todo.md<CR>
-nmap <Leader>eN :vsp ~/Documents/notes-book.md<CR>
+nmap <Leader>eN :tabnew ~/Documents/todo.md<CR>
 nmap <Leader>f :e .<CR>
 nmap <c-t> :Tags<CR>
 nmap <c-p> :Files<CR>

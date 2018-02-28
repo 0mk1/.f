@@ -27,3 +27,4 @@
   lg = log --color --graph
   rbdel = push origin --delete
   st = status --porcelain
+  rbprune = remote update origin --prune
