@@ -7,7 +7,7 @@
   status = auto
   branch = auto
 [core]
-  excludesfile = /Users/mkamycki/.gitignore_global
+  excludesfile = ~/.gitignore_global
   editor = vim
 [github]
   user = toffi9
