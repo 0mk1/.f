@@ -7,7 +7,7 @@
   status = auto
   branch = auto
 [core]
-  excludesfile = ~/.gitignore_global
+	excludesfile = /Users/mkamycki/.gitignore_global
   editor = vim
 [github]
   user = toffi9
@@ -28,3 +28,9 @@
   rbdel = push origin --delete
   st = status --porcelain
   rbprune = remote update origin --prune
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true

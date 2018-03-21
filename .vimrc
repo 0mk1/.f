@@ -94,8 +94,10 @@ endif
 
 let g:python_docker_command = 'docker-compose -f dev.yml run --rm --no-deps django '
 
-let test#python#runner = 'pytest'
-let test#python#pytest#executable = python_docker_command . 'pytest -vv'
+let test#python#runner = 'djangotest'
+let test#python#djangotest#executable = 'coverage run test_settings.py test'
+" let test#python#runner = 'pytest'
+" let test#python#pytest#executable = python_docker_command . 'pytest -vv'
 
 let g:jedi#completions_enabled = 0
 let g:jedi#use_tabs_not_buffers = 1
