@@ -2,9 +2,8 @@
 
 echo 'dotfiles' &&
 cd ~/Projects/github/dotfiles/ &&
-git pull &&
+git pull
 
 echo 'dotfiles-private' &&
 cd ~/Projects/bitbucket/dotfiles-private/ &&
-git pull &&
-exit 0
+git pull

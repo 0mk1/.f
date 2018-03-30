@@ -3,11 +3,10 @@ cd ~/Projects/github/dotfiles/ &&
 echo 'dotfiles' &&
 git add -A &&
 git commit -m "dotfiles sync $(date +"%Y%m%d")" &&
-git push origin master &&
+git push origin master
 
 cd ~/Projects/bitbucket/dotfiles-private/ &&
 echo 'dotfiles-private' &&
 git add -A &&
 git commit -m "dotfiles sync $(date +"%Y%m%d")" &&
-git push origin master &&
-exit 0
+git push origin master
