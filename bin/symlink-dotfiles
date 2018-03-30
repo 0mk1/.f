@@ -1,20 +1,25 @@
 #!/bin/bash
 
 echo "Changing directory to ~/Projects/dotfiles/"
-cd ~/Projects/github/dotfiles/
+cd ~/Projects/github/dotfiles/ &&
 
-echo "---- Creating symlinks ----"
+echo "---- Creating symlinks ----" &&
 
 # Folders
-ln -fs $PWD/bin/ $HOME
-ln -fs $PWD/.vim/UltiSnips/ $HOME/.vim/
+ln -fs $PWD/bin/ $HOME &&
+ln -fs $PWD/.vim/UltiSnips/ $HOME/.vim/ &&
 
 # Files
-ln -fs $PWD/.aliases $HOME
-ln -fs $PWD/.ctags $HOME
-ln -fs $PWD/.gitconfig $HOME
-ln -fs $PWD/.gitignore_global $HOME
-ln -fs $PWD/.hgrc $HOME
-ln -fs $PWD/.tmux.conf $HOME
-ln -fs $PWD/.vimrc $HOME
-ln -fs $PWD/.zshrc $HOME
+ln -fs $PWD/.aliases $HOME &&
+ln -fs $PWD/.ctags $HOME &&
+ln -fs $PWD/.gitconfig $HOME &&
+ln -fs $PWD/.gitignore_global $HOME &&
+ln -fs $PWD/.hgrc $HOME &&
+ln -fs $PWD/.tmux.conf $HOME &&
+ln -fs $PWD/.vimrc $HOME &&
+ln -fs $PWD/.zshrc $HOME &&
+
+cd ~/Projects/bitbucket/dotfiles-private/ &&
+ln -fs $PWD/.ssh/ $HOME &&
+ln -fs $PWD/Documents/ $HOME &&
+exit 0
