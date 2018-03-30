@@ -186,6 +186,7 @@ nmap <Leader>et :tabnew ~/.tmux.conf<CR>
 nmap <Leader>ez :tabnew ~/.zshrc<CR>
 nmap <Leader>eg :tabnew ~/.gitconfig<CR>
 nmap <Leader>en :vsp ~/Documents/todo.md<CR>
+nmap <Leader>ew :vsp ~/Documents/work-notes.md<CR>
 nmap <Leader>eN :tabnew ~/Documents/todo.md<CR>
 nmap <Leader>f :e .<CR>
 nmap <c-t> :Tags<CR>

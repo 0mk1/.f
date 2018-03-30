@@ -41,3 +41,5 @@ stty -ixon  # Ctrl + s not hanging vim
 eval "$(pyenv init -)"
 
 source $HOME/.aliases
+
+push-dotfiles

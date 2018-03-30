@@ -1,12 +1,13 @@
 #!/bin/bash
+mkdir -p ~/Projects/bitbucket/ &&
+mkdir -p ~/Projects/github/ &&
 # setup mac options: capslock
 # chrome
 # brew
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" &&
 # git
-brew install git
+brew install git &&
 # iterm and config from dotfiles
-
 # Specify the preferences directory
 defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/Projects/github/dotfiles/iterm2"
 # Tell iTerm2 to use the custom preferences in the directory
@@ -31,11 +32,10 @@ chsh -s $(which zsh)
 # antigen
 cd ~ && curl -L git.io/antigen > antigen.zsh
 
-# symlink dotfiles
-cd ~/Projects/github/dotfiles && ./bin/symlink-dotfiles
-
 # aws-cli
 # install utils
 brew install fzf ctags ag fd coreutils httpie
 
 # docker, docker-compose
+# symlink dotfiles
+cd ~/Projects/github/dotfiles && ./bin/symlink-dotfiles
