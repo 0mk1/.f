@@ -75,7 +75,8 @@ set wildignore+=*.pyc,node_modules
 set wildignore+=node_modules/*
 set autoread
 
-colorscheme github
+" colorscheme github
+colorscheme muon
 
 autocmd Filetype gitcommit setlocal spell textwidth=72
 " Per default, netrw leaves unmodified buffers open. This autocommand
