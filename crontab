@@ -1,0 +1,2 @@
+MAILTO=""
+0 12 * * * push-dotfiles >> /var/log/push-dotfiles.log 2>&1
