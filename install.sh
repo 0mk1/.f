@@ -34,7 +34,7 @@ cd ~ && curl -L git.io/antigen > antigen.zsh
 
 # aws-cli
 # install utils
-brew install fzf ctags ag fd coreutils httpie
+brew install fzf ctags ag fd coreutils httpie jq
 
 # docker, docker-compose
 # symlink dotfiles

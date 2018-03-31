@@ -38,6 +38,8 @@ export FZF_DEFAULT_OPTS="--color=dark,spinner:80,pointer:80"
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 
 stty -ixon  # Ctrl + s not hanging vim
+
 eval "$(pyenv init -)"
 
+source $HOME/bin/awsp_functions
 source $HOME/.aliases
