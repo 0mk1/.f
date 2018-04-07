@@ -186,9 +186,8 @@ nmap <Leader>ev :tabnew ~/.vimrc<CR>
 nmap <Leader>et :tabnew ~/.tmux.conf<CR>
 nmap <Leader>ez :tabnew ~/.zshrc<CR>
 nmap <Leader>eg :tabnew ~/.gitconfig<CR>
-nmap <Leader>en :vsp ~/Documents/todo.md<CR>
-nmap <Leader>ew :vsp ~/Documents/todo-longterm.md<CR>
-nmap <Leader>eN :tabnew ~/Documents/todo.md<CR>
+nmap <Leader>en :tabnew ~/Documents/todo.md<CR>
+nmap <Leader>ew :tabnew ~/Documents/todo-longterm.md<CR>
 nmap <Leader>f :e .<CR>
 nmap <c-t> :Tags<CR>
 nmap <c-p> :Files<CR>
