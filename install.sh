@@ -33,8 +33,10 @@ chsh -s $(which zsh)
 cd ~ && curl -L git.io/antigen > antigen.zsh
 
 # aws-cli
+
 # install utils
-brew install fzf ctags ag fd coreutils httpie jq
+brew tap wata727/tflint
+brew install fzf ctags ag fd coreutils httpie jq tflint
 
 # docker, docker-compose
 # symlink dotfiles

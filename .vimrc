@@ -95,10 +95,10 @@ endif
 
 let g:python_docker_command = 'docker-compose -f dev.yml run --rm --no-deps django '
 
-let test#python#runner = 'djangotest'
-let test#python#djangotest#executable = 'coverage run test_settings.py test'
-" let test#python#runner = 'pytest'
-" let test#python#pytest#executable = python_docker_command . 'pytest -vv'
+" let test#python#runner = 'djangotest'
+" let test#python#djangotest#executable = 'python setup.py test'
+let test#python#runner = 'pytest'
+let test#python#pytest#executable = python_docker_command . 'pytest -vv'
 
 let g:jedi#completions_enabled = 0
 let g:jedi#use_tabs_not_buffers = 1
@@ -187,7 +187,6 @@ nmap <Leader>et :tabnew ~/.tmux.conf<CR>
 nmap <Leader>ez :tabnew ~/.zshrc<CR>
 nmap <Leader>eg :tabnew ~/.gitconfig<CR>
 nmap <Leader>en :tabnew ~/Documents/todo.md<CR>
-nmap <Leader>ew :tabnew ~/Documents/todo-longterm.md<CR>
 nmap <Leader>f :e .<CR>
 nmap <c-t> :Tags<CR>
 nmap <c-p> :Files<CR>
