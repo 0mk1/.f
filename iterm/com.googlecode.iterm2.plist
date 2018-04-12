@@ -1056,9 +1056,11 @@
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/Projects/github/dotfiles/iterm</string>
+	<string>~/Documents</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
-	<string>{876, 448}</string>
+	<string>{712, 448}</string>
+	<key>NSNavPanelExpandedSizeForSaveMode</key>
+	<string>{712, 448}</string>
 	<key>NSQuotedKeystrokeBinding</key>
 	<string></string>
 	<key>NSRepeatCountBinding</key>
@@ -1090,20 +1092,16 @@
 	</data>
 	<key>NSTableView Supports v2 KeyBingingTable</key>
 	<true/>
-	<key>NSWindow Frame NSFontPanel</key>
-	<string>552 667 445 77 0 0 1440 878 </string>
 	<key>NSWindow Frame ProfilesPanel</key>
-	<string>206 625 735 382 0 0 1680 1028 </string>
-	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>400 1849 620 392 185 900 1050 1658 </string>
+	<string>458 1705 735 382 -89 1050 1920 1200 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
-	<string>290 1498 599 401 -87 900 1680 1028 </string>
+	<string>671 1696 599 404 -89 1050 1920 1200 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>458 550 796 473 0 0 1680 1028 </string>
+	<string>253 1335 918 401 -89 1050 1920 1200 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>404 576 570 452 0 0 1680 1050 </string>
+	<string>202 1554 570 452 -89 1050 1920 1200 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>0 426 570 452 0 0 1440 878 </string>
+	<string>212 105 570 452 0 0 1680 1050 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1692,7 +1690,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>Monaco 12</string>
+			<string>Monaco 14</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<false/>
 			<key>Open Toolbelt</key>
@@ -1768,17 +1766,15 @@
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
-	<string>E7D436B2-F80E-44AB-AA27-B1732BB78AFA</string>
-	<key>NoSyncLastTipTime</key>
-	<real>527104896.505072</real>
+	<string>6335050B-95C9-4B15-AD44-37FF9F6F7A50</string>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
+	<true/>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
+	<integer>0</integer>
 	<key>NoSyncPermissionToShowTip</key>
 	<false/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
-	<real>527085866.93195701</real>
-	<key>NoSyncTipsToNotShow</key>
-	<array>
-		<string>000</string>
-	</array>
+	<real>542108477.49786901</real>
 	<key>PMPrintingExpandedStateForPrint2</key>
 	<false/>
 	<key>PointerActions</key>
@@ -1825,11 +1821,11 @@
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/final.xml?shard=47</string>
+	<string>https://iterm2.com/appcasts/final.xml?shard=32</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-03-07T08:28:41Z</date>
+	<date>2018-04-11T12:05:53Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowBookmarkName</key>
