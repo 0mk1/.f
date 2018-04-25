@@ -40,6 +40,7 @@ export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 stty -ixon  # Ctrl + s not hanging vim
 
 eval "$(pyenv init -)"
+eval "$(pipenv --completion)"
 
 source $HOME/bin/awsp_functions
 source $HOME/.aliases
