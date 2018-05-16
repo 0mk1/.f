@@ -18,6 +18,7 @@ Plug 'craigemery/vim-autotag'
 Plug 'jiangmiao/auto-pairs'
 Plug 'mileszs/ack.vim'
 Plug 'janko-m/vim-test'
+Plug 'alfredodeza/coveragepy.vim'
 Plug 'tyru/open-browser.vim'
 Plug 'iamcco/markdown-preview.vim'
 Plug 'Shougo/deoplete.nvim'
@@ -186,7 +187,7 @@ nmap <Leader>ev :tabnew ~/.vimrc<CR>
 nmap <Leader>et :tabnew ~/.tmux.conf<CR>
 nmap <Leader>ez :tabnew ~/.zshrc<CR>
 nmap <Leader>eg :tabnew ~/.gitconfig<CR>
-nmap <Leader>en :tabnew ~/Documents/todo.md<CR>
+nmap <Leader>en :tabnew ~/Documents/<CR>
 nmap <Leader>f :e .<CR>
 nmap <c-t> :Tags<CR>
 nmap <c-p> :Files<CR>
@@ -204,6 +205,7 @@ nmap <silent> <Leader>tf :TestFile<CR>
 nmap <silent> <Leader>tl :TestLast<CR>
 nmap <silent> <Leader>tn :TestNearest<CR>
 nmap <silent> <Leader>ts :TestSuite<CR>
+nmap <silent> <Leader>tc :!coverage run setup.py test && coverage report -m<CR>
 nnoremap <F3> :set hlsearch! hlsearch?<cr>
 noremap <Leader>0 :tabnext<cr>
 noremap <Leader>1 1gt
