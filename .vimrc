@@ -28,10 +28,13 @@ Plug 'zchee/deoplete-jedi'
 Plug 'davidhalter/jedi-vim'
 Plug 'plytophogy/vim-virtualenv'
 Plug 'fisadev/vim-isort'
+Plug 'tmhedberg/matchit'
 Plug 'google/yapf', { 'rtp': 'plugins/vim' }
+" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'SirVer/ultisnips'
 Plug 'sheerun/vim-polyglot'
 Plug 'Glench/Vim-Jinja2-Syntax'
+Plug 'christoomey/vim-tmux-runner'
 call plug#end()
 
 filetype on
@@ -107,6 +110,10 @@ let g:python_host_prog  = '/usr/local/bin/python'
 let g:python3_host_prog = '/usr/local/bin/python3'
 let g:deoplete#enable_at_startup = 1
 
+let g:VtrStripLeadingWhitespace = 0
+let g:VtrClearEmptyLines = 0
+let g:VtrAppendNewline = 1
+
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
@@ -172,7 +179,6 @@ endfunction
 let mapleader = ","
 map <Leader>q :q<cr>
 map <Leader>w :w<cr>
-nmap ; :Buffers<CR>
 nmap <Leader><F6> :source ~/.vimrc<CR>
 nmap <Leader>F :tabnew .<cr>
 nmap <Leader>S :Ack! -i 
@@ -194,6 +200,8 @@ nmap <c-p> :Files<CR>
 nmap <Leader>v :vsp<cr>
 nmap <Leader>W :OpenBrowserSmartSearch 
 nmap <Leader>gs :Gstatus<CR>
+nmap <Leader>gsp :Git st<CR>
+nmap <Leader>gdf :Git diff<CR>
 nmap <Leader>gm :Gcommit<CR>
 nmap <Leader>gco :Git checkout 
 nmap <Leader>gcb :Git checkout -b 
