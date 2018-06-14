@@ -5,12 +5,12 @@ Plug 'endel/vim-github-colorscheme'
 Plug 'gregsexton/Muon'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf.vim'
+Plug 'justinmk/vim-sneak'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
-Plug 'junegunn/gv.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'danro/rename.vim'
 Plug 'w0rp/ale'
@@ -19,7 +19,6 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'mileszs/ack.vim'
 Plug 'janko-m/vim-test'
 Plug 'alfredodeza/coveragepy.vim'
-Plug 'tyru/open-browser.vim'
 Plug 'iamcco/markdown-preview.vim'
 Plug 'Shougo/deoplete.nvim'
 Plug 'roxma/nvim-yarp'
@@ -34,7 +33,6 @@ Plug 'google/yapf', { 'rtp': 'plugins/vim' }
 Plug 'SirVer/ultisnips'
 Plug 'sheerun/vim-polyglot'
 Plug 'Glench/Vim-Jinja2-Syntax'
-Plug 'christoomey/vim-tmux-runner'
 call plug#end()
 
 filetype on
@@ -110,9 +108,7 @@ let g:python_host_prog  = '/usr/local/bin/python'
 let g:python3_host_prog = '/usr/local/bin/python3'
 let g:deoplete#enable_at_startup = 1
 
-let g:VtrStripLeadingWhitespace = 0
-let g:VtrClearEmptyLines = 0
-let g:VtrAppendNewline = 1
+let g:sneak#label = 1
 
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
