@@ -29,7 +29,7 @@ Plug 'plytophogy/vim-virtualenv'
 Plug 'fisadev/vim-isort'
 Plug 'tmhedberg/matchit'
 Plug 'google/yapf', { 'rtp': 'plugins/vim' }
-" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'SirVer/ultisnips'
 Plug 'sheerun/vim-polyglot'
 Plug 'Glench/Vim-Jinja2-Syntax'
@@ -70,7 +70,7 @@ set nobackup
 set nowritebackup
 set noswapfile
 set colorcolumn=80
-set list listchars=tab:»·,trail:·,nbsp:·
+" set list listchars=tab:»·,trail:·,nbsp:·
 set rtp+=/usr/local/opt/fzf
 set rtp+=~/.fzf
 set wildignore+=*.pyc,node_modules
