@@ -55,3 +55,12 @@ function _awsSwitchProfile() {
        aws configure list
    fi
 };
+
+function aws_prof {
+  local profile="${AWS_DEFAULT_PROFILE}"
+
+  if [[ -z "${profile}" ]]
+  then echo ""
+  else echo " ☁️  ${profile}"
+  fi
+}

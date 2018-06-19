@@ -49,7 +49,6 @@ set expandtab
 set nocompatible
 set relativenumber
 set number
-set ambiwidth=double
 set showmatch
 set showcmd
 set noshowmode

@@ -1,9 +1,0 @@
-[ui]
-username = Mateusz Kamycki <m.kamycki@merixstudio.com>
-
-[extensions]
-pager =
-shelve =
-progress =
-color =
-purge =
