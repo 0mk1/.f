@@ -11,6 +11,7 @@ antigen bundle docker  # only autocomplete
 antigen bundle docker-compose  # only autocomplete
 antigen bundle virtualenv
 antigen bundle virtualenvwrapper
+antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle unixorn/autoupdate-antigen.zshplugin
 antigen apply
 

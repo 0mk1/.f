@@ -1,3 +1,5 @@
+scriptencoding utf-8
+set termencoding=utf-8
 set encoding=utf-8
 
 call plug#begin('~/.vim/plugged')
@@ -47,6 +49,7 @@ set expandtab
 set nocompatible
 set relativenumber
 set number
+set ambiwidth=double
 set showmatch
 set showcmd
 set noshowmode
@@ -192,9 +195,10 @@ nmap <Leader>eg :tabnew ~/.gitconfig<CR>
 nmap <Leader>en :tabnew ~/Documents/<CR>
 nmap <Leader>f :e .<CR>
 nmap <c-t> :Tags<CR>
+nmap <Leader>T :BTags<CR>
 nmap <c-p> :Files<CR>
+nmap <c-g> :GFiles?<CR>
 nmap <Leader>v :vsp<cr>
-nmap <Leader>W :OpenBrowserSmartSearch 
 nmap <Leader>gs :Gstatus<CR>
 nmap <Leader>gsp :Git st<CR>
 nmap <Leader>gdf :Git diff<CR>
@@ -221,8 +225,6 @@ noremap <Leader>6 6gt
 noremap <Leader>7 7gt
 noremap <Leader>8 8gt
 noremap <Leader>9 9gt
-noremap <Leader>bs :resize 90<cr>
-noremap <Leader>ss :resize 10<cr>
 vnoremap <Leader>fy :'<,'>call yapf#YAPF()<cr>
 vnoremap < <gv
 noremap > >gv
