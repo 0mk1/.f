@@ -1,6 +1,6 @@
 source $HOME/antigen.zsh
 export LANG=en_US.UTF-8
-export EDITOR='vim'
+export EDITOR='nvim'
 export WORKON_HOME=~/.virtualenvs
 export PROJECT_HOME=$HOME/Projects
 export VIRTUALENVWRAPPER_PYTHON=$(which python3)

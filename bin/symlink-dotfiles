@@ -6,6 +6,7 @@ cd ~/Projects/github/dotfiles/ &&
 echo "---- Creating symlinks ----" &&
 
 # Folders
+ln -fs $PWD/.config/nvim/ $HOME/.config/ &&
 ln -fs $PWD/bin/ $HOME &&
 ln -fs $PWD/.vim/UltiSnips/ $HOME/.vim/ &&
 

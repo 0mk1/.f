@@ -1,45 +1,63 @@
-scriptencoding utf-8
-set termencoding=utf-8
-set encoding=utf-8
-
+" TODO structure this file
 call plug#begin('~/.vim/plugged')
+" looks
 Plug 'endel/vim-github-colorscheme'
-Plug 'gregsexton/Muon'
 Plug 'itchyny/lightline.vim'
+" searching/moving
 Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-sneak'
+Plug 'craigemery/vim-autotag'
+Plug 'mileszs/ack.vim'
+Plug 'tmhedberg/matchit'
+" file managing
+Plug 'danro/rename.vim'
 Plug 'tpope/vim-vinegar'
+" text editing
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
-Plug 'danro/rename.vim'
-Plug 'w0rp/ale'
-Plug 'craigemery/vim-autotag'
 Plug 'jiangmiao/auto-pairs'
-Plug 'mileszs/ack.vim'
-Plug 'janko-m/vim-test'
-Plug 'alfredodeza/coveragepy.vim'
-Plug 'iamcco/markdown-preview.vim'
-Plug 'Shougo/deoplete.nvim'
-Plug 'roxma/nvim-yarp'
-Plug 'roxma/vim-hug-neovim-rpc'
+Plug 'SirVer/ultisnips'
+" autocomplete / Goto definition TODO nvim
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
 Plug 'zchee/deoplete-jedi'
 Plug 'davidhalter/jedi-vim'
+" linting
+Plug 'w0rp/ale'
+" general tools (git, test runner)
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'janko-m/vim-test'
+" python specific
+Plug 'alfredodeza/coveragepy.vim'
 Plug 'plytophogy/vim-virtualenv'
 Plug 'fisadev/vim-isort'
-Plug 'tmhedberg/matchit'
 Plug 'google/yapf', { 'rtp': 'plugins/vim' }
+" golang specific
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'SirVer/ultisnips'
-Plug 'sheerun/vim-polyglot'
+" syntax highlight
 Plug 'Glench/Vim-Jinja2-Syntax'
+Plug 'pearofducks/ansible-vim'
+Plug 'moby/moby', { 'rtp': 'moby/contrib/syntax/vim/syntax/dockerfile.vim' }
+Plug 'othree/html5.vim'
+Plug 'martinda/Jenkinsfile-vim-syntax'
+Plug 'chr4/nginx.vim'
+Plug 'hashivim/vim-terraform'
+Plug 'stephpy/vim-yaml'
 call plug#end()
 
 filetype on
 filetype plugin indent on
 syntax on
+scriptencoding utf-8
+set termencoding=utf-8
+set encoding=utf-8
 set autoindent
 set tabstop=2
 set path+=**
@@ -80,7 +98,6 @@ set wildignore+=node_modules/*
 set autoread
 
 colorscheme github
-" colorscheme muon
 
 autocmd Filetype gitcommit setlocal spell textwidth=72
 " Per default, netrw leaves unmodified buffers open. This autocommand
@@ -106,7 +123,7 @@ let test#python#pytest#executable = python_docker_command . 'pytest -vv'
 
 let g:jedi#completions_enabled = 0
 let g:jedi#use_tabs_not_buffers = 1
-let g:python_host_prog  = '/usr/local/bin/python'
+let g:python_host_prog  = '/usr/local/bin/python3'
 let g:python3_host_prog = '/usr/local/bin/python3'
 let g:deoplete#enable_at_startup = 1
 
@@ -163,9 +180,6 @@ function! LightlineLinterOK() abort
 endfunction
 
 autocmd User ALELint call s:MaybeUpdateLightline()
-let g:ale_linters = {
-\   'javascript': ['eslint'],
-\}
 
 " Update and show lightline but only if it's visible (e.g., not in Goyo)
 function! s:MaybeUpdateLightline()
