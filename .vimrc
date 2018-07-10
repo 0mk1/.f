@@ -32,15 +32,15 @@ Plug 'davidhalter/jedi-vim'
 Plug 'w0rp/ale'
 " general tools (git, test runner)
 Plug 'tpope/vim-fugitive'
+Plug 'christoomey/vim-conflicted'
 Plug 'airblade/vim-gitgutter'
 Plug 'janko-m/vim-test'
 " python specific
 Plug 'alfredodeza/coveragepy.vim'
 Plug 'plytophogy/vim-virtualenv'
 Plug 'fisadev/vim-isort'
+Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'google/yapf', { 'rtp': 'plugins/vim' }
-" golang specific
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 " syntax highlight
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'pearofducks/ansible-vim'
@@ -109,6 +109,8 @@ let g:netrw_banner = 0
 let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
 let g:netrw_keepdir = 1
 let g:netrw_liststyle = 3
+let g:netrw_altv = 1
+let g:netrw_browse_split = 4
 
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
@@ -192,7 +194,7 @@ let mapleader = ","
 map <Leader>q :q<cr>
 map <Leader>w :w<cr>
 nmap <Leader><F6> :source ~/.vimrc<CR>
-nmap <Leader>F :tabnew .<cr>
+nmap <Leader>f :tabnew  .<cr>
 nmap <Leader>S :Ack! -i 
 nmap <Leader>na :ALENext<cr>
 nmap <Leader>cn :cnext<CR>
@@ -206,7 +208,6 @@ nmap <Leader>et :tabnew ~/.tmux.conf<CR>
 nmap <Leader>ez :tabnew ~/.zshrc<CR>
 nmap <Leader>eg :tabnew ~/.gitconfig<CR>
 nmap <Leader>en :tabnew ~/Documents/<CR>
-nmap <Leader>f :e .<CR>
 nmap <c-t> :Tags<CR>
 nmap <Leader>T :BTags<CR>
 nmap <c-p> :Files<CR>

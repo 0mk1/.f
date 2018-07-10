@@ -12,9 +12,10 @@ defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/Projects
 defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 # virtualenvwrapper
 pip install virtualenvwrapper 
-# vim8 with flags
+# nvim
 pip install neovim
-brew install vim --with-python3
+pip3 install neovim
+brew install nvim
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 # tmux
