@@ -109,8 +109,6 @@ let g:netrw_banner = 0
 let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
 let g:netrw_keepdir = 1
 let g:netrw_liststyle = 3
-let g:netrw_altv = 1
-let g:netrw_browse_split = 4
 
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
@@ -195,6 +193,7 @@ map <Leader>q :q<cr>
 map <Leader>w :w<cr>
 nmap <Leader><F6> :source ~/.vimrc<CR>
 nmap <Leader>f :tabnew  .<cr>
+nmap <Leader>F :tabnew<cr>
 nmap <Leader>S :Ack! -i 
 nmap <Leader>na :ALENext<cr>
 nmap <Leader>cn :cnext<CR>
@@ -212,13 +211,14 @@ nmap <c-t> :Tags<CR>
 nmap <Leader>T :BTags<CR>
 nmap <c-p> :Files<CR>
 nmap <c-g> :GFiles?<CR>
-nmap <Leader>v :vsp<cr>
+nmap <Leader>v :vnew<cr>
 nmap <Leader>gs :Gstatus<CR>
 nmap <Leader>gsp :Git st<CR>
 nmap <Leader>gdf :Git diff<CR>
 nmap <Leader>gm :Gcommit<CR>
 nmap <Leader>gco :Git checkout 
 nmap <Leader>gcb :Git checkout -b 
+nmap <Leader><F4> :set nonumber<CR>:set norelativenumber<CR>
 nmap <c-h> <c-w>h
 nmap <c-j> <c-w>j
 nmap <c-k> <c-w>k
