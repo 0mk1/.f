@@ -3,6 +3,7 @@ call plug#begin('~/.vim/plugged')
 " looks
 Plug 'endel/vim-github-colorscheme'
 Plug 'itchyny/lightline.vim'
+Plug 'gosukiwi/vim-atom-dark'
 " searching/moving
 Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-sneak'
@@ -35,6 +36,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'christoomey/vim-conflicted'
 Plug 'airblade/vim-gitgutter'
 Plug 'janko-m/vim-test'
+Plug 'majutsushi/tagbar'
 " python specific
 Plug 'alfredodeza/coveragepy.vim'
 Plug 'plytophogy/vim-virtualenv'
@@ -50,6 +52,7 @@ Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'chr4/nginx.vim'
 Plug 'hashivim/vim-terraform'
 Plug 'stephpy/vim-yaml'
+Plug 'gabrielelana/vim-markdown'
 call plug#end()
 
 filetype on
@@ -113,6 +116,8 @@ let g:netrw_liststyle = 3
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
+
+let g:markdown_enable_spell_checking = 0
 
 let g:python_docker_command = 'docker-compose -f dev.yml run --rm --no-deps django '
 
@@ -218,7 +223,7 @@ nmap <Leader>gdf :Git diff<CR>
 nmap <Leader>gm :Gcommit<CR>
 nmap <Leader>gco :Git checkout 
 nmap <Leader>gcb :Git checkout -b 
-nmap <Leader><F4> :set nonumber<CR>:set norelativenumber<CR>
+nmap <Leader><F4> :set nonumber<CR>:set norelativenumber<CR>:GitGutterToggle<CR>
 nmap <c-h> <c-w>h
 nmap <c-j> <c-w>j
 nmap <c-k> <c-w>k
@@ -242,3 +247,5 @@ noremap <Leader>9 9gt
 vnoremap <Leader>fy :'<,'>call yapf#YAPF()<cr>
 vnoremap < <gv
 noremap > >gv
+tnoremap <Leader>! <C-\><C-n>
+nmap <F8> :TagbarToggle<CR>

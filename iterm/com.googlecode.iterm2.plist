@@ -1103,11 +1103,11 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>621 412 606 469 0 0 1680 1028 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>268 453 918 401 0 0 1680 1028 </string>
+	<string>268 414 918 512 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>30 1699 650 502 -118 1050 1920 1178 </string>
+	<string>30 1598 650 502 -118 1050 1920 1200 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>1310 66 367 962 0 0 1680 1028 </string>
+	<string>1313 56 367 972 0 0 1680 1028 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -2016,7 +2016,7 @@
 				<string>1</string>
 			</dict>
 			<key>Custom Command</key>
-			<string>Yes</string>
+			<string>No</string>
 			<key>Custom Directory</key>
 			<string>Advanced</string>
 			<key>Default Bookmark</key>
