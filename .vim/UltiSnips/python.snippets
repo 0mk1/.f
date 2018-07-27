@@ -100,3 +100,21 @@ snippet validate "validation" b
 
         return validated_data
 endsnippet
+
+snippet db_logging "" b
+'LOGGING': {
+		'version': 1,
+		'handlers': {
+				'console': {
+						'level': 'DEBUG',
+						'class': 'logging.StreamHandler',
+				}
+		},
+		'loggers': {
+				'django.db.backends': {
+						'level': 'DEBUG',
+						'handlers': ['console'],
+				}
+		}
+},
+endsnippet

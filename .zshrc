@@ -35,7 +35,8 @@ PROMPT='%{$fg[blue]%}%~/ %{$reset_color%}$(git_prompt_status)$(git_prompt_info)
 %{$fg[white]%}λ %{$reset_color%}'
 RPROMPT='$(aws_prof) $(kube_ps1) $(virtualenv_prompt_info)'
 
-export PATH="/usr/local/sbin:/usr/local/bin:$HOME/.local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$HOME/bin:/usr/local/mysql/bin"
+export PATH="/usr/local/sbin:/usr/local/bin:$HOME/.local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$HOME/bin"
+
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPTS="--color=dark,spinner:80,pointer:80"
