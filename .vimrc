@@ -93,10 +93,10 @@ set nobackup
 set nowritebackup
 set noswapfile
 set colorcolumn=80
-" set list listchars=tab:»·,trail:·,nbsp:·
+set list listchars=tab:»·,trail:·,nbsp:·
 set rtp+=/usr/local/opt/fzf
 set rtp+=~/.fzf
-set wildignore+=*.pyc,node_modules
+set wildignore+=*.pyc
 set wildignore+=node_modules/*
 set autoread
 
@@ -211,7 +211,7 @@ nmap <Leader>ev :tabnew ~/.vimrc<CR>
 nmap <Leader>et :tabnew ~/.tmux.conf<CR>
 nmap <Leader>ez :tabnew ~/.zshrc<CR>
 nmap <Leader>eg :tabnew ~/.gitconfig<CR>
-nmap <Leader>en :tabnew ~/Documents/<CR>
+nmap <Leader>en :tabnew ~/Documents/todo.md<CR>
 nmap <c-t> :Tags<CR>
 nmap <Leader>T :BTags<CR>
 nmap <c-p> :Files<CR>
