@@ -211,7 +211,6 @@ nmap <Leader>ev :tabnew ~/.vimrc<CR>
 nmap <Leader>et :tabnew ~/.tmux.conf<CR>
 nmap <Leader>ez :tabnew ~/.zshrc<CR>
 nmap <Leader>eg :tabnew ~/.gitconfig<CR>
-nmap <Leader>en :tabnew ~/Documents/todo.md<CR>
 nmap <c-t> :Tags<CR>
 nmap <Leader>T :BTags<CR>
 nmap <c-p> :Files<CR>

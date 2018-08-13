@@ -11,7 +11,7 @@ brew install git
 defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/Projects/github/dotfiles/iterm2"
 defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 # virtualenvwrapper
-pip install virtualenvwrapper 
+pip install virtualenvwrapper
 # nvim
 pip install neovim
 pip3 install neovim
@@ -28,6 +28,6 @@ chsh -s $(which zsh)
 cd ~ && curl -L git.io/antigen > antigen.zsh
 # install utils
 brew install fzf ctags ag fd coreutils httpie jq awscli kubectl kubectx
-# TODO docker, docker-compose
 # symlink dotfiles
 cd ~/Projects/github/dotfiles && ./bin/symlink-dotfiles
+# apps: chrome, iterm (vim, tmux), slack, hipchat, skype, spotify, docker, magnet
