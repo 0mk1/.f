@@ -37,6 +37,7 @@ Plug 'christoomey/vim-conflicted'
 Plug 'airblade/vim-gitgutter'
 Plug 'janko-m/vim-test'
 Plug 'majutsushi/tagbar'
+Plug 'tpope/vim-obsession'
 " python specific
 Plug 'alfredodeza/coveragepy.vim'
 Plug 'plytophogy/vim-virtualenv'
@@ -121,10 +122,10 @@ let g:markdown_enable_spell_checking = 0
 
 let g:python_docker_command = 'docker-compose -f dev.yml run --rm --no-deps django '
 
-" let test#python#runner = 'djangotest'
-" let test#python#djangotest#executable = 'python setup.py test'
-let test#python#runner = 'pytest'
-let test#python#pytest#executable = python_docker_command . 'pytest -vv'
+let test#python#runner = 'djangotest'
+let test#python#djangotest#executable = 'python test_settings.py --cms test'
+" let test#python#runner = 'pytest'
+" let test#python#pytest#executable = python_docker_command . 'pytest -vv'
 
 let g:jedi#completions_enabled = 0
 let g:jedi#use_tabs_not_buffers = 1
