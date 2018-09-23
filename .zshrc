@@ -48,5 +48,6 @@ stty -ixon  # Ctrl + s not hanging vim
 
 eval "$(pyenv init -)"
 eval "$(pipenv --completion)"
+export GPG_TTY=$(tty)
 
 source $HOME/.aliases

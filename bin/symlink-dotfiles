@@ -22,4 +22,5 @@ ln -fs $PWD/.zshrc $HOME &&
 cd ~/Projects/bitbucket/dotfiles-private/ &&
 ln -fs $PWD/.ssh/ $HOME &&
 ln -fs $PWD/.aws/ $HOME &&
+ln -fs $PWD/.gnupg/ $HOME &&
 exit 0

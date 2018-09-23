@@ -1,6 +1,7 @@
 [user]
   name = Mateusz Kamycki
   email = mateusz.kamycki@gmail.com
+  signingkey = 0CE0DF42C6718E2B
 [color]
   ui = true
   diff = auto
@@ -11,6 +12,8 @@
   editor = nvim
 [github]
   user = toffi9
+[commit]
+  gpgsign = true
 [push]
   default = current
 [merge]

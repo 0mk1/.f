@@ -1,4 +1,5 @@
 " TODO structure this file
+" :cdo s/llll/tttt/g | update
 call plug#begin('~/.vim/plugged')
 " looks
 Plug 'endel/vim-github-colorscheme'
@@ -114,6 +115,8 @@ let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
 let g:netrw_keepdir = 1
 let g:netrw_liststyle = 3
 
+let g:terraform_fmt_on_save=1
+
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
@@ -123,7 +126,9 @@ let g:markdown_enable_spell_checking = 0
 let g:python_docker_command = 'docker-compose -f dev.yml run --rm --no-deps django '
 
 let test#python#runner = 'djangotest'
-let test#python#djangotest#executable = 'python test_settings.py --cms test'
+let test#python#djangotest#executable = 'ENABLE_VERSIONING=1 python test_settings.py --cms test'
+" let test#python#djangotest#executable = 'python test_settings.py --cms test'
+" let test#python#djangotest#executable = 'python tests/settings.py --cms test'
 " let test#python#runner = 'pytest'
 " let test#python#pytest#executable = python_docker_command . 'pytest -vv'
 
@@ -198,8 +203,8 @@ let mapleader = ","
 map <Leader>q :q<cr>
 map <Leader>w :w<cr>
 nmap <Leader><F6> :source ~/.vimrc<CR>
-nmap <Leader>f :tabnew  .<cr>
-nmap <Leader>F :tabnew<cr>
+nmap <Leader>f :e  .<cr>
+nmap <Leader>T :tabnew<cr>
 nmap <Leader>S :Ack! -i 
 nmap <Leader>na :ALENext<cr>
 nmap <Leader>cn :cnext<CR>
@@ -213,7 +218,6 @@ nmap <Leader>et :tabnew ~/.tmux.conf<CR>
 nmap <Leader>ez :tabnew ~/.zshrc<CR>
 nmap <Leader>eg :tabnew ~/.gitconfig<CR>
 nmap <c-t> :Tags<CR>
-nmap <Leader>T :BTags<CR>
 nmap <c-p> :Files<CR>
 nmap <c-g> :GFiles?<CR>
 nmap <Leader>v :vnew<cr>
