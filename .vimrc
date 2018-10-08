@@ -1,26 +1,17 @@
-" TODO structure this file
-" :cdo s/llll/tttt/g | update
 call plug#begin('~/.vim/plugged')
-" looks
 Plug 'endel/vim-github-colorscheme'
 Plug 'itchyny/lightline.vim'
-Plug 'gosukiwi/vim-atom-dark'
-" searching/moving
 Plug 'junegunn/fzf.vim'
-Plug 'justinmk/vim-sneak'
 Plug 'craigemery/vim-autotag'
 Plug 'mileszs/ack.vim'
 Plug 'tmhedberg/matchit'
-" file managing
 Plug 'danro/rename.vim'
 Plug 'tpope/vim-vinegar'
-" text editing
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'jiangmiao/auto-pairs'
 Plug 'SirVer/ultisnips'
-" autocomplete / Goto definition TODO nvim
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
@@ -30,31 +21,18 @@ else
 endif
 Plug 'zchee/deoplete-jedi'
 Plug 'davidhalter/jedi-vim'
-" linting
 Plug 'w0rp/ale'
-" general tools (git, test runner)
 Plug 'tpope/vim-fugitive'
-Plug 'christoomey/vim-conflicted'
-Plug 'airblade/vim-gitgutter'
 Plug 'janko-m/vim-test'
-Plug 'majutsushi/tagbar'
-Plug 'tpope/vim-obsession'
-" python specific
-Plug 'alfredodeza/coveragepy.vim'
 Plug 'plytophogy/vim-virtualenv'
 Plug 'fisadev/vim-isort'
 Plug 'Vimjas/vim-python-pep8-indent'
-Plug 'google/yapf', { 'rtp': 'plugins/vim' }
-" syntax highlight
-Plug 'Glench/Vim-Jinja2-Syntax'
-Plug 'pearofducks/ansible-vim'
 Plug 'moby/moby', { 'rtp': 'moby/contrib/syntax/vim/syntax/dockerfile.vim' }
 Plug 'othree/html5.vim'
 Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'chr4/nginx.vim'
 Plug 'hashivim/vim-terraform'
 Plug 'stephpy/vim-yaml'
-Plug 'gabrielelana/vim-markdown'
 call plug#end()
 
 filetype on
@@ -121,10 +99,7 @@ if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
 
-let g:markdown_enable_spell_checking = 0
-
 let g:python_docker_command = 'docker-compose -f dev.yml run --rm --no-deps django '
-
 let test#python#runner = 'djangotest'
 let test#python#djangotest#executable = 'ENABLE_VERSIONING=1 python test_settings.py --cms test'
 " let test#python#djangotest#executable = 'python test_settings.py --cms test'
@@ -137,8 +112,6 @@ let g:jedi#use_tabs_not_buffers = 1
 let g:python_host_prog  = '/usr/local/bin/python3'
 let g:python3_host_prog = '/usr/local/bin/python3'
 let g:deoplete#enable_at_startup = 1
-
-let g:sneak#label = 1
 
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
@@ -221,13 +194,6 @@ nmap <c-t> :Tags<CR>
 nmap <c-p> :Files<CR>
 nmap <c-g> :GFiles?<CR>
 nmap <Leader>v :vnew<cr>
-nmap <Leader>gs :Gstatus<CR>
-nmap <Leader>gsp :Git st<CR>
-nmap <Leader>gdf :Git diff<CR>
-nmap <Leader>gm :Gcommit<CR>
-nmap <Leader>gco :Git checkout 
-nmap <Leader>gcb :Git checkout -b 
-nmap <Leader><F4> :set nonumber<CR>:set norelativenumber<CR>:GitGutterToggle<CR>
 nmap <c-h> <c-w>h
 nmap <c-j> <c-w>j
 nmap <c-k> <c-w>k
@@ -248,7 +214,6 @@ noremap <Leader>6 6gt
 noremap <Leader>7 7gt
 noremap <Leader>8 8gt
 noremap <Leader>9 9gt
-vnoremap <Leader>fy :'<,'>call yapf#YAPF()<cr>
 vnoremap < <gv
 noremap > >gv
 tnoremap <Leader>! <C-\><C-n>
