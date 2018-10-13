@@ -153,7 +153,6 @@ nmap <silent> <Leader>tn :TestNearest<CR>
 nmap <silent> <Leader>ts :TestSuite<CR>
 nmap <silent> <Leader>tc :!coverage run setup.py test && coverage report -m<CR>
 nnoremap <F3> :set hlsearch! hlsearch?<cr>
-noremap <Leader>0 :tabnext<cr>
 noremap <Leader>1 1gt
 noremap <Leader>2 2gt
 noremap <Leader>3 3gt
