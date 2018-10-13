@@ -37,3 +37,5 @@
   lg = log --color --graph
   drb = push origin --delete
   prunerb = remote update origin --prune
+  p = push
+  plr = pull --rebase

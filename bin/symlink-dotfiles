@@ -1,7 +1,7 @@
 #!/bin/bash
 
-echo "Changing directory to ~/Projects/dotfiles/"
-cd ~/Projects/github/dotfiles/ &&
+echo "Changing directory to ~/code/dotfiles/"
+cd ~/code/dotfiles/ &&
 
 echo "---- Creating symlinks ----" &&
 
@@ -19,7 +19,7 @@ ln -fs $PWD/.tmux.conf $HOME &&
 ln -fs $PWD/.vimrc $HOME &&
 ln -fs $PWD/.zshrc $HOME &&
 
-cd ~/Projects/bitbucket/dotfiles-private/ &&
+cd ~/code/dotfiles-private/ &&
 ln -fs $PWD/.ssh/ $HOME &&
 ln -fs $PWD/.aws/ $HOME &&
 ln -fs $PWD/.gnupg/ $HOME &&

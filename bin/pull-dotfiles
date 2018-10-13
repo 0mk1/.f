@@ -1,9 +1,9 @@
 #!/bin/bash
 
 echo 'dotfiles' &&
-cd ~/Projects/github/dotfiles/ &&
+cd ~/code/dotfiles/ &&
 git pull
 
 echo 'dotfiles-private' &&
-cd ~/Projects/bitbucket/dotfiles-private/ &&
+cd ~/code/dotfiles-private/ &&
 git pull
