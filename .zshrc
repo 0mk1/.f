@@ -4,7 +4,7 @@ export WORKON_HOME=~/.virtualenvs
 export PROJECT_HOME=$HOME/Projects
 export VIRTUALENVWRAPPER_PYTHON=$(which python3)
 export GOPATH=$HOME/code/go/
-export CDPATH=$CDPATH:$GOPATH/src/github.com
+export CDPATH=$CDPATH:$GOPATH/src/github.com:/code
 
 source $HOME/antigen.zsh
 antigen use oh-my-zsh
@@ -20,7 +20,7 @@ export PATH=$PATH:$(go env GOPATH)/bin
 export FZF_DEFAULT_OPTS="--color=dark,spinner:80,pointer:80"
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 stty -ixon  # Ctrl + s not hanging vim
-eval "$(pyenv init -)"
+# eval "$(pyenv init -)"
 export GPG_TTY=$(tty)
 source $HOME/.aliases
 

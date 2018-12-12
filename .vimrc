@@ -20,6 +20,7 @@ else
 endif
 Plug 'zchee/deoplete-jedi'
 Plug 'davidhalter/jedi-vim'
+Plug 'zchee/deoplete-go'
 Plug 'w0rp/ale'
 Plug 'tpope/vim-fugitive'
 Plug 'janko-m/vim-test'
@@ -29,6 +30,7 @@ Plug 'plytophogy/vim-virtualenv'
 Plug 'fisadev/vim-isort'
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'fatih/vim-go'
+Plug 'jodosha/vim-godebug'
 Plug 'moby/moby', { 'rtp': 'moby/contrib/syntax/vim/syntax/dockerfile.vim' }
 Plug 'othree/html5.vim'
 Plug 'martinda/Jenkinsfile-vim-syntax'
@@ -156,7 +158,6 @@ nmap <Leader>ev :tabnew ~/.vimrc<CR>
 nmap <Leader>et :tabnew ~/.tmux.conf<CR>
 nmap <Leader>ez :tabnew ~/.zshrc<CR>
 nmap <Leader>eg :tabnew ~/.gitconfig<CR>
-nmap <Leader>en :tabnew ~/code/dotfiles-private/notes.md<CR>
 nmap <c-t> :Tags<CR>
 nmap <c-p> :Files<CR>
 nmap <c-g> :GFiles?<CR>
