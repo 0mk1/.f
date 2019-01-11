@@ -1,4 +1,6 @@
 call plug#begin('~/.vim/plugged')
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'endel/vim-github-colorscheme'
 Plug 'junegunn/fzf.vim'
 Plug 'craigemery/vim-autotag'
@@ -25,7 +27,7 @@ Plug 'w0rp/ale'
 Plug 'tpope/vim-fugitive'
 Plug 'janko-m/vim-test'
 Plug 'mgedmin/coverage-highlight.vim'
-Plug 'ambv/black'
+" Plug 'ambv/black'
 Plug 'plytophogy/vim-virtualenv'
 Plug 'fisadev/vim-isort'
 Plug 'Vimjas/vim-python-pep8-indent'
@@ -98,6 +100,11 @@ autocmd Filetype go setlocal wrap
 colorscheme github
 highlight! link SignColumn LineNr
 
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+let NERDTreeShowLineNumbers = 1
+let NERDTreeShowHidden = 1
+
 autocmd Filetype gitcommit setlocal spell textwidth=72
 " Per default, netrw leaves unmodified buffers open. This autocommand
 " deletes netrw's buffer once it's hidden (using ':q', for example)
@@ -111,20 +118,17 @@ let g:netrw_liststyle = 3
 
 let g:terraform_fmt_on_save=1
 " autocmd BufWritePre *.py execute ':Black'
-autocmd BufWritePre *.py execute ':Isort'
+" autocmd BufWritePre *.py execute ':Isort'
 
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
 
 let g:python_docker_command = 'docker-compose -f dev.yml run --rm --no-deps django '
-let test#python#runner = 'djangotest'
-" let test#python#djangotest#executable = 'ENABLE_VERSIONING=1 python test_settings.py --cms test'
-" let test#python#djangotest#executable = 'DATABASE_URL="postgres://postgres@localhost/djangocms_test_server" python test_settings.py --cms test'
-let test#python#djangotest#executable = 'python test_settings.py --cms test'
+" let test#python#runner = 'djangotest'
 " let test#python#djangotest#executable = 'python tests/settings.py --cms test'
-" let test#python#runner = 'pytest'
-" let test#python#pytest#executable = python_docker_command . 'pytest -vv'
+let test#python#runner = 'pytest'
+let test#python#pytest#executable = python_docker_command . 'pytest -vv'
 
 let g:jedi#completions_enabled = 0
 let g:jedi#use_tabs_not_buffers = 1

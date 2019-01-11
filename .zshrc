@@ -13,6 +13,7 @@ antigen bundle virtualenv
 antigen bundle virtualenvwrapper
 antigen apply
 source $HOME/bin/awsp_functions
+source /usr/local/opt/kube-ps1/share/kube-ps1.sh
 
 export PATH="/usr/local/sbin:/usr/local/bin:$HOME/.local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$HOME/bin"
 export PATH=$PATH:$(go env GOPATH)/bin
@@ -39,4 +40,4 @@ ZSH_THEME_GIT_PROMPT_UNTRACKED="%{*%G%}"
 ZSH_THEME_GIT_PROMPT_CLEAN=" %{$fg_bold[green]%}%{✔%G%}"
 PROMPT='%{$fg[blue]%}%~/ %{$reset_color%}$(git_prompt_status)$(git_prompt_info)
 %{$fg[white]%}λ %{$reset_color%}'
-RPROMPT='$(aws_prof) $(virtualenv_prompt_info)'
+RPROMPT='$(aws_prof) $(kube_ps1) $(virtualenv_prompt_info)'
