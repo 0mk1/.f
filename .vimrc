@@ -1,6 +1,4 @@
 call plug#begin('~/.vim/plugged')
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'endel/vim-github-colorscheme'
 Plug 'junegunn/fzf.vim'
 Plug 'craigemery/vim-autotag'
@@ -26,8 +24,7 @@ Plug 'zchee/deoplete-go'
 Plug 'w0rp/ale'
 Plug 'tpope/vim-fugitive'
 Plug 'janko-m/vim-test'
-Plug 'mgedmin/coverage-highlight.vim'
-" Plug 'ambv/black'
+Plug 'ambv/black'
 Plug 'plytophogy/vim-virtualenv'
 Plug 'fisadev/vim-isort'
 Plug 'Vimjas/vim-python-pep8-indent'
@@ -100,11 +97,6 @@ autocmd Filetype go setlocal wrap
 colorscheme github
 highlight! link SignColumn LineNr
 
-let NERDTreeMinimalUI = 1
-let NERDTreeDirArrows = 1
-let NERDTreeShowLineNumbers = 1
-let NERDTreeShowHidden = 1
-
 autocmd Filetype gitcommit setlocal spell textwidth=72
 " Per default, netrw leaves unmodified buffers open. This autocommand
 " deletes netrw's buffer once it's hidden (using ':q', for example)
@@ -117,8 +109,8 @@ let g:netrw_keepdir = 1
 let g:netrw_liststyle = 3
 
 let g:terraform_fmt_on_save=1
-" autocmd BufWritePre *.py execute ':Black'
-" autocmd BufWritePre *.py execute ':Isort'
+autocmd BufWritePre *.py execute ':Black'
+autocmd BufWritePre *.py execute ':Isort'
 
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
