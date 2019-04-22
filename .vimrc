@@ -29,7 +29,8 @@ Plug 'plytophogy/vim-virtualenv'
 Plug 'fisadev/vim-isort'
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'fatih/vim-go'
-Plug 'jodosha/vim-godebug'
+Plug 'sebdah/vim-delve'
+Plug 'neoclide/macdown.vim'
 Plug 'moby/moby', { 'rtp': 'moby/contrib/syntax/vim/syntax/dockerfile.vim' }
 Plug 'othree/html5.vim'
 Plug 'martinda/Jenkinsfile-vim-syntax'
@@ -109,8 +110,8 @@ let g:netrw_keepdir = 1
 let g:netrw_liststyle = 3
 
 let g:terraform_fmt_on_save=1
-autocmd BufWritePre *.py execute ':Black'
-autocmd BufWritePre *.py execute ':Isort'
+" autocmd BufWritePre *.py execute ':Black'
+" autocmd BufWritePre *.py execute ':Isort'
 
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'

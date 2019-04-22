@@ -1,0 +1,7 @@
+#!/bin/bash
+set -e
+
+echo 'Changing to m.kamycki@merixstudio.com'
+git config user.name "Mateusz Kamycki"
+git config user.email m.kamycki@merixstudio.com
+echo 'Done'

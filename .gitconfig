@@ -28,14 +28,8 @@
   cb = checkout -b
   cmt = commit -v
   co = checkout
-  fu = fetch upstream
-  f = fetch origin
-  cum = checkout upstream/master
-  cm = checkout origin/master
-  rum = rebase upstream/master
-  rom = rebase origin/master
+  f = fetch
+  rb = rebase
   lg = log --color --graph
-  drb = push origin --delete
   prunerb = remote update origin --prune
-  p = push
-  plr = pull --rebase
+  pll = pull --rebase
