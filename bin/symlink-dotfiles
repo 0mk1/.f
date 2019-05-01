@@ -23,4 +23,5 @@ cd ~/code/dotfiles-private/ &&
 ln -fs $PWD/.ssh/ $HOME &&
 ln -fs $PWD/.aws/ $HOME &&
 ln -fs $PWD/.gnupg/ $HOME &&
+ln -fs $PWD/.password-store/ $HOME &&
 exit 0
