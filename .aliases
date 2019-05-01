@@ -1,6 +1,7 @@
 alias awsp="_awsSwitchProfile"
 alias build="cd . && ddev build && pip install -r requirements.txt"
 alias c="cd ~/code/"
+alias dc="cd ~/docs/"
 alias dcomp="docker-compose "
 alias ddev="docker-compose -f dev.yml"
 alias g="git"
