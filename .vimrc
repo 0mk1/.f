@@ -1,5 +1,6 @@
 call plug#begin('~/.vim/plugged')
 Plug 'endel/vim-github-colorscheme'
+Plug 'altercation/vim-colors-solarized'
 Plug 'junegunn/fzf.vim'
 Plug 'craigemery/vim-autotag'
 Plug 'mileszs/ack.vim'
@@ -95,7 +96,8 @@ autocmd Filetype go setlocal ai
 autocmd Filetype go setlocal si
 autocmd Filetype go setlocal wrap
 
-colorscheme github
+colorscheme solarized
+set bg=dark
 highlight! link SignColumn LineNr
 
 autocmd Filetype gitcommit setlocal spell textwidth=72
