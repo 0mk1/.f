@@ -19,6 +19,7 @@ source /usr/local/opt/kube-ps1/share/kube-ps1.sh
 export PATH="/usr/local/sbin:/usr/local/bin:$HOME/.local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$HOME/bin"
 export PATH=$PATH:$(go env GOPATH)/bin
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_OPTS="--color=dark,spinner:80,pointer:80"
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 stty -ixon  # Ctrl + s not hanging vim
 # eval "$(pyenv init -)"
