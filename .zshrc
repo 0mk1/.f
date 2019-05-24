@@ -24,6 +24,7 @@ export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 stty -ixon  # Ctrl + s not hanging vim
 # eval "$(pyenv init -)"
 export GPG_TTY=$(tty)
+export HELM_HOST=:44134
 source $HOME/.aliases
 
 KUBE_PS1_PREFIX=""

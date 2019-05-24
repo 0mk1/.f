@@ -97,7 +97,7 @@ autocmd Filetype go setlocal si
 autocmd Filetype go setlocal wrap
 
 colorscheme github
-" set bg=dark
+set bg=light
 highlight! link SignColumn LineNr
 
 autocmd Filetype gitcommit setlocal spell textwidth=72
