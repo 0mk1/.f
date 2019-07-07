@@ -4,34 +4,38 @@ export WORKON_HOME=~/.virtualenvs
 export PROJECT_HOME=$HOME/Projects
 export VIRTUALENVWRAPPER_PYTHON=$(which python3)
 export GOPATH=$HOME/code/go/
-export CDPATH=$CDPATH:$GOPATH/src/github.com:/code
+export CDPATH=$CDPATH:$GOPATH/src/github.com/toffi9:/code
 
 source $HOME/antigen.zsh
 antigen use oh-my-zsh
 antigen bundle ssh-agent
-# # antigen bundle virtualenv
-# # antigen bundle virtualenvwrapper
+antigen bundle vi-mode
+# antigen bundle virtualenv
+# antigen bundle virtualenvwrapper
 antigen apply
 
 source $HOME/bin/awsp_functions
 source /usr/local/opt/kube-ps1/share/kube-ps1.sh
 
 export PATH="/usr/local/sbin:/usr/local/bin:$HOME/.local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$HOME/bin"
-export PATH=$PATH:$(go env GOPATH)/bin
+export PATH=$PATH:$GOPATH/bin
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPTS="--color=dark,spinner:80,pointer:80"
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 stty -ixon  # Ctrl + s not hanging vim
-# eval "$(pyenv init -)"
 export GPG_TTY=$(tty)
+# eval "$(pyenv init -)"
 export HELM_HOST=:44134
 source $HOME/.aliases
 
 KUBE_PS1_PREFIX=""
 KUBE_PS1_SUFFIX=""
+KUBE_PS1_NS_ENABLE=true
+KUBE_PS1_SEPARATOR=""
+KUBE_PS1_CTX_COLOR="black"
 ZSH_THEME_VIRTUALENV_PREFIX="🐍 %{$fg[green]%}"
 ZSH_THEME_VIRTUALENV_SUFFIX="%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_PREFIX="⎇ %{$fg[green]%}"
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[green]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_STAGED="%{$fg[red]%}%{●%G%}"
 ZSH_THEME_GIT_PROMPT_CONFLICTS="%{$fg[red]%}%{✖%G%}"
@@ -40,5 +44,5 @@ ZSH_THEME_GIT_PROMPT_BEHIND="%{↓%G%}"
 ZSH_THEME_GIT_PROMPT_AHEAD="%{↑%G%}"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{*%G%}"
 ZSH_THEME_GIT_PROMPT_CLEAN=" %{$fg_bold[green]%}%{✔%G%}"
-PROMPT='%{$fg[blue]%}%~/ %{$reset_color%}$(git_prompt_status)$(git_prompt_info)$(aws_prof) $(kube_ps1) $(virtualenv_prompt_info)
-%{$fg[white]%}λ %{$reset_color%}'
+PROMPT='%{$fg[blue]%}%1~ %{$fg[white]%}λ %{$reset_color%}'
+RPROMPT='$(vi_mode_prompt_info) $(aws_prof) $(git_prompt_info) $(kube_ps1)'

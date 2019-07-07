@@ -96,6 +96,8 @@ autocmd Filetype go setlocal ai
 autocmd Filetype go setlocal si
 autocmd Filetype go setlocal wrap
 
+let g:go_fmt_command = "goimports"
+
 colorscheme github
 set bg=light
 highlight! link SignColumn LineNr
