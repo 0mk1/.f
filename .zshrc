@@ -1,33 +1,26 @@
 export LANG=en_US.UTF-8
 export EDITOR='nvim'
-export WORKON_HOME=~/.virtualenvs
-export PROJECT_HOME=$HOME/Projects
-export VIRTUALENVWRAPPER_PYTHON=$(which python3)
 export GOPATH=$HOME/code/go/
-export CDPATH=$CDPATH:$GOPATH/src/github.com/toffi9:/code
+export CDPATH=$CDPATH:$GOPATH/src/github.com
+export PATH="/usr/local/sbin:/usr/local/bin:$HOME/.local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$HOME/bin"
+export PATH=$PATH:$GOPATH/bin
 
 source $HOME/antigen.zsh
 antigen use oh-my-zsh
 antigen bundle ssh-agent
 antigen bundle vi-mode
-# antigen bundle virtualenv
-# antigen bundle virtualenvwrapper
 antigen apply
-
-source $HOME/bin/awsp_functions
+source $HOME/.aliases
 source /usr/local/opt/kube-ps1/share/kube-ps1.sh
-
-export PATH="/usr/local/sbin:/usr/local/bin:$HOME/.local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$HOME/bin"
-export PATH=$PATH:$GOPATH/bin
+source $HOME/bin/awsp_functions
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+stty -ixon  # Ctrl + s not hanging vim
+
+export KUBECTL_VERSION=1.13
+export GPG_TTY=$(tty)
 export FZF_DEFAULT_OPTS="--color=dark,spinner:80,pointer:80"
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
-stty -ixon  # Ctrl + s not hanging vim
-export GPG_TTY=$(tty)
-# eval "$(pyenv init -)"
-export HELM_HOST=:44134
-source $HOME/.aliases
-
 KUBE_PS1_PREFIX=""
 KUBE_PS1_SUFFIX=""
 KUBE_PS1_NS_ENABLE=true

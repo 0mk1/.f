@@ -1,6 +1,7 @@
 call plug#begin('~/.vim/plugged')
 Plug 'endel/vim-github-colorscheme'
 Plug 'altercation/vim-colors-solarized'
+Plug 'junegunn/goyo.vim'
 Plug 'junegunn/fzf.vim'
 Plug 'craigemery/vim-autotag'
 Plug 'mileszs/ack.vim'
@@ -113,7 +114,7 @@ let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
 let g:netrw_keepdir = 1
 let g:netrw_liststyle = 3
 
-let g:terraform_fmt_on_save=1
+let g:terraform_fmt_on_save=0
 " autocmd BufWritePre *.py execute ':Black'
 " autocmd BufWritePre *.py execute ':Isort'
 
