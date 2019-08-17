@@ -4,6 +4,7 @@ export GOPATH=$HOME/code/go/
 export CDPATH=$CDPATH:$GOPATH/src/github.com
 export PATH="/usr/local/sbin:/usr/local/bin:$HOME/.local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$HOME/bin"
 export PATH=$PATH:$GOPATH/bin
+export TERM=xterm-256color
 
 source $HOME/antigen.zsh
 antigen use oh-my-zsh

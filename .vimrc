@@ -39,6 +39,7 @@ Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'chr4/nginx.vim'
 Plug 'hashivim/vim-terraform'
 Plug 'stephpy/vim-yaml'
+Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 call plug#end()
 
 filetype on

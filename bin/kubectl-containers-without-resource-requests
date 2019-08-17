@@ -1,0 +1,2 @@
+#!/bin/sh
+kubectl get po --all-namespaces -o jsonpath='{range .items[*]}{.metadata.namespace} {.metadata.name} {range .spec.containers[*]} {.name} {.resources.requests.memory} {"\n"}{end}{end}'
