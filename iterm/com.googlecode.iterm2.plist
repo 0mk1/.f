@@ -1127,7 +1127,7 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>268 593 918 452 0 0 1680 1050 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1674 1050 0 0 1680 1050 </string>
+	<string>0 0 1680 1050 0 0 1680 1050 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>364 304 650 502 0 0 1680 1027 </string>
 	<key>New Bookmarks</key>
@@ -1792,7 +1792,9 @@
 		<string>3.3.2</string>
 		<string>3.2.9</string>
 		<string>3.3.1</string>
+		<string>3.3.4</string>
 		<string>3.3.0</string>
+		<string>3.3.3</string>
 	</array>
 	<key>NoSyncFrame_SessionsPreferences</key>
 	<dict>
@@ -1800,6 +1802,13 @@
 		<string>{{0, 0}, {1920, 1080}}</string>
 		<key>topLeft</key>
 		<string>{534, 839}</string>
+	</dict>
+	<key>NoSyncFrame_SharedPreferences</key>
+	<dict>
+		<key>screenFrame</key>
+		<string>{{0, 0}, {1920, 1080}}</string>
+		<key>topLeft</key>
+		<string>{638, 862}</string>
 	</dict>
 	<key>NoSyncHaveRequestedFullDiskAccess</key>
 	<true/>
@@ -1810,7 +1819,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>6335050B-95C9-4B15-AD44-37FF9F6F7A50</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>18</integer>
+	<integer>38</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -2573,7 +2582,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-08-29T16:11:35Z</date>
+	<date>2019-09-24T07:20:01Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
@@ -2581,7 +2590,7 @@
 	<key>ShowBookmarkName</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
-	<true/>
+	<false/>
 	<key>ShowNewOutputIndicator</key>
 	<false/>
 	<key>SoundForEsc</key>
@@ -2607,7 +2616,7 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.3.2</string>
+	<string>3.3.4</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
