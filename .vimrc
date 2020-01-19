@@ -1,9 +1,6 @@
 call plug#begin('~/.vim/plugged')
 Plug 'endel/vim-github-colorscheme'
-Plug 'altercation/vim-colors-solarized'
-Plug 'junegunn/goyo.vim'
 Plug 'junegunn/fzf.vim'
-Plug 'craigemery/vim-autotag'
 Plug 'mileszs/ack.vim'
 Plug 'tmhedberg/matchit'
 Plug 'danro/rename.vim'
@@ -22,24 +19,24 @@ else
 endif
 Plug 'zchee/deoplete-jedi'
 Plug 'davidhalter/jedi-vim'
-Plug 'zchee/deoplete-go'
+" Plug 'zchee/deoplete-go'
 Plug 'w0rp/ale'
 Plug 'tpope/vim-fugitive'
-Plug 'janko-m/vim-test'
-Plug 'psf/black'
-Plug 'plytophogy/vim-virtualenv'
-Plug 'fisadev/vim-isort'
-Plug 'Vimjas/vim-python-pep8-indent'
-Plug 'fatih/vim-go'
-Plug 'sebdah/vim-delve'
-Plug 'neoclide/macdown.vim'
+" Plug 'janko-m/vim-test'
+" Plug 'psf/black'
+" Plug 'plytophogy/vim-virtualenv'
+" Plug 'fisadev/vim-isort'
+" Plug 'Vimjas/vim-python-pep8-indent'
+" Plug 'fatih/vim-go'
+" Plug 'sebdah/vim-delve'
+" Plug 'neoclide/macdown.vim'
 Plug 'moby/moby', { 'rtp': 'moby/contrib/syntax/vim/syntax/dockerfile.vim' }
-Plug 'othree/html5.vim'
-Plug 'martinda/Jenkinsfile-vim-syntax'
+" Plug 'othree/html5.vim'
+" Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'chr4/nginx.vim'
 Plug 'hashivim/vim-terraform'
 Plug 'stephpy/vim-yaml'
-Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
+" Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 call plug#end()
 
 filetype on
@@ -186,4 +183,3 @@ noremap <Leader>8 8gt
 noremap <Leader>9 9gt
 vnoremap < <gv
 noremap > >gv
-tnoremap <Leader>! <C-\><C-n>

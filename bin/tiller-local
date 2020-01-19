@@ -1,2 +1,0 @@
-#!/bin/bash
-TILLER_NAMESPACE=$1 tiller --listen :44134
