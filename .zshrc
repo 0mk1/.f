@@ -10,7 +10,6 @@ antigen bundle vi-mode
 antigen apply
 source $HOME/.aliases
 source /usr/local/opt/kube-ps1/share/kube-ps1.sh
-source $HOME/bin/awsp_functions
 
 stty -ixon  # Ctrl + s not hanging vim
 

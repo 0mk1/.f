@@ -1,7 +1,7 @@
 #!/bin/bash
 
-echo "Changing directory to ~/code/dotfiles/"
-cd ~/code/dotfiles/ &&
+echo "Changing directory to ~/.f"
+cd ~/.f &&
 
 echo "---- Creating symlinks ----" &&
 

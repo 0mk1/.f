@@ -1,6 +1,6 @@
 #!/bin/bash
-cd ~/code/dotfiles/ &&
-echo 'dotfiles' &&
+cd ~/.f &&
+echo '.files' &&
 git add -A &&
-git commit -m "dotfiles sync $(date +"%Y%m%d")" &&
+git commit -m ".files sync $(date +"%Y%m%d")" &&
 git push origin master
