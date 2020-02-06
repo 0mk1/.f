@@ -1,6 +1,7 @@
 [user]
   name = Mateusz Kamycki
-	email = mkamycki@merixstudio.com
+	email = m.kamycki@merixstudio.com
+	signingkey = F1F43A662450B5B6A2D43F0F376850444093B99F
 [color]
   ui = true
   diff = auto
@@ -10,7 +11,7 @@
 	excludesfile = ~/.gitignore_global
   editor = nvim
 [commit]
-  ; gpgsign = true
+  gpgsign = true
 [push]
   default = current
 [merge]
