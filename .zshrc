@@ -35,3 +35,9 @@ ZSH_THEME_GIT_PROMPT_UNTRACKED="%{*%G%}"
 ZSH_THEME_GIT_PROMPT_CLEAN=" %{$fg_bold[green]%}%{✔%G%}"
 PROMPT='%{$fg[blue]%}%1~ %{$fg[white]%}λ %{$reset_color%}'
 RPROMPT='$(vi_mode_prompt_info) $(aws_prof) $(git_prompt_info) $(kube_ps1)'
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/mateuszkamycki/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/mateuszkamycki/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/mateuszkamycki/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/mateuszkamycki/Downloads/google-cloud-sdk/completion.zsh.inc'; fi

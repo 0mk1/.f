@@ -3,7 +3,11 @@
 echo -n "Install firefox, iterm, slack, zoom, chrome, spotify, spectacle"
 echo -n "Install brew"
 echo -n "Installing from brew"
-# brew install ssh pass zsh tmux neovim kube-ps1 fd fzf git gnupg kubectx pinentry reattach-to-user-namespace the_silver_searcher wget curl minikube
+# brew install ssh pass zsh tmux neovim kube-ps1 fd fzf git gnupg kubectx pinentry reattach-to-user-namespace the_silver_searcher wget curl minikube python awscli
+# https://cloud.google.com/sdk/docs/quickstart-macos
+# gcloud init
+# gcloud auth application-default login
+# gcloud container clusters get-credentials kubernetes --region europe-west1
 echo -n "Install antigen"
 echo "Remember to use chsh to change to /bin/zsh"
 # chsh -s /bin/zsh
