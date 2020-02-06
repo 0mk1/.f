@@ -1,7 +1,5 @@
 [user]
   name = Mateusz Kamycki
-  email = mkamycki@fastmail.com
-  signingkey = 0CE0DF42C6718E2B
 [color]
   ui = true
   diff = auto
@@ -10,10 +8,8 @@
 [core]
 	excludesfile = ~/.gitignore_global
   editor = nvim
-[github]
-  user = toffi9
 [commit]
-  gpgsign = true
+  ; gpgsign = true
 [push]
   default = current
 [merge]

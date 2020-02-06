@@ -1,4 +1,5 @@
 alias awsp="_awsSwitchProfile"
+alias l="ls -lah"
 alias c="cd ~/code/"
 alias dcmp="docker-compose "
 alias ddev="docker-compose -f dev.yml"

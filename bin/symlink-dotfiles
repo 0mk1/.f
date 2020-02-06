@@ -12,16 +12,9 @@ ln -fs $PWD/.vim/UltiSnips/ $HOME/.vim/ &&
 
 # Files
 ln -fs $PWD/.aliases $HOME &&
-ln -fs $PWD/.ctags $HOME &&
 ln -fs $PWD/.gitconfig $HOME &&
 ln -fs $PWD/.gitignore_global $HOME &&
 ln -fs $PWD/.tmux.conf $HOME &&
 ln -fs $PWD/.vimrc $HOME &&
 ln -fs $PWD/.zshrc $HOME &&
-
-cd ~/code/dotfiles-private/ &&
-ln -fs $PWD/.ssh/ $HOME &&
-ln -fs $PWD/.aws/ $HOME &&
-ln -fs $PWD/.gnupg/ $HOME &&
-ln -fs $PWD/.password-store/ $HOME &&
 exit 0

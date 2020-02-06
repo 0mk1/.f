@@ -1,9 +1,6 @@
 export LANG=en_US.UTF-8
 export EDITOR='nvim'
-export GOPATH=$HOME/code/go/
-export CDPATH=$CDPATH:$GOPATH/src/github.com
 export PATH="/usr/local/sbin:/usr/local/bin:$HOME/.local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$HOME/bin"
-export PATH=$PATH:$GOPATH/bin
 export TERM=xterm-256color
 
 source $HOME/antigen.zsh
@@ -27,8 +24,6 @@ KUBE_PS1_SUFFIX=""
 KUBE_PS1_NS_ENABLE=true
 KUBE_PS1_SEPARATOR=""
 KUBE_PS1_CTX_COLOR="black"
-ZSH_THEME_VIRTUALENV_PREFIX="🐍 %{$fg[green]%}"
-ZSH_THEME_VIRTUALENV_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[green]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_STAGED="%{$fg[red]%}%{●%G%}"
