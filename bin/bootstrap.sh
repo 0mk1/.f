@@ -1,9 +1,12 @@
 #!/bin/bash
 
-echo -n "Install firefox, iterm, slack, zoom, chrome, spotify, spectacle"
+echo -n "Setup Mac Preferences"
+echo -n "Switch Capslock to Esc"
+echo -n "Install firefox, iterm, slack, zoom, chrome, spectacle"
+echo -n "Setup Firefox settings and Vim, Https, ublock, auto delete cookie"
 echo -n "Install brew"
 echo -n "Installing from brew"
-# brew install ssh pass zsh tmux neovim kube-ps1 fd fzf git gnupg kubectx pinentry reattach-to-user-namespace the_silver_searcher wget curl
+# brew install openssh pass zsh tmux neovim kube-ps1 fd fzf git gnupg kubectx pinentry reattach-to-user-namespace the_silver_searcher wget curl
 echo -n "Install antigen"
 echo -n "Install gcloud"
 echo "Remember to use chsh to change to /bin/zsh"
