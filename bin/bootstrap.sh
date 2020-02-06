@@ -1,9 +1,9 @@
 #!/bin/bash
 
-echo -n "Install firefox, iterm, slack, zoom, chrome, spotify, spectacle"
+echo -n "Install firefox, iterm, slack, zoom, chrome, spotify, spectacle, 1password"
 echo -n "Install brew"
 echo -n "Installing from brew"
-# brew install ssh pass zsh tmux neovim kube-ps1 fd fzf git gnupg kubectx pinentry reattach-to-user-namespace the_silver_searcher wget curl minikube python awscli
+# brew install ssh zsh tmux neovim kube-ps1 fd fzf git gnupg kubectx pinentry reattach-to-user-namespace the_silver_searcher wget curl minikube python awscli
 # https://cloud.google.com/sdk/docs/quickstart-macos
 # gcloud init
 # gcloud auth application-default login
@@ -25,3 +25,4 @@ echo -n "Enter user gpg signingkey:"
 # read signingkey
 # git config --global user.email $email
 # git config --global user.signingkey $signingkey
+echo -n "Gpg Agent"
