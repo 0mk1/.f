@@ -17,26 +17,10 @@ else
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
-Plug 'zchee/deoplete-jedi'
-Plug 'davidhalter/jedi-vim'
-" Plug 'zchee/deoplete-go'
-Plug 'w0rp/ale'
-Plug 'tpope/vim-fugitive'
-" Plug 'janko-m/vim-test'
-" Plug 'psf/black'
-" Plug 'plytophogy/vim-virtualenv'
-" Plug 'fisadev/vim-isort'
-" Plug 'Vimjas/vim-python-pep8-indent'
-" Plug 'fatih/vim-go'
-" Plug 'sebdah/vim-delve'
-" Plug 'neoclide/macdown.vim'
 Plug 'moby/moby', { 'rtp': 'moby/contrib/syntax/vim/syntax/dockerfile.vim' }
-" Plug 'othree/html5.vim'
-" Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'chr4/nginx.vim'
 Plug 'hashivim/vim-terraform'
 Plug 'stephpy/vim-yaml'
-" Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 call plug#end()
 
 filetype on
@@ -112,33 +96,12 @@ let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
 let g:netrw_keepdir = 1
 let g:netrw_liststyle = 3
 
-let g:terraform_fmt_on_save=0
-" autocmd BufWritePre *.py execute ':Black'
-" autocmd BufWritePre *.py execute ':Isort'
-
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
-
-let g:python_docker_command = 'docker-compose -f dev.yml run --rm --no-deps django '
-" let test#python#runner = 'djangotest'
-" let test#python#djangotest#executable = 'python tests/settings.py --cms test'
-let test#python#runner = 'pytest'
-let test#python#pytest#executable = python_docker_command . 'pytest -vv'
-
-let g:jedi#completions_enabled = 0
-let g:jedi#use_tabs_not_buffers = 1
 let g:python_host_prog  = '/usr/local/bin/python3'
 let g:python3_host_prog = '/usr/local/bin/python3'
 let g:deoplete#enable_at_startup = 1
-
-let g:ale_echo_msg_error_str = 'E'
-let g:ale_echo_msg_warning_str = 'W'
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-let g:ale_sign_warning = '▲'
-let g:ale_sign_error = '✗'
-highlight link ALEWarningSign String
-highlight link ALEErrorSign Title
 
 let mapleader = ","
 map <Leader>q :q<cr>
@@ -147,7 +110,6 @@ nmap <Leader><F6> :source ~/.vimrc<CR>
 nmap <Leader>f :e  .<cr>
 nmap <Leader>T :tabnew<cr>
 nmap <Leader>S :Ack! -i 
-nmap <Leader>na :ALENext<cr>
 nmap <Leader>cn :cnext<CR>
 nmap <Leader>co :copen<CR>
 nmap <Leader>cp :cprev<CR>
@@ -158,7 +120,6 @@ nmap <Leader>ev :tabnew ~/.vimrc<CR>
 nmap <Leader>et :tabnew ~/.tmux.conf<CR>
 nmap <Leader>ez :tabnew ~/.zshrc<CR>
 nmap <Leader>eg :tabnew ~/.gitconfig<CR>
-nmap <c-t> :Tags<CR>
 nmap <c-p> :Files<CR>
 nmap <c-g> :GFiles?<CR>
 nmap <Leader>v :vnew<cr>
@@ -166,20 +127,10 @@ nmap <c-h> <c-w>h
 nmap <c-j> <c-w>j
 nmap <c-k> <c-w>k
 nmap <c-l> <c-w>l
-nmap <silent> <Leader>tf :TestFile<CR>
-nmap <silent> <Leader>tl :TestLast<CR>
-nmap <silent> <Leader>tn :TestNearest<CR>
-nmap <silent> <Leader>ts :TestSuite<CR>
-nmap <silent> <Leader>tc :!coverage run setup.py test && coverage report -m<CR>
 nnoremap <F3> :set hlsearch! hlsearch?<cr>
 noremap <Leader>1 1gt
 noremap <Leader>2 2gt
 noremap <Leader>3 3gt
 noremap <Leader>4 4gt
-noremap <Leader>5 5gt
-noremap <Leader>6 6gt
-noremap <Leader>7 7gt
-noremap <Leader>8 8gt
-noremap <Leader>9 9gt
 vnoremap < <gv
 noremap > >gv

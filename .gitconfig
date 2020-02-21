@@ -17,7 +17,7 @@
 [merge]
   ff = only
 [help]
-  autocorrect = 1
+  autocorrect = 0
 [alias]
   st = status --porcelain
   all = add -A
