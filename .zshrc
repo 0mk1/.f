@@ -5,7 +5,8 @@ export TERM=xterm-256color
 
 source $HOME/antigen.zsh
 antigen use oh-my-zsh
-antigen bundle gitfast vi-mode
+antigen bundle gitfast
+antigen bundle vi-mode
 antigen apply
 
 stty -ixon  # Ctrl + s not hanging vim
@@ -17,7 +18,7 @@ if [ -S "$SSH_AUTH_SOCK" ] && [ ! -h "$SSH_AUTH_SOCK" ]; then
 fi
 export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
 (ssh-add -l | grep -q "Error connecting to agent") && ssh-agent zsh
-(ssh-add -l | grep -q "no identities") && ssh-add -K
+(ssh-add -l | grep -q "no identities") && ssh-add -k
 
 export KUBECTL_VERSION=1.13
 export GPG_TTY=$(tty)
