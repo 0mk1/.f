@@ -1,4 +1,6 @@
-alias awsp="_awsSwitchProfile"
+alias awsall="_awsListProfile"
+alias awsp="_awsSetProfile"
+alias awswho="aws configure list"
 alias l="ls -lah"
 alias c="cd ~/code/"
 alias g="git"

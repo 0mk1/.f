@@ -14,9 +14,9 @@ stty -ixon  # Ctrl + s not hanging vim
 # Fix SSH agent forwarding in tmux/screen by always having the forwarding socket
 # on the same path.
 if [ -S "$SSH_AUTH_SOCK" ] && [ ! -h "$SSH_AUTH_SOCK" ]; then
-  ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
+  ln -sf "$SSH_AUTH_SOCK" $HOME/.ssh/ssh_auth_sock
 fi
-export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
+export SSH_AUTH_SOCK=$HOME/.ssh/ssh_auth_sock
 (ssh-add -l | grep -q "Error connecting to agent") && ssh-agent zsh
 (ssh-add -l | grep -q "no identities") && ssh-add -k
 
@@ -36,4 +36,7 @@ ZSH_THEME_GIT_PROMPT_SEPARATOR=""
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%}%{✔%G%}"
 PROMPT='%{$fg[blue]%}%1~ $(git_prompt_info)%{$fg[white]%}λ %{$reset_color%}'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source awsp_functions.sh
 source $HOME/.aliases
+complete -W "$(cat $HOME/.aws/credentials | grep -Eo '\[.*\]' | tr -d '[]')" _awsSwitchProfile
+complete -W "$(cat $HOME/.aws/config | grep -Eo '\[.*\]' | tr -d '[]' | cut -d " " -f 2)" _awsSetProfile
