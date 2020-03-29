@@ -40,3 +40,9 @@ source awsp_functions.sh
 source $HOME/.aliases
 complete -W "$(cat $HOME/.aws/credentials | grep -Eo '\[.*\]' | tr -d '[]')" _awsSwitchProfile
 complete -W "$(cat $HOME/.aws/config | grep -Eo '\[.*\]' | tr -d '[]' | cut -d " " -f 2)" _awsSetProfile
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/mateuszkamycki/code/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/mateuszkamycki/code/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/mateuszkamycki/code/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/mateuszkamycki/code/google-cloud-sdk/completion.zsh.inc'; fi
