@@ -8,9 +8,11 @@ Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
+Plug 'junegunn/goyo.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'hashivim/vim-terraform'
 Plug 'stephpy/vim-yaml'
+Plug 'chr4/nginx.vim'
 call plug#end()
 
 filetype on
@@ -87,7 +89,7 @@ let g:netrw_keepdir = 1
 let g:netrw_liststyle = 3
 
 if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
+  let g:ackprg = 'ag --vimgrep --hidden --ignore .git'
 endif
 let g:python_host_prog  = '/usr/local/bin/python3'
 let g:python3_host_prog = '/usr/local/bin/python3'
