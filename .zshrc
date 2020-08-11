@@ -34,7 +34,7 @@ ZSH_THEME_GIT_PROMPT_AHEAD="%{↑%G%}"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{*%G%}"
 ZSH_THEME_GIT_PROMPT_SEPARATOR=""
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%}%{✔%G%}"
-PROMPT='%{$fg[blue]%}%1~ $(git_prompt_info)%{$fg[white]%}λ %{$reset_color%}'
+PROMPT='%{$fg[blue]%}%1~ $(git_prompt_info)%{$fg[white]%}🐋 %{$reset_color%}'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source awsp_functions.sh
 source $HOME/.aliases
