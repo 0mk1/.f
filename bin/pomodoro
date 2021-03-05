@@ -26,6 +26,7 @@ POMODORO_BANG="❗"
 POMODORO_SYMBOL="🍅"
 POMODORO_NBSP=" "
 POMODORO_MINUTES=25
+POMODORO_BREAK_MINUTES=5
 
 POMODORO_GRAPH_BLOCKS=( ▁ ▂ ▃ ▄ ▅ ▆ ▇ )
 POMODORO_DOT_BLOCKS=( ⠈ ⠨ ⠩ ⠭ )
@@ -298,6 +299,26 @@ case "$ARG" in
             read_status
             P_START=$NOW
             P_DURATION=$POMODORO_MINUTES
+            if [ -z "$P_FIRST" ]; then
+                P_FIRST=$P_START
+            fi
+        fi
+        emit_data > $POMODORO_STATUS_FILE
+
+        $TMUX_REFRESH >/dev/null 2>&1
+        exit 0
+        ;;
+
+    break)
+        clear_counter
+
+        if  [ -z "$POMODORO_REMOTE_CMD" ] || \
+            [ $(hostname) == "$POMODORO_NOSYNC_NAME" ] || \
+            ! "${POMODORO_REMOTE_CMD[@]}" start -m ${POMODORO_MINUTES} >/dev/null 2>&1
+        then
+            read_status
+            P_START=$NOW
+            P_DURATION=$POMODORO_BREAK_MINUTES
             if [ -z "$P_FIRST" ]; then
                 P_FIRST=$P_START
             fi

@@ -15,4 +15,6 @@ alias vim="nvim"
 alias passcp="cat ~/.pass | pbcopy"
 alias pass1cp="cat ~/.pass1 | pbcopy"
 alias dcp="docker-compose"
-alias helm="docker run -ti --rm -v $(pwd):/apps -v ~/.kube:/root/.kube:ro -v ~/.helm:/root/.helm -w /apps alpine/helm:3.2.4"
+#alias helm="docker run -ti --rm -v $(pwd):/apps -v ~/.kube:/root/.kube:ro -v ~/.helm:/root/.helm -w /apps alpine/helm:2.17.0"
+
+alias aws2="docker run -it --rm -v ~/.aws:/root/.aws -e AWS_PROFILE -e AWS_DEFAULT_PROFILE -e AWS_DEFAULT_REGION -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY -e AWS_SDK_LOAD_CONFIG=1 amazon/aws-cli:latest "

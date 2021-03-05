@@ -10,6 +10,7 @@
 [core]
 	excludesfile = ~/.gitignore_global
   editor = nvim
+  pager = delta
 [commit]
   gpgsign = true
 [push]
@@ -31,3 +32,11 @@
   lg = log --color --graph
   prunerb = remote update origin --prune
   pll = pull --rebase
+[delta]
+  plus-color = "#012800"
+  minus-color = "#340001"
+  syntax-theme = Github
+  line-numbers = true
+  light = true
+[interactive]
+  diffFilter = delta --color-only

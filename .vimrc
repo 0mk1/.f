@@ -1,6 +1,7 @@
 call plug#begin('~/.vim/plugged')
 Plug 'endel/vim-github-colorscheme'
 Plug 'junegunn/fzf.vim'
+Plug 'dense-analysis/ale'
 Plug 'mileszs/ack.vim'
 Plug 'tmhedberg/matchit'
 Plug 'danro/rename.vim'
@@ -11,6 +12,7 @@ Plug 'tpope/vim-repeat'
 Plug 'junegunn/goyo.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'hashivim/vim-terraform'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'stephpy/vim-yaml'
 Plug 'chr4/nginx.vim'
 call plug#end()
@@ -85,8 +87,8 @@ autocmd Filetype gitcommit setlocal spell textwidth=72
 autocmd FileType netrw setl bufhidden=delete
 let g:netrw_banner = 0
 let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
-let g:netrw_keepdir = 1
-let g:netrw_liststyle = 3
+let g:netrw_keepdir = 0
+let g:netrw_liststyle = 0
 
 if executable('ag')
   let g:ackprg = 'ag --vimgrep --hidden --ignore .git'
@@ -115,6 +117,7 @@ nmap <Leader>eg :tabnew ~/.gitconfig<CR>
 nmap <c-p> :Files<CR>
 nmap <c-g> :GFiles?<CR>
 nmap <Leader>v :vnew<cr>
+nmap <Leader>P :MarkdownPreview<CR>
 nmap <c-h> <c-w>h
 nmap <c-j> <c-w>j
 nmap <c-k> <c-w>k
